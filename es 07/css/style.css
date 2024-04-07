@@ -1,0 +1,21 @@
+h1,
+h2 {
+  color: cornflowerblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+h1 {
+  font-size: 50px;
+}
+p {
+  line-height: 2;
+}
+a {
+  color: black;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: forestgreen;
+}
