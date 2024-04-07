@@ -1,0 +1,20 @@
+label {
+  color: cadetblue;
+}
+input {
+  background-color: beige;
+  border-radius: 5px;
+}
+button {
+  border-radius: 30%;
+  background-color: cadetblue;
+  color: white;
+}
+button:hover {
+  background-color: white;
+  color: cadetblue;
+}
+#text {
+  margin-left: 40px;
+  border-radius: 10px;
+}
