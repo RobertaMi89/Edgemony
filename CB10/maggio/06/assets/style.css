@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap");
+body {
+  background-image: url("img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: "Briem Hand", cursive;
+}
+.gold {
+  color: darkgoldenrod;
+}
+.form {
+  width: 25%;
+  padding-left: 20px;
+}
+.btn {
+  background-color: darkgoldenrod;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+img {
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 10px 0px rgb(116, 112, 112);
+  -moz-box-shadow: 5px 5px 10px 0px rgb(116, 112, 112);
+  box-shadow: 5px 5px 10px 0px rgb(116, 112, 112);
+}
+aside {
+  width: 50%;
+}
