@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poetsen+One&display=swap");
+body {
+  background-color: bisque;
+}
+@media screen and (max-width: 480px) {
+  body {
+    background-color: blueviolet;
+  }
+}
+p {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  font-family: "Poetsen One", sans-serif;
+  text-transform: capitalize;
+  color: rgba(61, 22, 4, 0.5);
+}
+.flex {
+  display: flex;
+  background-color: rgba(255, 152, 103, 0.5);
+}
+@media screen and (max-width: 768px) {
+  .flex {
+    width: 25%;
+  }
+  .flex > .heading {
+    display: none;
+  }
+}
+
+.heading {
+  width: 50%;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 100;
+}
+span {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 3em;
+}
+.square {
+  width: 200px;
+  height: 200px;
+  background-color: cornflowerblue;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.square:hover {
+  background-color: brown;
+  -webkit-box-shadow: -5px -5px 15px 5px #000000;
+  box-shadow: -5px -5px 15px 5px #000000;
+}
+.rett {
+  width: 30%;
+  height: 200px;
+  margin-top: 20px;
+  margin: 10px;
+  background-color: cornflowerblue;
+}
