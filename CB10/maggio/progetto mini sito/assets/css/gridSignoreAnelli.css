@@ -1,0 +1,220 @@
+.cast h3 {
+  font-size: 2em;
+  text-align: center;
+  color: #71250d;
+}
+.container {
+  width: 95vw;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+}
+.border {
+  height: 190px;
+  width: 190px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+  &:hover {
+    border: 1px solid white;
+  }
+}
+.card {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 70px 63px -60px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  margin: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+  text-align: start;
+}
+.card0 {
+  background: url("../img/cast/Elijah\ Wood\ -\ Frodo\ Baggins.jpeg") center
+    center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Elijah\ Wood\ -\ Frodo\ Baggins.jpeg") left
+      center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card1 {
+  background: url("../img/cast/Sean\ Astin\ -\ Samvise\ Gamgee.jpeg") center
+    center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Sean\ Astin\ -\ Samvise\ Gamgee.jpeg") left
+      center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card2 {
+  background: url("../img/cast/Ian\ McKellen\ -\ Gandalf.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Ian\ McKellen\ -\ Gandalf.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card3 {
+  background: url("../img/cast/Viggo\ Mortensen\ -\ Aragorn.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Viggo\ Mortensen\ -\ Aragorn.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card4 {
+  background: url("../img/cast/Orlando\ Bloom\ -\ Legolas.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Orlando\ Bloom\ -\ Legolas.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card5 {
+  background: url("../img/cast/Sean\ Bean\ -\ Boromir.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Sean\ Bean\ -\ Boromir.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card6 {
+  background: url("../img/cast/dominic\ monaghan.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/dominic\ monaghan.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card7 {
+  background: url("../img/cast/tuc.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/tuc.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card8 {
+  background: url("../img/cast/liv\ tyler.webp") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/liv\ tyler.webp") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card9 {
+  background: url("../img/cast/Andy\ Serkis\ -\ Gollum.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Andy\ Serkis\ -\ Gollum.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card10 {
+  background: url("../img/cast/Cate\ Blanchett\ -\ Galadriel.jpeg") center
+    center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Cate\ Blanchett\ -\ Galadriel.jpeg") left
+      center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card11 {
+  background: url("../img/cast/Christopher\ Lee.avif") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Christopher\ Lee.avif") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}

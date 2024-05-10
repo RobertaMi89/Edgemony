@@ -1,0 +1,164 @@
+.card12 {
+  background: url("../img/cast/martin\ freeman.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/martin\ freeman.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card13 {
+  background: url("../img/cast/luke\ evans.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/luke\ evans.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card14 {
+  background: url("../img/cast/Ian\ McKellen\ -\ Gandalf.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Ian\ McKellen\ -\ Gandalf.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card15 {
+  background: url("../img/cast/benedict.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/benedict.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card16 {
+  background: url("../img/cast/Orlando\ Bloom\ -\ Legolas.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Orlando\ Bloom\ -\ Legolas.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card17 {
+  background: url("../img/cast/evangelin\ lilly.webp") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/evangelin\ lilly.webp") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card18 {
+  background: url("../img/cast/dominic\ monaghan.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/dominic\ monaghan.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card19 {
+  background: url("../img/cast/tuc.jpg") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/tuc.jpg") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card20 {
+  background: url("../img/cast/hugo\ weaving.webp") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/hugo\ weaving.webp") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card21 {
+  background: url("../img/cast/Andy\ Serkis\ -\ Gollum.jpeg") center center
+    no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Andy\ Serkis\ -\ Gollum.jpeg") left center
+      no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card22 {
+  background: url("../img/cast/Cate\ Blanchett\ -\ Galadriel.jpeg") center
+    center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Cate\ Blanchett\ -\ Galadriel.jpeg") left
+      center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
+.card23 {
+  background: url("../img/cast/Christopher\ Lee.avif") center center no-repeat;
+  background-size: 200px;
+
+  &:hover {
+    background: url("../img/cast/Christopher\ Lee.avif") left center no-repeat;
+    background-size: 300px;
+
+    h2 {
+      opacity: 1;
+    }
+  }
+}
