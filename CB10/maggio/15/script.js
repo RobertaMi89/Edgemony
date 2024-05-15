@@ -67,7 +67,7 @@ switch(answ1){
     default:
         score -= 1;
 }
-switch (answ2.toLowerCase()) {
+switch (answ2()) {
     case "sette":
     case "7":
         score += 3;
