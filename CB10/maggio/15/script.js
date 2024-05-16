@@ -9,7 +9,7 @@
    /* - Controlliamo che siano valori validi (non null), con almeno 3 caratteri e mostriamo tramite alert errori specifici;
     - Se abbiamo mostrato un errore ricarichiamo la pagina usando `window.location.reload()`;*/
 
-    if (!userName || !userSurname) {
+    if (!userName && !userSurname) {
         alert("Devi inserire sia il nome che il cognome.");
         window.location.reload();
     } else if (userName.length < 3 || userSurname.length < 3) {
@@ -67,7 +67,7 @@ switch(answ1){
     default:
         score -= 1;
 }
-switch (answ2()) {
+switch (answ2) {
     case "sette":
     case "7":
         score += 3;
@@ -76,7 +76,7 @@ switch (answ2()) {
         score -= 1;
 }
 
-switch (answ3.toLowerCase()) {
+switch (answ3.toLowerCase) {
     case "leonardo da vinci":
         score += 3;
         break;
