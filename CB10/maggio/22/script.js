@@ -41,18 +41,25 @@ function contaIndicazioni(...directions){
     return moves;
 }
 console.log(contaIndicazioni('su', 'su','su', 'sinistra')); 
-
 /*scriviamo una function che conta quante volte viene eseguita. Attacchiamo questa function all'evento click sul body usando document.body.onclick.*/
-let count = 0;
 
-        const button = document.getElementById('countClick');
+let count = 1;
+const countClick = () => {
+      return count++;
+} 
+document.body.onclick = countClick;
 
-        button.addEventListener('click', () => {
-            count++;
-            console.log(`Click -> ${count}`);
-        });
+////////////////////////////////////////////////////////////
 
-document.getElementById("countClick").addEventListener("click",countClick)
+let count1 = 0;
+
+const button = document.getElementById('countClick');
+
+button.addEventListener('click', () => {
+  
+    count1++;
+    console.log(`Click-> : ${count1}`);
+});
 
 /* Scrivere una function che data una stringa in input possa sostituire ogni carattere con il suo indice nell'alfabeto.
 
