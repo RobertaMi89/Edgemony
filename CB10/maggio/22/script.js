@@ -47,9 +47,7 @@ let count = 1;
 const countClick = () => {
       return count++;
 } 
-
-
-
+document.body.onclick = countClick;
 
 /* Scrivere una function che data una stringa in input possa sostituire ogni carattere con il suo indice nell'alfabeto.
 
