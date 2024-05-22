@@ -45,21 +45,10 @@ console.log(contaIndicazioni('su', 'su','su', 'sinistra'));
 
 let count = 1;
 const countClick = () => {
-      return count++;
+      console.log(`Click-> ${count++}`)
 } 
 document.body.onclick = countClick;
 
-////////////////////////////////////////////////////////////
-
-let count1 = 0;
-
-const button = document.getElementById('countClick');
-
-button.addEventListener('click', () => {
-  
-    count1++;
-    console.log(`Click-> : ${count1}`);
-});
 
 /* Scrivere una function che data una stringa in input possa sostituire ogni carattere con il suo indice nell'alfabeto.
 
