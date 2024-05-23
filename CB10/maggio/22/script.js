@@ -10,7 +10,7 @@ indicazioni('su', 'su', 'sinistra');
 
 function indicazioni(...directions){
     for(let direct of directions){
-        if (direct === 'su' || direct === 'giù' || direct === 'sinistra' || direct === 'destra') {
+        if (direct === 'su' || direct === 'giù' || direct === 'sinistra' || direct === 'destra') { //["su","giù","sx","dx"].includes(directions) è vaido solo con || OR
             console.log(direct);
         } else {
             console.log(`${direct} non è una direzione valida`);
@@ -75,3 +75,23 @@ function alphabetPosition(text) {
 
 console.log(alphabetPosition('Rosso di sera, bel tempo si spera'));
 // Output: "18 15 19 19 15 4 9 19 5 18 1 2 5 12 20 5 13 16 15 19 9 19 16 5 18 1"
+
+/*const alphabet ="abcdefghijklmnopqrstuvwxyz";
+
+    function alpPosition(string = " "){
+        let output = ""
+        string = string.toLowerCase();
+
+            for(let char of string){
+                const indexOfChar = alphabet.indexOf(char);
+                const isValid = indexOfChar >-1
+                if(isValid){
+                    output += (indexOfChar+1)+" ";
+                }else{
+                    output += char;
+                }
+                
+                output +=(isValid)?((indexOfChar)+" "):char
+            }
+            return output
+    }*/
