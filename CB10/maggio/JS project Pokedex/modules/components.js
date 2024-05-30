@@ -1,5 +1,4 @@
 const cardElGen = (obj) => {
-	console.log('obj:', obj);
 	const container = document.createElement('div');
 	const imageEl = document.createElement('img');
 	const titleEl = document.createElement('h2');
