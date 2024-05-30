@@ -17,8 +17,7 @@ window.onload = () => {
 };
 
 /*
-1 - dobbiamo interagire con gli items creando delle checkbox selezionabili, (onclick) al click della chackbox depennare l'item selezionato,
-3 - si potrà modificare l'item "manuale"
-4 - cancellare gli item che non servono
+1 - dobbiamo interagire con gli items, (onclick) al click della checkbox depennare l'item selezionato,
+4 - cancellare gli item che non servono icona cash
 6 - inserire icone nella category (inserire icon nell'oggetto)
 */
