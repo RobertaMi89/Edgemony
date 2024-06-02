@@ -23,14 +23,14 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
+  max-width: 10%;
+  margin-right: 0;
 }
-
 .close:hover,
 .close:focus {
   color: rgb(247, 65, 186);

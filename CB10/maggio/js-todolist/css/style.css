@@ -38,12 +38,18 @@ body::before {
 }
 
 /*HEADER*/
-header h1 {
+header h1,
+footer {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  background-color: rgb(156, 182, 255);
-  /* background: linear-gradient(90deg, #bd90cf, #aabcf8, #d587b3); */
+  background: rgb(215, 189, 246);
+  background: linear-gradient(
+    90deg,
+    rgba(215, 189, 246, 1) 0%,
+    rgba(176, 206, 255, 1) 50%,
+    rgba(215, 189, 246, 1) 100%
+  );
   height: 100px;
   border-radius: 20px;
   align-items: center;
@@ -53,7 +59,25 @@ header h1 {
   color: aliceblue;
   box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.336);
   font-weight: 700;
-  text-shadow: 2px 2px 0px #506aff, 4px 4px 0px #7ba0f1;
+  text-shadow: 2px 2px 0px #7ba0f1, 4px 4px 0px #506aff;
+  font-size: 50px;
+}
+
+.title-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.title-wrapper span {
+  font-size: 35px;
+}
+.category-icon {
+  height: 50px;
+  width: 50px;
+  align-items: center;
+}
+h2 {
+  display: flex;
 }
 
 /*MAIN*/
@@ -87,6 +111,7 @@ main {
   text-transform: capitalize;
   text-align: center;
   color: #7f6f79;
+  width: 100%;
 }
 .text {
   display: flex;
@@ -95,6 +120,7 @@ main {
 }
 span {
   text-align: center;
+  margin-left: 10px;
 }
 
 /* BOTTONE ADD*/
@@ -128,8 +154,44 @@ span {
   outline: none;
 }
 
+/*LISTA ITEMS*/
+
 ul {
   margin-left: 20px;
   margin-bottom: 20px;
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+}
+li span:nth-child(2) {
+  width: 70%;
+  text-align: left;
+}
+.select {
+  cursor: pointer;
+  color: gray;
+  font-weight: 900;
+}
+.select:hover,
+.select.active {
+  color: rgb(49, 189, 49);
+}
+.checked {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.edit {
+  cursor: pointer;
+}
+footer {
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 16px;
+  text-shadow: 1px 1px 0px #7ba0f1, 2px 2px 0px #506aff;
 }
