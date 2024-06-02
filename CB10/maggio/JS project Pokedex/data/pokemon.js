@@ -55,6 +55,12 @@ const pokemon = [
 	}
 ]
 
+const pokemonTypes = [
+	'fire', 'water', 'grass', 'ice', 'psyco'
+]
+
 export {
 	pokemon,
+	pokemonTypes
 }
+

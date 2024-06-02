@@ -1,10 +1,7 @@
-// Importiamo i dati dei Pokémon e le funzioni per generare gli elementi delle card
-import { pokemon } from "./data/pokemon.js";
-import { cardElGen, cardListGen } from "./modules/components.js";
+import { pokemon, pokemonTypes } from "./data/pokemon.js";
+import { cardElGen, cardListGen, buttonGen } from "./modules/components.js";
 
-// Creiamo un nuovo oggetto Pokémon chiamato 'Charizard'
-// Ci serve solo in questo momento in cui implementiamo, un passo alla volta, l'aggiunta di un Pokemon
-// Domani questo metodo si evolverà
+
 const newPokemon = {
 	id: 6,
 	name: 'Charizard',
@@ -16,15 +13,27 @@ const mainSectionEl = document.querySelector('.main');
 
 const btnAdd = document.querySelector('.btn-add');
 
+const headerElement = document.querySelector('.header');
+
+//prende una lista di tipi di pokemon
+//cicla la lista e per ogni tipo genera un bottone 
+// a ogni bottone viene associata una funzione che prende un tipo di pokemon e restituisce la lista filtrata di questi
+const renderListTypePokemon = () => {
+	return pokemonTypes.forEach(type => {
+		const btnType = buttonGen(`Type - ${type}`, type);
+
+		btnType.addEventListener('click', function () {
+			const newArray = pokemon.filter(pokemonsingolo => pokemonsingolo.type === this.id)
+			console.log(newArray.length ? newArray : 'Non esistono pokemon con questo tipo')
+		})
+		headerElement.append(btnType);
+	})
+}
+
 const renderListCard = () => {
 	mainSectionEl.innerHTML = ""
 
 	const cardList = cardListGen();
-
-	/* 	for (let i = 0; i <= pokemon.length - 1; i++) {
-			const cardEl = cardElGen(pokemon[i]);
-			cardList.append(cardEl);
-		} */
 
 	pokemon.forEach((singlePokemon) => {
 		const cardEl = cardElGen(singlePokemon);
@@ -34,10 +43,9 @@ const renderListCard = () => {
 	return cardList
 }
 
-window.onload = mainSectionEl.append(renderListCard());
+window.onload = mainSectionEl.append(renderListTypePokemon(), renderListCard());
 
 btnAdd.addEventListener("click", function () {
-	// Aggiungiamo la card alla lista
 
 	const isEqual = pokemon.some(i => i.id === newPokemon.id)
 
@@ -49,6 +57,7 @@ btnAdd.addEventListener("click", function () {
 		mainSectionEl.append(renderListCard())
 	}
 })
+
 
 
 

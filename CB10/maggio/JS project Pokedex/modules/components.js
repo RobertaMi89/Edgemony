@@ -6,6 +6,7 @@ const cardElGen = (obj) => {
 	const typeEl = document.createElement('p');
 
 	container.classList.add('card', obj.type);
+	container.id = obj.id;
 	imageEl.src = obj.image;
 	imageEl.className = "card__img"
 	imageEl.alt = obj.name;
@@ -31,7 +32,17 @@ const cardListGen = () => {
 	return container
 }
 
+const buttonGen = (text, id) => {
+	const button = document.createElement('button');
+
+	button.textContent = text;
+	button.id = id;
+
+	return button
+}
+
 export {
 	cardElGen,
-	cardListGen
+	cardListGen,
+	buttonGen
 }
