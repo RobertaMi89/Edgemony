@@ -1,6 +1,7 @@
 export const toDo = () => [
   {
     category: "Documents",
+    icon: "&#128196",
     id: 0,
     items: [
       "Passport",
@@ -16,6 +17,7 @@ export const toDo = () => [
   },
   {
     category: "Clothes",
+    icon: "&#128090",
     id: 1,
     items: [
       "T-shirts",
@@ -33,6 +35,7 @@ export const toDo = () => [
   },
   {
     category: "Toiletries",
+    icon: "&#129532",
     id: 2,
     items: [
       "Toothbrush",
@@ -51,6 +54,7 @@ export const toDo = () => [
   },
   {
     category: "Medical kit",
+    icon: "&#128138",
     id: 3,
     items: [
       "Personal medications",
@@ -63,6 +67,7 @@ export const toDo = () => [
   },
   {
     category: "Electronics",
+    icon: "&#128241",
     id: 4,
     items: [
       "Smartphone",
@@ -71,17 +76,19 @@ export const toDo = () => [
       "Universal adapter",
       "Laptop/Tablet",
       "Camera",
-      "Headphones/Earphones",
+      "Headphones",
       "eBook reader",
     ],
   },
   {
     category: "Accessories",
+    icon: "&#128082",
     id: 5,
     items: ["Sunglasses", "Sun hat", "Belt", "Scarf", "Watch", "Jewelry"],
   },
   {
     category: "Beauty",
+    icon: "&#128132",
     id: 6,
     items: [
       "BB cream",
@@ -98,11 +105,13 @@ export const toDo = () => [
   },
   {
     category: "Leisure",
+    icon: "&#128211",
     id: 7,
     items: ["Book", "Travel guide", "Travel games", "Notebook"],
   },
   {
     category: "Other",
+    icon: "&#128302",
     id: 8,
     items: [
       "Plastic bags for dirty clothes",

@@ -1,3 +1,6 @@
+import { openModal } from "./modal.js";
+
+/*ARRAY DI COLORI per inserirli random nelle card*/
 export const cardColor = [
   "#ffdef2",
   "#f2e2ff",
@@ -9,83 +12,72 @@ export const cardColor = [
   "#ffe6c7",
   "#b0ceff",
 ];
+//funzione per inserire random l'array colori nelle card
 const getRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * cardColor.length);
   const color = cardColor[randomIndex];
-  cardColor.splice(randomIndex, 1); // Rimuove il colore selezionato dall'array
+  cardColor.splice(randomIndex, 1);
   return color;
 };
 
-/*abbiamo selezionato e creato la card-list dove andranno tutte le card iterate in base all'oggetto */
-/*FUNZIONI*/
+//abbiamo selezionato e creato la card-list dove andranno tutte le card iterate in base all'oggetto
 export const cardList = () => {
   const container = document.createElement("div");
   container.className = "card-list";
   return container;
 };
-
-/* CREAZIONE CARD*/
+//CREAZIONE CARD
 export const card = (el) => {
   const container = document.createElement("div");
+  const titleWrapper = document.createElement("div"); // Aggiunto un wrapper per il titolo e l'icona
   const title = document.createElement("h2");
+  const icon = document.createElement("span"); // Aggiunto un elemento per l'icona
   const text = document.createElement("div");
   const input = document.createElement("input");
   const btn = document.createElement("button");
   const list = document.createElement("ul");
-  const liEl = document.createElement("li");
-  // const radio = document.createElement("checkbox");
-
   const randomColor = getRandomColor();
+
   container.style.backgroundColor = randomColor;
   container.classList.add("card");
-  title.classList.add("card__title");
+
+  titleWrapper.classList.add("title-wrapper"); // Aggiunto una classe al wrapper
+  icon.classList.add("category-icon"); // Aggiunto una classe all'icona
+  icon.innerHTML = el.icon; // Impostato il contenuto dell'icona
   title.innerHTML = el.category;
   title.className = "card__title";
   title.textContent = el.category;
 
+  titleWrapper.appendChild(icon);
+  titleWrapper.appendChild(title);
+
   text.className = "text";
   text.appendChild(input);
   text.appendChild(btn);
+
   btn.innerHTML = "Add";
   btn.classList.add("card__btn");
+
   input.classList.add("card__input");
 
+  //STAMPA SU DOM l'array di items
   list.className = "todo";
   for (let i = 0; i < el.items.length; i++) {
-    const liEl = document.createElement("li");
-    liEl.textContent = el.items[i];
-    list.appendChild(liEl);
-  }
-  container.append(title, text, list);
-
-  const modal = document.getElementById("myModal");
-  const span = document.getElementsByClassName("close")[0];
-
-  // Funzione per aprire la modale
-  function openModal() {
-    modal.style.display = "block";
+    addItem(el.items[i], input, list);
   }
 
-  // Funzione per chiudere la modale
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
+  container.append(titleWrapper, text, list);
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-
-  //al click del bottone tutto ciò che scritto i input verrà messo in fondo alla lista
+  //al click del bottone tutto ciò che scritto in input verrà messo in fondo alla lista
   btn.addEventListener("click", () => {
     const inputValue = input.value.trim().toLowerCase();
     const listItems = list.getElementsByTagName("li");
     let itemExists = false;
-
+    //Controllo se l'item esiste già
     for (let i = 0; i < listItems.length; i++) {
-      if (listItems[i].textContent.toLowerCase() === inputValue) {
+      if (
+        listItems[i].children[1].textContent.trim().toLowerCase() === inputValue
+      ) {
         itemExists = true;
         break;
       }
@@ -93,81 +85,55 @@ export const card = (el) => {
     if (itemExists) {
       openModal();
     } else if (inputValue !== "") {
-      const newLi = document.createElement("li");
-      newLi.textContent = inputValue;
-      list.appendChild(newLi);
-      input.value = "";
-
-      // Modifica elemento quando viene cliccato
-      newLi.onclick = function (event) {
-        const clickedElement = event.target;
-        if (clickedElement.tagName === "LI") {
-          input.value = clickedElement.textContent;
-          clickedElement.remove();
-        }
-      };
+      addItem(inputValue, input, list);
     }
   });
 
   return container;
 };
 
-// Bottone close da associare ad ogni list item
-const myNodelist = document.getElementsByTagName("LI");
-let i;
-for (i = 0; i < myNodelist.length; i++) {
-  const span = document.createElement("SPAN");
-  const txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+function addItem(text, input, list) {
+  const liEl = document.createElement("li");
+
+  // Aggiungi il pulsante select ad ogni elemento li
+  const selectBtn = document.createElement("span");
+  selectBtn.className = "select";
+  selectBtn.innerHTML = "\u2714";
+  liEl.insertBefore(selectBtn, liEl.firstChild);
+
+  // Aggiungi il testo dell'elemento li
+  const textSpan = document.createElement("span");
+  textSpan.textContent = text;
+
+  liEl.appendChild(textSpan);
+
+  // Aggiungi il gestore di eventi per il pulsante select
+  selectBtn.addEventListener("click", function () {
+    selectBtn.classList.toggle("active");
+    textSpan.classList.toggle("checked");
+  });
+
+  // Aggiungi il pulsante edit (matita) ad ogni elemento li
+  const editBtn = document.createElement("span");
+  editBtn.className = "edit";
+  editBtn.innerHTML = "✏️";
+  liEl.appendChild(editBtn);
+
+  // Aggiungi il gestore di eventi per il pulsante edit
+  editBtn.addEventListener("click", function () {
+    input.value = textSpan.textContent.trim();
+    liEl.remove();
+  });
+  // Pulsante × close ad ogni elemento li
+  const closeBtn = document.createElement("span");
+  closeBtn.className = "close";
+  closeBtn.innerHTML = "\u00D7";
+  liEl.appendChild(closeBtn);
+
+  // Rimuovi l'elemento "li" quando si fa clic sul pulsante close
+  closeBtn.addEventListener("click", function () {
+    liEl.remove();
+  });
+
+  list.appendChild(liEl);
 }
-
-// Clicco il btn Close per rimuovere un item
-const close = document.getElementsByClassName("close");
-let y;
-for (y = 0; y < close.length; y++) {
-  close[i].onclick = function () {
-    const div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// // Add a "checked" symbol when clicking on a list item Aggiungo il pulsante quando cicco un item
-// const list = document.querySelector("ul");
-// list.addEventListener(
-//   "click",
-//   function (ev) {
-//     if (ev.target.tagName === "LI") {
-//       ev.target.classList.toggle("checked");
-//     }
-//   },
-//   false
-// );
-
-// // Create a new list item when clicking on the "Add" button
-// function newElement() {
-//   const li = document.createElement("li");
-//   const inputValue = document.getElementById("myInput").value;
-//   const t = document.createTextNode(inputValue);
-//   li.appendChild(t);
-//   if (inputValue === "") {
-//     alert("You must write something!");
-//   } else {
-//     document.getElementById("myUL").appendChild(li);
-//   }
-//   document.getElementById("myInput").value = "";
-
-//   const span = document.createElement("SPAN");
-//   const txt = document.createTextNode("\u00D7");
-//   span.className = "close";
-//   span.appendChild(txt);
-//   li.appendChild(span);
-
-//   for (i = 0; i < close.length; i++) {
-//     close[i].onclick = function () {
-//       const div = this.parentElement;
-//       div.style.display = "none";
-//     };
-//   }
-// }

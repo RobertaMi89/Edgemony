@@ -9,7 +9,6 @@ window.onload = () => {
   const categories = toDo();
   /*utilizziamo il for per leggere tutto l'array e stampare gli items nelle card*/
   for (let i = 0; i < categories.length; i++) {
-    for (let j = 0; j < categories[i].items.length; j++) {}
     sectionCardList.appendChild(card(categories[i]));
   }
 
