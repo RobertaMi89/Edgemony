@@ -104,7 +104,7 @@ function addItem(text, input, list) {
 
   // Aggiungi il testo dell'elemento li
   const textSpan = document.createElement("span");
-  textSpan.textContent = text;
+  textSpan.textContent = text; ////svsdbsfbsfbs
 
   liEl.appendChild(textSpan);
 
