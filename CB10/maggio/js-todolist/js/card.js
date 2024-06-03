@@ -86,6 +86,7 @@ export const card = (el) => {
       openModal();
     } else if (inputValue !== "") {
       addItem(inputValue, input, list);
+      input.value = "";
     }
   });
 
