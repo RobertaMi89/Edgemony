@@ -29,7 +29,6 @@ let intervalId = runInterval();
 startButton.addEventListener("click", () => {
   if (!intervalId) {
     intervalId = runInterval();
-    div.classList.add("background-active");
   }
 });
 
@@ -37,6 +36,5 @@ stopButton.addEventListener("click", () => {
   if (intervalId) {
     clearInterval(intervalId);
     intervalId = null;
-    div.classList.remove("background-active");
   }
 });
