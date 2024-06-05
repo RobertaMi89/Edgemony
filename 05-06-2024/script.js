@@ -31,19 +31,23 @@ let sec = 20;
 let countdown;
 
 openModalBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-  sec = 20;
-
-  const updateTimer = () => {
-    timerP.textContent = sec;
-    sec--;
-    if (sec < 0) {
-      modal.style.display = "none";
-      clearInterval(countdown);
-    }
-  };
-  updateTimer();
-  countdown = setInterval(updateTimer, 1000);
+  const inputValue = nameInput.value;
+  if (/^[a-zA-Z]+$/.test(inputValue)) {
+    modal.style.display = "block";
+    sec = 20;
+    const updateTimer = () => {
+      timerP.textContent = sec;
+      sec--;
+      if (sec < 0) {
+        modal.style.display = "none";
+        clearInterval(countdown);
+      }
+    };
+    updateTimer();
+    countdown = setInterval(updateTimer, 1000);
+  } else {
+    alert("Inserisci solo caratteri alfabetici.");
+  }
 });
 
 closeBtn.addEventListener("click", () => {
