@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -34,10 +38,11 @@
 
 .modal-content {
   background-color: #fff;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 20px;
   border-radius: 10px;
-  width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 50%;
   max-width: 400px;
 }
 
@@ -49,11 +54,39 @@
   cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
+.close:hover {
+  color: #333;
+}
+#nameDisplay {
+  margin-bottom: 20px;
 }
 
+#question {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#yesBtn,
+#noBtn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#yesBtn:hover,
+#noBtn:hover {
+  background-color: #45a049;
+}
+
+#timer {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
 #inputModal {
   display: flex;
   align-items: center;
