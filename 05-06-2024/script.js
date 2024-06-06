@@ -34,7 +34,7 @@ openModalBtn.addEventListener("click", () => {
   const inputValue = nameInput.value;
   if (/^[a-zA-Z]+$/.test(inputValue)) {
     modal.style.display = "block";
-    sec = 20;
+    sec = 10;
     const updateTimer = () => {
       timerP.textContent = sec;
       sec--;
