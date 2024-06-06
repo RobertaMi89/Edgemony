@@ -44,10 +44,11 @@ showProducts.addEventListener("click", () => {
   div = document.querySelector(".display");
   div.style.display = "block";
 });
+
+//filtro dentro il campo input
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", searchProducts);
 
-//filtro dentro il campo input
 function searchProducts() {
   let input = document.getElementById("search-input").value.toLowerCase();
   let products = document.querySelectorAll(".card");
