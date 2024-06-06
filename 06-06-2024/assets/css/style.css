@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --light-bg: #f7f7f7; /* Colore di sfondo chiaro */
+  --light-gray-bg: #e0e0e0; /* Colore di sfondo grigio chiaro */
+  --white: #fff; /* Colore bianco */
+  --dark: #333; /* Colore testo scuro */
+  --text-gray: #666; /* Colore testo grigio */
+  --purple: #7e57c2; /* Colore viola */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--light-bg);
+  color: var(--dark);
+}
+
+h1 {
+  height: 30vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 5em;
+  color: var(--text-gray);
+}
+
+/* Contenitore dei pulsanti e dell'input */
+#search-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.seeAllBtn {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--purple);
+  color: var(--white);
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seeAllBtn:hover {
+  background-color: #6a1b9a;
+}
+.seeAllBtn:active {
+  transform: translateY(2px);
+}
+
+input {
+  width: 300px;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 25px;
+  border: 1px solid var(--text-gray);
+  outline: none;
+  font-size: 1em;
+}
+
+/* Contenitore delle carte */
+.display,
+input {
+  display: none;
+}
+
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Stile delle carte */
+.card {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s;
+  backdrop-filter: blur(6px);
+}
+.card:hover {
+  border: 1px solid var(--text-gray);
+  transform: scale(1.05);
+}
+.card-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--purple);
+}
