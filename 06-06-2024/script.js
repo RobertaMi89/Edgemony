@@ -4,7 +4,6 @@ fetch("https://fakestoreapi.com/products")
     console.log(data);
     renderCards(data);
   });
-
 //creazione card
 const cardsContainer = document.querySelector("#cards-container");
 function renderCards(data) {
@@ -13,15 +12,12 @@ function renderCards(data) {
     const image = document.createElement("img");
     const title = document.createElement("h3");
     const price = document.createElement("p");
-
     div.classList = "card";
     image.classList = "card-img";
     price.classList = "card-price";
-
     image.src = e.image;
     title.textContent = e.title;
     price.textContent = `${e.price} €`;
-
     div.appendChild(image);
     div.appendChild(title);
     div.appendChild(price);
@@ -29,12 +25,9 @@ function renderCards(data) {
   });
 }
 cardsContainer.innerHTML = "";
-
 //bottone per mostrare le card al click
 const showProducts = document.querySelector("button");
-showProducts.classList = "seeAllBtn";
 showProducts.textContent = "See all products";
-
 showProducts.addEventListener("click", () => {
   const inputContainer = document.querySelector("input");
   if (inputContainer) {
@@ -47,17 +40,11 @@ showProducts.addEventListener("click", () => {
 //filtro dentro il campo input
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", searchProducts);
-
 function searchProducts() {
   let input = document.getElementById("search-input").value.toLowerCase();
   let products = document.querySelectorAll(".card");
-
   products.forEach((product) => {
-    let title = product.querySelector("h3").textContent.toLowerCase();
-    if (!title.includes(input)) {
-      product.style.display = "none";
-    } else {
-      product.style.display = "block";
-    }
+    const title = product.querySelector("h3").textContent.toLowerCase();
+    product.style.display = title.includes(input) ? "block" : "none";
   });
 }
