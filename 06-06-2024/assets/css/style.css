@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --light-bg: #f7f7f7; /* Colore di sfondo chiaro */
-  --light-gray-bg: #e0e0e0; /* Colore di sfondo grigio chiaro */
-  --white: #fff; /* Colore bianco */
-  --dark: #333; /* Colore testo scuro */
-  --text-gray: #666; /* Colore testo grigio */
-  --purple: #7e57c2; /* Colore viola */
+  --light-bg: #f7f7f7;
+  --light-gray-bg: #e0e0e0;
+  --white: #fff;
+  --dark: #333;
+  --text-gray: #666;
+  --purple: #7e57c2;
 }
 
 * {
@@ -83,7 +83,7 @@ input {
   gap: 20px;
 }
 
-/* Stile delle carte */
+/* carte */
 .card {
   background-color: var(--white);
   border-radius: 10px;

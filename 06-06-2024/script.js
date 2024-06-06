@@ -30,6 +30,7 @@ function renderCards(data) {
   });
 }
 cardsContainer.innerHTML = "";
+
 //bottone per mostrare le card al click
 const showProducts = document.querySelector("button");
 showProducts.classList = "seeAllBtn";
