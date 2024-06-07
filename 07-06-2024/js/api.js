@@ -1,8 +1,8 @@
-import { API_KEY } from "./js/keys.js";
-import { renderCards, searchBar } from "./js/card.js";
-import { handlePagination } from "./js/pagination.js";
+import { API_KEY } from "./keys.js";
+import { renderCards, searchBar } from "./card.js";
 
-let currentPage = 1;
+export let currentPage = 1;
+export let totalPages = 0;
 let currentEndpoint = "popular";
 
 const options = {
@@ -21,7 +21,8 @@ function changeEndpoint(endpoint) {
 fetchData(currentPage, currentEndpoint);
 
 // Funzione per effettuare la richiesta API
-function fetchData(page, endpoint) {
+
+export function fetchData(page, endpoint) {
   const apiUrl = `https://api.themoviedb.org/3/movie/${endpoint}?language=en-US&page=${page}&api_key=${API_KEY}`;
   fetch(apiUrl, options)
     .then((response) => {
@@ -34,8 +35,8 @@ function fetchData(page, endpoint) {
       console.log("Data received:", data);
       const movies = data.results;
       renderCards(movies);
-      handlePagination(page, data.total_pages, fetchData, currentEndpoint);
-      updatePageNumber(page, data.total_pages);
+      if (totalPages === 0) totalPages = data.total_pages;
+      updatePageNumber(page, totalPages);
       searchBar();
     })
     .catch((err) => {
@@ -69,3 +70,28 @@ document
 document
   .getElementById("upcoming-btn")
   .addEventListener("click", () => changeEndpoint("upcoming"));
+
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+prevBtn.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    fetchData(currentPage, currentEndpoint);
+    updateButtons();
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    fetchData(currentPage, currentEndpoint).then(() => {
+      updateButtons();
+    });
+  }
+});
+
+function updateButtons() {
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+}
