@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>Popular Movies</title>
+    <title>Prime Movies</title>
   </head>
   <body>
     <header>
@@ -18,25 +18,25 @@
     </header>
 
     <!--SEARCH BAR-->
-    <div class="search-bar">
-      <input
-        type="text"
-        id="search-input"
-        class="search-input"
-        placeholder="Cerca film..."
-      />
-    </div>
+    <main>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Cerca film..."
+        />
+      </div>
+      <!--CONTAINER CARDS-->
+      <div id="cards-container" class="div-cards"></div>
+      <div id="pagination">
+        <button id="prev-btn">Prev</button>
+        <button id="next-btn">Next</button>
+      </div>
 
-    <!--CONTAINER CARDS-->
-    <div class="card-container" id="cards-container"></div>
-    <div id="pagination">
-      <button id="prev-btn">Prev</button>
-      <button id="next-btn">Next</button>
-    </div>
-
-    <!--PAGINE-->
-    <div id="page-number"></div>
-
+      <!--PAGINE-->
+      <div id="page-number"></div>
+    </main>
     <!-- ERROR -->
     <div id="error-message">Oops! Qualcosa è andato storto.</div>
     <script type="module" src="./script.js"></script>
