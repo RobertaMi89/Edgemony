@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Popular Movies</title>
+  </head>
+  <body>
+    <header>
+      <h1>Prime Movies</h1>
+      <div id="endpoint-buttons">
+        <button id="popular-btn">Popular</button>
+        <button id="nowplaying-btn">Now Playing</button>
+        <button id="top-rated-btn">Top Rated</button>
+        <button id="upcoming-btn">Upcoming</button>
+      </div>
+    </header>
+
+    <!--SEARCH BAR-->
+    <div class="search-bar">
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="Cerca film..."
+      />
+    </div>
+
+    <!--CONTAINER CARDS-->
+    <div class="card-container" id="cards-container"></div>
+    <div id="pagination">
+      <button id="prev-btn">Prev</button>
+      <button id="next-btn">Next</button>
+    </div>
+
+    <!--PAGINE-->
+    <div id="page-number"></div>
+
+    <!-- ERROR -->
+    <div id="error-message">Oops! Qualcosa è andato storto.</div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
