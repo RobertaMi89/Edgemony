@@ -10,14 +10,14 @@ export function handlePagination(
   prevBtn.addEventListener("click", () => {
     if (currentPage > 1) {
       currentPage--;
-      fetchData(currentPage, currentEndpoint); // Aggiorniamo il parametro dell'endpoint corrente
+      fetchData(currentPage, currentEndpoint);
     }
   });
 
   nextBtn.addEventListener("click", () => {
     if (currentPage < totalPages) {
       currentPage++;
-      fetchData(currentPage, currentEndpoint); // Aggiorniamo il parametro dell'endpoint corrente
+      fetchData(currentPage, currentEndpoint);
     }
   });
 }

@@ -36,6 +36,7 @@ function fetchData(page, endpoint) {
       renderCards(movies);
       handlePagination(page, data.total_pages, fetchData, currentEndpoint);
       updatePageNumber(page, data.total_pages);
+      searchBar();
     })
     .catch((err) => {
       console.error("Fetch error or JSON parsing error: ", err);

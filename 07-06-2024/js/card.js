@@ -6,23 +6,23 @@ export function renderCards(data) {
   data.forEach((movie) => {
     console.log("Rendering movie:", movie);
     const div = document.createElement("div");
-    const image = document.createElement("img");
     const title = document.createElement("h3");
+    const divText = document.createElement("div");
     const overview = document.createElement("p");
 
     div.classList.add("card");
-    image.classList.add("card-img");
+    div.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+
     title.classList.add("card-title");
+    divText.classList.add("div-text");
     overview.classList.add("card-overview");
 
-    image.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-    image.alt = movie.title;
     title.textContent = movie.title;
     overview.textContent = movie.overview;
 
-    div.appendChild(image);
-    div.appendChild(title);
-    div.appendChild(overview);
+    div.appendChild(divText);
+    divText.appendChild(title);
+    divText.appendChild(overview);
     cardsContainer.appendChild(div);
   });
 }
