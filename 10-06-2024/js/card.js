@@ -17,6 +17,7 @@ export function renderCards(data, mediaType) {
     divText.classList.add("div-text");
     overview.classList.add("card-overview");
 
+    // Usa il campo corretto per il titolo in base al tipo di media
     title.textContent = mediaType === "movie" ? item.title : item.name;
     overview.textContent = item.overview;
 
@@ -42,9 +43,6 @@ export function searchBar() {
 }
 
 export function updateMediaTypeTitle(mediaType) {
-  const mediaTitleElement = document.getElementById("media-title");
-  if (mediaTitleElement) {
-    mediaTitleElement.textContent =
-      mediaType === "movie" ? "Movies" : "TV Series";
-  }
+  const mediaTypeTitle = document.getElementById("media-type-title");
+  mediaTypeTitle.textContent = mediaType === "movie" ? "Film" : "Serie TV";
 }

@@ -26,10 +26,30 @@ nav {
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
 }
-span {
-  color: white;
-  font-size: 1.5em;
+/*BTN GENERI*/
+#genres-dropdown {
+  padding: 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
+#category {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: rgb(105, 102, 102);
+  font-size: 1.5em;
+  margin: 0 20px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#category span:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 3em;
   width: 8em;
@@ -238,26 +258,3 @@ button:focus {
   align-items: center;
   background-color: #ec4d2b;
 }
-/*TITOLO SERIE TV CARDS*/
-.tv-title {
-  font-weight: bold;
-  color: #ff5722; /* Colore a tua scelta */
-}
-/* MENU DROPDOWN
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #912222;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content.show {
-  display: block;
-} */
