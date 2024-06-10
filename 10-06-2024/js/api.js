@@ -1,11 +1,10 @@
 import { API_KEY } from "./keys.js";
-import { renderCards, searchBar, updateMediaTypeTitle } from "./card.js";
+import { renderCards, searchBar } from "./card.js";
 
-export let currentPage = 1;
-export let totalPages = 0;
+let currentPage = 1;
+let totalPages = 0;
 let currentEndpoint = "popular";
-let currentMediaType = "movie"; // Tipo di media attuale (film per impostazione predefinita)
-let currentGenreId = null; // ID del genere corrente
+let currentMediaType = "movie";
 
 const options = {
   headers: {
@@ -17,51 +16,31 @@ const options = {
 function changeEndpoint(endpoint, mediaType) {
   currentEndpoint = endpoint;
   currentMediaType = mediaType;
-  currentGenreId = null; // Reset del genere corrente
-  currentPage = 1; // Resetta la pagina quando cambi endpoint
-  fetchData(currentPage, currentEndpoint, currentMediaType, currentGenreId);
+  currentPage = 1;
+  fetchData(currentPage, currentEndpoint, currentMediaType);
+}
 
-  // Aggiorna il tipo di media nel titolo
-  updateMediaTypeTitle(currentMediaType);
+// Funzione che gestisce il cambio del tipo di media e aggiorna i bottoni degli endpoint
+async function changeMediaType(mediaType) {
+  currentMediaType = mediaType;
+  updateEndpoints(mediaType);
+  await populateGenresDropdown(); // Aggiorna anche i generi nel menu a tendina
+  changeEndpoint(currentEndpoint, currentMediaType);
 }
 
 // Caricamento dei film/popular iniziali
 fetchData(currentPage, currentEndpoint, currentMediaType);
 
-// Funzione per ottenere la lista dei generi
-async function fetchGenres(mediaType) {
-  let apiUrl = "";
-  if (mediaType === "movie") {
-    apiUrl = `https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${API_KEY}`;
-  } else if (mediaType === "tv") {
-    apiUrl = `https://api.themoviedb.org/3/genre/tv/list?language=en-US&api_key=${API_KEY}`;
-  }
-
-  try {
-    const response = await fetch(apiUrl, options);
-    if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
-    }
-    const data = await response.json();
-    return data.genres;
-  } catch (err) {
-    console.error("Fetch error or JSON parsing error: ", err);
-    showError();
-    throw err; // Rilancia l'errore per gestione ulteriore
-  }
-}
+// Popola il menu a tendina dei generi all'avvio
+populateGenresDropdown();
 
 // Funzione per effettuare la richiesta API
-export async function fetchData(page, endpoint, mediaType, genreId = null) {
+async function fetchData(page, endpoint, mediaType) {
   let apiUrl = "";
   if (mediaType === "movie") {
-    apiUrl = `https://api.themoviedb.org/3/${
-      genreId ? `discover/movie?with_genres=${genreId}` : `movie/${endpoint}`
-    }?language=en-US&page=${page}&api_key=${API_KEY}`;
+    apiUrl = `https://api.themoviedb.org/3/movie/${endpoint}?language=en-US&page=${page}&api_key=${API_KEY}`;
   } else if (mediaType === "tv") {
-    apiUrl = `https://api.themoviedb.org/3/${
-      genreId ? `discover/tv?with_genres=${genreId}` : `tv/${endpoint}`
-    }?language=en-US&page=${page}&api_key=${API_KEY}`;
+    apiUrl = `https://api.themoviedb.org/3/tv/${endpoint}?language=en-US&page=${page}&api_key=${API_KEY}`;
   }
 
   try {
@@ -71,11 +50,11 @@ export async function fetchData(page, endpoint, mediaType, genreId = null) {
     }
     const data = await response.json();
     console.log("Data received:", data);
-    const items = data.results;
-    renderCards(items, mediaType); // Passa il tipo di media a renderCards
+    const movies = data.results;
+    renderCards(movies, currentMediaType);
     if (totalPages === 0) totalPages = data.total_pages;
     updatePageNumber(page, totalPages);
-    searchBar();
+    searchBar(currentMediaType);
   } catch (err) {
     console.error("Fetch error or JSON parsing error: ", err);
     showError();
@@ -95,47 +74,56 @@ function updatePageNumber(currentPage, totalPages) {
   pageNumberElement.textContent = `Pagina: ${currentPage} di ${totalPages}`;
 }
 
-// Funzione per aggiornare la lista dei generi
-async function updateGenres(mediaType) {
-  const genres = await fetchGenres(mediaType);
-  const genresDropdown = document.getElementById("genres-dropdown");
-  genresDropdown.innerHTML = '<option value="">Seleziona un genere</option>';
+// Funzione per aggiornare i bottoni degli endpoint
+function updateEndpoints(mediaType) {
+  const endpointsContainer = document.getElementById("endpoints");
+  endpointsContainer.innerHTML = "";
 
-  genres.forEach((genre) => {
-    const genreOption = document.createElement("option");
-    genreOption.value = genre.id;
-    genreOption.textContent = genre.name;
-    genresDropdown.appendChild(genreOption);
+  const endpoints =
+    mediaType === "movie"
+      ? ["popular", "now_playing", "top_rated", "upcoming"]
+      : ["popular", "airing_today", "on_the_air", "top_rated"];
+
+  endpoints.forEach((endpoint) => {
+    const button = document.createElement("button");
+    button.id = `${endpoint}-btn`;
+    button.textContent = endpoint
+      .replace("_", " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase());
+    button.addEventListener("click", () => changeEndpoint(endpoint, mediaType));
+    endpointsContainer.appendChild(button);
   });
 }
 
-// Event listener per il dropdown dei generi
-document
-  .getElementById("genres-dropdown")
-  .addEventListener("change", (event) => {
-    currentGenreId = event.target.value;
-    fetchData(currentPage, currentEndpoint, currentMediaType, currentGenreId);
-  });
+// Funzione per popolare il menu a tendina dei generi
+async function populateGenresDropdown() {
+  const genresDropdown = document.getElementById("genres-dropdown");
+  genresDropdown.innerHTML = "<option value=''>Seleziona un genere</option>";
 
-// BTN per il cambio di endpoint
-document
-  .getElementById("popular-btn")
-  .addEventListener("click", () => changeEndpoint("popular", currentMediaType));
-document
-  .getElementById("nowplaying-btn")
-  .addEventListener("click", () =>
-    changeEndpoint("now_playing", currentMediaType)
-  );
-document
-  .getElementById("top-rated-btn")
-  .addEventListener("click", () =>
-    changeEndpoint("top_rated", currentMediaType)
-  );
-document
-  .getElementById("upcoming-btn")
-  .addEventListener("click", () =>
-    changeEndpoint("upcoming", currentMediaType)
-  );
+  try {
+    // Effettua la chiamata API per ottenere la lista dei generi
+    const response = await fetch(
+      `https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${API_KEY}`
+    );
+    if (!response.ok) {
+      throw new Error("Errore di rete: " + response.statusText);
+    }
+    const data = await response.json();
+    console.log("Data received:", data);
+    const genres = data.genres;
+
+    // Aggiunge le opzioni al menu a tendina
+    genres.forEach((genre) => {
+      const option = document.createElement("option");
+      option.value = genre.id;
+      option.textContent = genre.name;
+      genresDropdown.appendChild(option);
+    });
+  } catch (error) {
+    console.error("Errore durante il recupero dei generi:", error.message);
+    // Puoi gestire l'errore qui, ad esempio visualizzando un messaggio di errore all'utente
+  }
+}
 
 // BTN per il cambio di tipo di media (film/serie TV)
 document
@@ -151,12 +139,7 @@ const nextBtn = document.getElementById("next-btn");
 prevBtn.addEventListener("click", async () => {
   if (currentPage > 1) {
     currentPage--;
-    await fetchData(
-      currentPage,
-      currentEndpoint,
-      currentMediaType,
-      currentGenreId
-    );
+    await fetchData(currentPage, currentEndpoint, currentMediaType);
     updateButtons();
   }
 });
@@ -164,12 +147,7 @@ prevBtn.addEventListener("click", async () => {
 nextBtn.addEventListener("click", async () => {
   if (currentPage < totalPages) {
     currentPage++;
-    await fetchData(
-      currentPage,
-      currentEndpoint,
-      currentMediaType,
-      currentGenreId
-    );
+    await fetchData(currentPage, currentEndpoint, currentMediaType);
     updateButtons();
   }
 });
@@ -178,14 +156,3 @@ function updateButtons() {
   prevBtn.disabled = currentPage === 1;
   nextBtn.disabled = currentPage === totalPages;
 }
-
-// Funzione per il cambio del tipo di media (film/serie TV)
-function changeMediaType(mediaType) {
-  currentMediaType = mediaType;
-  currentGenreId = null; // Reset del genere corrente
-  changeEndpoint(currentEndpoint, currentMediaType);
-  updateGenres(currentMediaType); // Aggiorna i generi disponibili
-}
-
-// Aggiorna i generi disponibili all'avvio
-updateGenres(currentMediaType);
