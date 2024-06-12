@@ -12,7 +12,7 @@ const options = {
   },
 };
 
-// Funzione che gestisce il cambio di endpoint
+// Cambio di endpoint
 function changeEndpoint(endpoint, mediaType) {
   currentEndpoint = endpoint;
   currentMediaType = mediaType;
@@ -20,21 +20,21 @@ function changeEndpoint(endpoint, mediaType) {
   fetchData(currentPage, currentEndpoint, currentMediaType);
 }
 
-// Funzione che gestisce il cambio del tipo di media e aggiorna i bottoni degli endpoint
+// Cambio del tipo di media e aggiorno i bottoni degli endpoint
 async function changeMediaType(mediaType) {
   currentMediaType = mediaType;
   updateEndpoints(mediaType);
-  await populateGenresDropdown(); // Aggiorna anche i generi nel menu a tendina
-  changeEndpoint(currentEndpoint, currentMediaType);
+  await populateGenresDropdown(mediaType);
+  changeEndpoint("popular", mediaType);
 }
 
 // Caricamento dei film/popular iniziali
 fetchData(currentPage, currentEndpoint, currentMediaType);
 
 // Popola il menu a tendina dei generi all'avvio
-populateGenresDropdown();
+populateGenresDropdown(currentMediaType);
 
-// Funzione per effettuare la richiesta API
+// Effettuo la richiesta API
 async function fetchData(page, endpoint, mediaType) {
   let apiUrl = "";
   if (mediaType === "movie") {
@@ -58,23 +58,23 @@ async function fetchData(page, endpoint, mediaType) {
   } catch (err) {
     console.error("Fetch error or JSON parsing error: ", err);
     showError();
-    throw err; // Rilancia l'errore per gestione ulteriore
+    throw err;
   }
 }
 
-// Funzione per mostrare eventuali errori
+// Eventuali errori
 function showError() {
   const errorMessage = document.querySelector("#error-message");
   errorMessage.style.display = "block";
 }
 
-// Funzione per aggiornare il numero della pagina corrente
+// Aggiorno il numero della pagina corrente
 function updatePageNumber(currentPage, totalPages) {
   const pageNumberElement = document.getElementById("page-number");
   pageNumberElement.textContent = `Pagina: ${currentPage} di ${totalPages}`;
 }
 
-// Funzione per aggiornare i bottoni degli endpoint
+// Aggiorno i bottoni degli endpoint
 function updateEndpoints(mediaType) {
   const endpointsContainer = document.getElementById("endpoints");
   endpointsContainer.innerHTML = "";
@@ -95,24 +95,26 @@ function updateEndpoints(mediaType) {
   });
 }
 
-// Funzione per popolare il menu a tendina dei generi
-async function populateGenresDropdown() {
+// Popolo il menu a tendina dei generi
+async function populateGenresDropdown(mediaType) {
   const genresDropdown = document.getElementById("genres-dropdown");
   genresDropdown.innerHTML = "<option value=''>Seleziona un genere</option>";
 
   try {
-    // Effettua la chiamata API per ottenere la lista dei generi
-    const response = await fetch(
-      `https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${API_KEY}`
-    );
+    const genreUrl = `https://api.themoviedb.org/3/genre/${mediaType}/list?language=en-US&api_key=${API_KEY}`;
+
+    console.log("Fetching genres from URL: ", genreUrl);
+
+    // Effettuo la chiamata API per ottenere la lista dei generi
+    const response = await fetch(genreUrl, options);
     if (!response.ok) {
       throw new Error("Errore di rete: " + response.statusText);
     }
     const data = await response.json();
-    console.log("Data received:", data);
+    console.log("Data received for genres:", data);
     const genres = data.genres;
 
-    // Aggiunge le opzioni al menu a tendina
+    // Aggiungo le opzioni al menu a tendina
     genres.forEach((genre) => {
       const option = document.createElement("option");
       option.value = genre.id;
@@ -121,7 +123,6 @@ async function populateGenresDropdown() {
     });
   } catch (error) {
     console.error("Errore durante il recupero dei generi:", error.message);
-    // Puoi gestire l'errore qui, ad esempio visualizzando un messaggio di errore all'utente
   }
 }
 

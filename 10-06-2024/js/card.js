@@ -4,7 +4,7 @@ export function renderCards(data, mediaType) {
   cardsContainer.innerHTML = "";
 
   data.forEach((item) => {
-    console.log("Rendering item:", item);
+    // console.log("Rendering item:", item);
     const div = document.createElement("div");
     const title = document.createElement("h3");
     const divText = document.createElement("div");
