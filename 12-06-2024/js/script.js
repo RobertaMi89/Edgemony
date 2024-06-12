@@ -5,7 +5,7 @@ import { initPagination, nextPage, prevPage } from "./pages.js";
 const productForm = document.getElementById("productForm");
 const deleteForm = document.getElementById("deleteForm");
 
-// Stampiamo la lista dei prodotti quando la pagina viene caricata
+//stampa dei prodotti al caricamento pagina
 window.addEventListener("DOMContentLoaded", () => {
   printAllProducts();
   initializeApp();
@@ -27,7 +27,7 @@ productForm.addEventListener("submit", async (event) => {
     const newProduct = await addProduct(productData);
     console.log("Nuovo prodotto aggiunto:", newProduct);
     alert("Prodotto aggiunto con successo!");
-    // Pulisce il form dopo l'aggiunta del prodotto
+
     productForm.reset();
   } catch (error) {
     console.error("Errore durante l'aggiunta del prodotto:", error);
@@ -47,7 +47,6 @@ deleteForm.addEventListener("submit", async (event) => {
     const deletedProduct = await deleteProduct(id);
     console.log("Eliminato con successo:", deletedProduct);
 
-    // Pulisce il form dopo l'aggiunta del prodotto
     deleteForm.reset();
   } catch (error) {
     console.error("Errore durante l'eliminazione del prodotto:", error);
@@ -64,12 +63,10 @@ async function initializeApp() {
     const products = await getProducts();
     initPagination(products);
 
-    // Gestione del click su "Successiva"
     nextPageBtn.addEventListener("click", () => {
       nextPage(products);
     });
 
-    // Gestione del click su "Precedente"
     prevPageBtn.addEventListener("click", () => {
       prevPage(products);
     });

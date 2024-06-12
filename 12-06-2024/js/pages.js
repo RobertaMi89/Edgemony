@@ -27,7 +27,7 @@ function renderProducts(page, products) {
   const visibleProducts = products.slice(startIndex, endIndex);
 
   const productList = document.getElementById("productList");
-  productList.innerHTML = ""; // Puliamo la lista dei prodotti
+  productList.innerHTML = "";
 
   visibleProducts.forEach((product) => {
     const card = createProductCard(product);
@@ -41,8 +41,8 @@ function updatePaginationButtons() {
   const prevPageBtn = document.getElementById("prevPageBtn");
   const nextPageBtn = document.getElementById("nextPageBtn");
 
-  prevPageBtn.disabled = currentPage === 1; // Disabilita il pulsante "Precedente" sulla prima pagina
-  nextPageBtn.disabled = currentPage === totalPages; // Disabilita il pulsante "Successiva" sull'ultima pagina
+  prevPageBtn.disabled = currentPage === 1;
+  nextPageBtn.disabled = currentPage === totalPages;
 }
 
 function createProductCard(product) {
