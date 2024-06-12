@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css">
     <title>Aggiungi Prodotto</title>
   </head>
   <body>
+    <div class="form-container">
     <h2>Aggiungi Prodotto</h1>
     <form id="productForm">
       <label for="title">Titolo:</label>
@@ -31,7 +33,7 @@
 
       <button type="submit">Aggiungi Prodotto</button>
     </form>
-<!--ELIMINA UN PRODOTTO-->
+    <!--ELIMINA UN PRODOTTO-->
     <h2>Elimina Prodotto</h1>
     <form id="deleteForm">
       <label for="productId">ID:</label>
@@ -39,6 +41,14 @@
 
       <button type="submitDelete">Cancella Prodotto</button>
     </form>
+  </div>
+  <h1>Lista Prodotti</h1>
+  <div id="productList"></div>
+  <!-- pagine dei prodotti -->
+<div class="pagination">
+  <button id="prevPageBtn" class="pagination-btn" disabled>← Precedente</button>
+  <button id="nextPageBtn" class="pagination-btn">Successiva →</button>
+</div>
 
     <script src="./js/script.js" type="module"></script>
   </body>
