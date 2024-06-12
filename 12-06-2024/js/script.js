@@ -1,19 +1,15 @@
-import { addProduct, deleteProduct, getProducts } from "./fetch.js";
+import { getProducts, addProduct, deleteProduct } from "./fetch.js";
+import { printAllProducts } from "./card.js";
+import { initPagination, nextPage, prevPage } from "./pages.js";
 
 const productForm = document.getElementById("productForm");
 const deleteForm = document.getElementById("deleteForm");
-console.log(deleteForm);
-async function printAllProducts() {
-  try {
-    const products = await getProducts();
-    console.log("Lista completa dei prodotti:", products);
-  } catch (error) {
-    console.error("Errore durante il recupero dei prodotti:", error);
-  }
-}
 
 // Stampiamo la lista dei prodotti quando la pagina viene caricata
-window.addEventListener("DOMContentLoaded", printAllProducts);
+window.addEventListener("DOMContentLoaded", () => {
+  printAllProducts();
+  initializeApp();
+});
 
 productForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -46,8 +42,7 @@ deleteForm.addEventListener("submit", async (event) => {
 
   const formData = new FormData(deleteForm);
   const id = formData.get("id");
-  console.log(id);
-  console.log(formData);
+
   try {
     const deletedProduct = await deleteProduct(id);
     console.log("Eliminato con successo:", deletedProduct);
@@ -59,3 +54,28 @@ deleteForm.addEventListener("submit", async (event) => {
     alert("Si è verificato un errore durante l'eliminazione del prodotto");
   }
 });
+
+//pagine
+async function initializeApp() {
+  const prevPageBtn = document.getElementById("prevPageBtn");
+  const nextPageBtn = document.getElementById("nextPageBtn");
+
+  try {
+    const products = await getProducts();
+    initPagination(products);
+
+    // Gestione del click su "Successiva"
+    nextPageBtn.addEventListener("click", () => {
+      nextPage(products);
+    });
+
+    // Gestione del click su "Precedente"
+    prevPageBtn.addEventListener("click", () => {
+      prevPage(products);
+    });
+  } catch (error) {
+    console.error("Errore durante il recupero dei prodotti:", error);
+  }
+}
+
+initializeApp();
