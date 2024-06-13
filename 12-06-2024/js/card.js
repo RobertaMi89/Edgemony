@@ -39,6 +39,10 @@ function createProductCard(product) {
   title.textContent = product.title || "Titolo non disponibile";
   card.appendChild(title);
 
+  const idCard = document.createElement("span");
+  title.textContent = product.title || "ID non disponibile";
+  card.appendChild(idCard);
+
   const price = document.createElement("p");
   price.textContent = `Prezzo: $${product.price || "N/D"}`;
   card.appendChild(price);
