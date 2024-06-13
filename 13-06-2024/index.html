@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/navbar.css">
-    <link rel="stylesheet" href="./css/modal.css">
-    <title>Aggiungi Prodotto</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/btn.css" />
+    <title>Fake Store</title>
   </head>
   <body>
     <nav class="navMenu">
@@ -15,92 +16,115 @@
       <a id="delete">elimina</a>
       <a id="edit">modifica</a>
     </nav>
+    <!-- Form Aggiungi Prodotto -->
     <div class="form-container">
       <div id="addProductModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
+
           <h2>Aggiungi Prodotto</h2>
+
           <form id="productForm">
+            <span id="titleError" class="error-message"></span>
             <label for="title">Titolo:</label>
-            <input type="text" id="title" name="title" required /><br /><br />
-  
+            <input type="text" id="title" name="title" /><br /><br />
+
+            <span id="priceError" class="error-message"></span>
             <label for="price">Prezzo:</label>
-            <input type="number" id="price" name="price" required /><br /><br />
-  
+            <input type="number" id="price" name="price" /><br /><br />
+
+            <span id="descriptionError" class="error-message"></span>
             <label for="description">Descrizione:</label>
-            <textarea id="description" name="description" required></textarea
+            <textarea id="description" name="description"></textarea
             ><br /><br />
-  
+
+            <span id="categoryIdError" class="error-message"></span>
             <label for="categoryId">Categoria:</label>
             <input
               type="number"
               id="categoryId"
               name="categoryId"
-              required
             /><br /><br />
-  
+
+            <span id="imagesError" class="error-message"></span>
             <label for="images">Immagini:</label>
-            <input type="text" id="images" name="images" required /><br /><br />
-  
+            <input type="text" id="images" name="images" /><br /><br />
+
             <button type="submit">Aggiungi Prodotto</button>
           </form>
         </div>
       </div>
-    <!--ELIMINA UN PRODOTTO-->
-    <!-- Modale Elimina Prodotto -->
-    <div id="deleteProductModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Elimina Prodotto</h2>
-        <form id="deleteForm">
-          <label for="productId">ID Prodotto:</label>
-          <input type="text" id="productId" name="id" required /><br /><br />
-          <button type="submit">Cancella Prodotto</button>
-        </form>
+
+      <!-- Form Cancella Prodotto -->
+      <div id="deleteProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <h2>Elimina Prodotto</h2>
+
+          <form id="deleteForm">
+            <span id="deleteIdError" class="error-message"></span>
+            <label for="productId">ID Prodotto:</label>
+            <input type="text" id="productId" name="id" /><br /><br />
+            <button type="submit">Cancella Prodotto</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Form Modifica Prodotto -->
+      <div id="editProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <h2>Modifica Prodotto</h2>
+
+          <form id="editProductForm">
+            <span id="editIdError" class="error-message"></span>
+            <label for="editProductId">ID:</label>
+            <input type="text" id="editProductId" name="id" /><br /><br />
+
+            <span id="editTitleError" class="error-message"></span>
+            <label for="editTitle">Titolo:</label>
+            <input type="text" id="editTitle" name="title" /><br /><br />
+
+            <span id="editPriceError" class="error-message"></span>
+            <label for="editPrice">Prezzo:</label>
+            <input type="number" id="editPrice" name="price" /><br /><br />
+
+            <span id="editDescriptionError" class="error-message"></span>
+            <label for="editDescription">Descrizione:</label>
+            <textarea id="editDescription" name="description"></textarea
+            ><br /><br />
+
+            <span id="editCategoryIdError" class="error-message"></span>
+            <label for="editCategoryId">Categoria:</label>
+            <input
+              type="number"
+              id="editCategoryId"
+              name="categoryId"
+            /><br /><br />
+
+            <span id="editImagesError" class="error-message"></span>
+            <label for="editImages">URL Immagine:</label>
+            <input type="text" id="editImages" name="images" /><br /><br />
+
+            <button type="submit">Modifica Prodotto</button>
+          </form>
+        </div>
       </div>
     </div>
-    <!--MODIFICA PRODOTTI-->
-    <div id="editProductModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Modifica Prodotto</h2>
-        <form id="editProductForm">
-          <label for="editProductId">ID:</label>
-          <input type="text" id="editProductId" name="id" required /><br /><br />
-    
-          <label for="editTitle">Titolo:</label>
-          <input type="text" id="editTitle" name="title" required /><br /><br />
-    
-          <label for="editPrice">Prezzo:</label>
-          <input type="number" id="editPrice" name="price" required /><br /><br />
-    
-          <label for="editDescription">Descrizione:</label>
-          <textarea id="editDescription" name="description" required></textarea
-          ><br /><br />
-    
-          <label for="editCategoryId">Categoria:</label>
-          <input
-            type="number"
-            id="editCategoryId"
-            name="categoryId"
-            required
-          /><br /><br />
-    
-          <!-- Aggiungiamo un campo per l'immagine -->
-          <label for="editImages">URL Immagine:</label>
-          <input type="text" id="editImages" name="images" required /><br /><br />
-    
-          <button type="submit">Modifica Prodotto</button>
-        </form>
-      </div>
+
+    <h1>Lista Prodotti</h1>
+
+    <div id="productList"></div>
+
+    <!-- pagine dei prodotti -->
+    <div class="pagination">
+      <button id="prevPageBtn" class="pagination-btn" disabled>
+        ← Precedente
+      </button>
+      <button id="nextPageBtn" class="pagination-btn">Successiva →</button>
     </div>
-  <h1>Lista Prodotti</h1>
-  <div id="productList"></div>
-  <!-- pagine dei prodotti -->
-<div class="pagination">
-  <button id="prevPageBtn" class="pagination-btn" disabled>← Precedente</button>
-  <button id="nextPageBtn" class="pagination-btn">Successiva →</button>
-</div>
 
     <script src="./js/script.js" type="module"></script>
   </body>

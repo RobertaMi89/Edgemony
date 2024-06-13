@@ -1,19 +1,21 @@
 export const BASE_URL = "https://api.escuelajs.co/";
 export const ProductsEndpoint = "api/v1/products";
 
+// Funzione generica per gestire la risposta e gli errori
+const handleResponse = async (response) => {
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw errorData;
+  }
+  return await response.json();
+};
+
 export async function getProducts() {
   try {
     const response = await fetch(`${BASE_URL}${ProductsEndpoint}`);
-    if (response.ok) {
-      const data = await response.json();
-      return data;
-    } else {
-      throw new Error(
-        `Errore durante il recupero dei prodotti: ${response.status}`
-      );
-    }
+    return await handleResponse(response);
   } catch (error) {
-    console.error("Errore:", error);
+    console.error("Errore durante il recupero dei prodotti:", error);
     throw error;
   }
 }
@@ -27,39 +29,25 @@ export async function addProduct(productData) {
       },
       body: JSON.stringify(productData),
     });
-
-    if (!response.ok) {
-      throw new Error(
-        `Errore durante l'aggiunta del prodotto: ${response.status}`
-      );
-    }
-
-    const responseData = await response.json();
-    return responseData;
+    return await handleResponse(response);
   } catch (error) {
     console.error("Errore durante l'aggiunta del prodotto:", error);
     throw error;
   }
 }
+
 export async function deleteProduct(id) {
   try {
     const response = await fetch(`${BASE_URL}${ProductsEndpoint}/${id}`, {
       method: "DELETE",
     });
-
-    if (!response.ok) {
-      throw new Error(
-        `Errore durante l'eliminazione del prodotto: ${response.status}`
-      );
-    }
-
-    const responseData = await response.json();
-    return responseData; //ID oggetto
+    return await handleResponse(response);
   } catch (error) {
-    console.error("Errore:", error);
+    console.error("Errore durante l'eliminazione del prodotto:", error);
     throw error;
   }
 }
+
 export async function editProduct(id, productData) {
   try {
     const response = await fetch(`${BASE_URL}${ProductsEndpoint}/${id}`, {
@@ -69,17 +57,10 @@ export async function editProduct(id, productData) {
       },
       body: JSON.stringify(productData),
     });
-
-    if (!response.ok) {
-      throw new Error(
-        `Errore durante la modifica del prodotto: ${response.status}`
-      );
-    }
-
-    const responseData = await response.json();
-    return responseData; //ID oggetto
+    return await handleResponse(response);
   } catch (error) {
     console.error("Errore durante la modifica del prodotto:", error);
+    errorHandler();
     throw error;
   }
 }
