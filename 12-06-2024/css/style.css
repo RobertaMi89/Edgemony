@@ -6,12 +6,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
 h1,
 h2 {
-  color: #333;
+  color: #939090;
 }
+
 /*FORM*/
 .form-container {
   display: flex;
@@ -39,6 +42,7 @@ form {
 label {
   display: block;
   margin-bottom: 5px;
+  color: white;
 }
 
 input[type="text"],
