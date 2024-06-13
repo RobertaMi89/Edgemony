@@ -1,27 +1,18 @@
-import {
-  getProducts,
-  addProduct,
-  deleteProduct,
-  editProduct,
-} from "./fetch.js";
+import { getProducts, addProduct, deleteProduct } from "./fetch.js";
 import { printAllProducts } from "./card.js";
 import { initPagination, nextPage, prevPage } from "./pages.js";
-import {
-  initAddProductModal,
-  initDeleteProductModal,
-  initEditProductModal,
-} from "./modal.js";
+import { initAddProductModal, initDeleteProductModal } from "./modal.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  initAddProductModal();
-  initDeleteProductModal();
-  initEditProductModal();
-  initializeApp();
-  printAllProducts();
-});
 const productForm = document.getElementById("productForm");
 const deleteForm = document.getElementById("deleteForm");
-const editProductForm = document.getElementById("editProductForm");
+
+//stampa dei prodotti al caricamento pagina
+window.addEventListener("DOMContentLoaded", () => {
+  printAllProducts();
+  initializeApp();
+  initAddProductModal();
+  initDeleteProductModal();
+});
 
 productForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -66,37 +57,6 @@ deleteForm.addEventListener("submit", async (event) => {
   }
 });
 
-editProductForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const id = document.getElementById("editProductId").value;
-  const productData = {
-    title: document.getElementById("editTitle").value,
-    price: parseFloat(document.getElementById("editPrice").value),
-    description: document.getElementById("editDescription").value,
-    categoryId: parseInt(document.getElementById("editCategoryId").value),
-    images: [document.getElementById("editImages").value],
-  };
-
-  try {
-    if (
-      !id ||
-      !productData.title ||
-      !productData.price ||
-      !productData.description ||
-      !productData.categoryId ||
-      !productData.images[0]
-    ) {
-      throw new Error("Tutti i campi sono obbligatori");
-    }
-
-    const updatedProduct = await editProduct(id, productData);
-    console.log("Prodotto modificato:", updatedProduct);
-    document.getElementById("editProductModal").style.display = "none";
-  } catch (error) {
-    console.error("Errore nella modifica del prodotto:", error.message);
-    alert("Errore nella modifica del prodotto: " + error.message);
-  }
-});
 //pagine
 async function initializeApp() {
   const prevPageBtn = document.getElementById("prevPageBtn");
@@ -104,7 +64,7 @@ async function initializeApp() {
 
   try {
     const products = await getProducts();
-    console.log("Lista Prodotti:", products);
+    console.log(products);
     initPagination(products);
 
     nextPageBtn.addEventListener("click", () => {
@@ -118,3 +78,5 @@ async function initializeApp() {
     console.error("Errore durante il recupero dei prodotti:", error);
   }
 }
+
+initializeApp();

@@ -37,33 +37,3 @@ export function initDeleteProductModal() {
     }
   };
 }
-export function initEditProductModal() {
-  const editModal = document.getElementById("editProductModal");
-  const editBtn = document.getElementById("edit");
-  const editSpan = editModal.getElementsByClassName("close")[0];
-
-  editBtn.onclick = function () {
-    editModal.style.display = "block";
-  };
-
-  editSpan.onclick = function () {
-    editModal.style.display = "none";
-  };
-
-  window.onclick = function (event) {
-    if (event.target == editModal) {
-      editModal.style.display = "none";
-    }
-  };
-}
-export function openEditModal(product) {
-  const modal = document.getElementById("editProductModal");
-  modal.style.display = "block";
-
-  document.getElementById("editProductId").value = product.id;
-  document.getElementById("editTitle").value = product.title;
-  document.getElementById("editPrice").value = product.price;
-  document.getElementById("editDescription").value = product.description;
-  document.getElementById("editCategoryId").value = product.categoryId;
-  document.getElementById("editImages").value = product.images[0];
-}

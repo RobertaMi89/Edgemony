@@ -60,26 +60,3 @@ export async function deleteProduct(id) {
     throw error;
   }
 }
-export async function editProduct(id, productData) {
-  try {
-    const response = await fetch(`${BASE_URL}${ProductsEndpoint}/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(productData),
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        `Errore durante la modifica del prodotto: ${response.status}`
-      );
-    }
-
-    const responseData = await response.json();
-    return responseData; //ID oggetto
-  } catch (error) {
-    console.error("Errore durante la modifica del prodotto:", error);
-    throw error;
-  }
-}
