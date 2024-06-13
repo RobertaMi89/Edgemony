@@ -38,6 +38,7 @@ export const hideInputErrors = () => {
     }
   }
 };
+
 //Mostra gli errori specifici del form di cancellazione
 const showDeleteInputError = (message) => {
   const errorMessage = document.getElementById("deleteIdError");

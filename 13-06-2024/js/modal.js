@@ -1,3 +1,4 @@
+//ADD
 export function initAddProductModal() {
   const addModal = document.getElementById("addProductModal");
   const addBtn = document.getElementById("add");
@@ -18,6 +19,8 @@ export function initAddProductModal() {
   };
 }
 
+//DELETE
+
 export function initDeleteProductModal() {
   const deleteModal = document.getElementById("deleteProductModal");
   const deleteBtn = document.getElementById("delete");
@@ -37,6 +40,9 @@ export function initDeleteProductModal() {
     }
   };
 }
+
+//EDIT
+
 export function initEditProductModal() {
   const editModal = document.getElementById("editProductModal");
   const editBtn = document.getElementById("edit");

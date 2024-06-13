@@ -1,0 +1,62 @@
+:root {
+  --form-label-color: #5a5255;
+  --form-input-bg-color: #fff4e6;
+  --form-input-border-color: #ccc;
+  --form-input-text-color: black;
+  --error-text-color: red;
+}
+
+form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--form-label-color);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--form-input-border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: var(--form-input-bg-color);
+  color: var(--form-input-text-color);
+}
+
+input[type="submit"] {
+  background-color: var(--form-submit-btn-bg-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--form-submit-btn-hover-bg-color);
+}
+
+.error-message {
+  color: #cc0033;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+  margin: 5px 0 0;
+}

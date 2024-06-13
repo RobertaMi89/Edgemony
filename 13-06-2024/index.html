@@ -3,51 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/form.css" />
     <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="./css/btn.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Fake Store</title>
   </head>
   <body>
     <nav class="navMenu">
-      <span>FAKE STORE</span>
-      <a id="add">vendi</a>
-      <a id="delete">elimina</a>
-      <a id="edit">modifica</a>
+      <h1>FAKE STORE</h1>
+      <span id="add">aggiungi</span>
+      <span id="delete">elimina</span>
+      <span id="edit">modifica</span>
     </nav>
+
     <!-- Form Aggiungi Prodotto -->
     <div class="form-container">
       <div id="addProductModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
 
-          <h2>Aggiungi Prodotto</h2>
+          <h3>Aggiungi Prodotto</h3>
 
           <form id="productForm">
-            <span id="titleError" class="error-message"></span>
             <label for="title">Titolo:</label>
+            <span id="titleError" class="error-message"></span>
             <input type="text" id="title" name="title" /><br /><br />
 
-            <span id="priceError" class="error-message"></span>
             <label for="price">Prezzo:</label>
+            <span id="priceError" class="error-message"></span>
             <input type="number" id="price" name="price" /><br /><br />
 
-            <span id="descriptionError" class="error-message"></span>
             <label for="description">Descrizione:</label>
+            <span id="descriptionError" class="error-message"></span>
             <textarea id="description" name="description"></textarea
             ><br /><br />
 
-            <span id="categoryIdError" class="error-message"></span>
             <label for="categoryId">Categoria:</label>
+            <span id="categoryIdError" class="error-message"></span>
             <input
               type="number"
               id="categoryId"
               name="categoryId"
             /><br /><br />
 
-            <span id="imagesError" class="error-message"></span>
             <label for="images">Immagini:</label>
+            <span id="imagesError" class="error-message"></span>
             <input type="text" id="images" name="images" /><br /><br />
 
             <button type="submit">Aggiungi Prodotto</button>
@@ -60,11 +60,11 @@
         <div class="modal-content">
           <span class="close">&times;</span>
 
-          <h2>Elimina Prodotto</h2>
+          <h3>Elimina Prodotto</h3>
 
           <form id="deleteForm">
-            <span id="deleteIdError" class="error-message"></span>
             <label for="productId">ID Prodotto:</label>
+            <span id="deleteIdError" class="error-message"></span>
             <input type="text" id="productId" name="id" /><br /><br />
             <button type="submit">Cancella Prodotto</button>
           </form>
@@ -76,36 +76,36 @@
         <div class="modal-content">
           <span class="close">&times;</span>
 
-          <h2>Modifica Prodotto</h2>
+          <h3>Modifica Prodotto</h3>
 
           <form id="editProductForm">
-            <span id="editIdError" class="error-message"></span>
             <label for="editProductId">ID:</label>
+            <span id="editIdError" class="error-message"></span>
             <input type="text" id="editProductId" name="id" /><br /><br />
 
-            <span id="editTitleError" class="error-message"></span>
             <label for="editTitle">Titolo:</label>
+            <span id="editTitleError" class="error-message"></span>
             <input type="text" id="editTitle" name="title" /><br /><br />
 
-            <span id="editPriceError" class="error-message"></span>
             <label for="editPrice">Prezzo:</label>
+            <span id="editPriceError" class="error-message"></span>
             <input type="number" id="editPrice" name="price" /><br /><br />
 
-            <span id="editDescriptionError" class="error-message"></span>
             <label for="editDescription">Descrizione:</label>
+            <span id="editDescriptionError" class="error-message"></span>
             <textarea id="editDescription" name="description"></textarea
             ><br /><br />
 
-            <span id="editCategoryIdError" class="error-message"></span>
             <label for="editCategoryId">Categoria:</label>
+            <span id="editCategoryIdError" class="error-message"></span>
             <input
               type="number"
               id="editCategoryId"
               name="categoryId"
             /><br /><br />
 
-            <span id="editImagesError" class="error-message"></span>
             <label for="editImages">URL Immagine:</label>
+            <span id="editImagesError" class="error-message"></span>
             <input type="text" id="editImages" name="images" /><br /><br />
 
             <button type="submit">Modifica Prodotto</button>
@@ -114,7 +114,7 @@
       </div>
     </div>
 
-    <h1>Lista Prodotti</h1>
+    <h2>Lista Prodotti</h2>
 
     <div id="productList"></div>
 
