@@ -79,10 +79,12 @@
           <h3>Modifica Prodotto</h3>
 
           <form id="editProductForm">
-            <label for="editProductId">ID:</label>
-            <span id="editIdError" class="error-message"></span>
-            <input type="text" id="editProductId" name="id" /><br /><br />
-
+            <div id="checkID">
+              <label for="editProductId">ID:</label>
+              <span id="editIdError" class="error-message"></span>
+              <input type="text" id="editProductId" name="id" /><br /><br />
+              <button id="checkIdBtn">Check</button>
+            </div>
             <label for="editTitle">Titolo:</label>
             <span id="editTitleError" class="error-message"></span>
             <input type="text" id="editTitle" name="title" /><br /><br />

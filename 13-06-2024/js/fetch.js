@@ -19,6 +19,15 @@ export async function getProducts() {
     throw error;
   }
 }
+export async function getProductById(id) {
+  try {
+    const response = await fetch(`${BASE_URL}${ProductsEndpoint}/${id}`);
+    return await handleResponse(response);
+  } catch (error) {
+    console.error("Errore nel recupero del prodotto:", error);
+    throw error;
+  }
+}
 
 export async function addProduct(productData) {
   try {

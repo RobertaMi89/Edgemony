@@ -27,7 +27,10 @@ label {
   margin-bottom: 5px;
   color: var(--form-label-color);
 }
-
+input {
+  z-index: 10;
+  position: relative;
+}
 input[type="text"],
 input[type="number"],
 textarea {
@@ -52,7 +55,19 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: var(--form-submit-btn-hover-bg-color);
 }
-
+#checkID {
+  display: flex;
+  width: 100%;
+}
+#checkIdBtn {
+  margin: 0 10px;
+}
+#editProductId {
+  width: 50%;
+  margin-left: 10px;
+  padding: 0;
+  height: 40px;
+}
 .error-message {
   color: #cc0033;
   font-size: 12px;

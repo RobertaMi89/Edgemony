@@ -1,8 +1,45 @@
-import { addProduct, deleteProduct, editProduct } from "./fetch.js";
+import {
+  addProduct,
+  deleteProduct,
+  editProduct,
+  getProductById,
+} from "./fetch.js"; // Assicurati di avere una funzione getProductById in fetch.js
 
 const productForm = document.getElementById("productForm");
 const deleteForm = document.getElementById("deleteForm");
 const editProductForm = document.getElementById("editProductForm");
+const inputSearchById = document.getElementById("editProductId");
+const buttonSearchById = document.getElementById("checkIdBtn");
+
+const updateProduct = {};
+let idCheck = "";
+
+buttonSearchById.addEventListener("click", async (event) => {
+  event.preventDefault();
+  idCheck = inputSearchById.value;
+
+  if (!idCheck) {
+    showInputErrors({ editId: "ID obbligatorio" });
+    return;
+  }
+
+  try {
+    const product = await getProductById(idCheck); // Usa getProductById per ottenere i dati del prodotto
+    if (product) {
+      // Riempie i campi del form con i dati del prodotto
+      document.getElementById("editTitle").value = product.title;
+      document.getElementById("editPrice").value = product.price;
+      document.getElementById("editDescription").value = product.description;
+      document.getElementById("editCategoryId").value = product.categoryId;
+      document.getElementById("editImages").value = product.images[0];
+    } else {
+      alert("Prodotto non trovato");
+    }
+  } catch (error) {
+    console.error("Errore durante la ricerca del prodotto:", error);
+    alert("Si è verificato un errore durante la ricerca del prodotto");
+  }
+});
 
 const inputErrors = {
   title: "Titolo obbligatorio",
