@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+:root {
+  --primary-color: #68c4af;
+  --secondary-color: #b8dbd3;
+  --background-color: #e8f4ea;
+  --text-color: #333;
+  --white-color: #fff;
+  --heading-color: #559e83;
+  --shadow-color: #5a5255;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+h1 {
+  color: var(--heading-color);
+  text-shadow: -1px -1px 0px var(--text-color), 2px 2px 0px var(--shadow-color),
+    5px 5px 0px rgba(0, 0, 0, 0.55);
+  text-align: start;
+  font-weight: 700;
+  font-size: 40px;
+}
+h2 {
+  color: var(--heading-color);
+  font-size: 35px;
+  text-shadow: -1px -1px 0px var(--text-color), 2px 2px 0px var(--shadow-color);
+}
+
+/*NAVBAR*/
+
+.navMenu {
+  background: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 20px;
+  width: 100%;
+}
+
+.navMenu span {
+  color: var(--heading-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 80px;
+}
+
+.navMenu span:hover {
+  color: var(--shadow-color);
+  text-decoration: underline;
+}
+
+/* CARDS */
+#productList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-card {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 10px;
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.2em;
+  color: var(--primary-color);
+}
+
+.product-card p {
+  font-size: 1em;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .form,
+  .product-list {
+    width: 90%;
+  }
+
+  .product-card {
+    width: calc(50% - 20px);
+  }
+}
+button {
+  background-color: #fbeee0;
+  color: var(--shadow-color);
+  border: 1px solid var(--shadow-color);
+  box-shadow: var(--shadow-color) 2px 2px 0 0;
+  cursor: pointer;
+  border-radius: 30px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  padding: 0 18px;
+}
+
+button:hover {
+  background-color: #fff;
+}
+
+button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}

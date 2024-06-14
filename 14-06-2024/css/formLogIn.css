@@ -1,0 +1,109 @@
+:root {
+  --background-color: #e8f4ea;
+}
+/*MODAL LOGIN-SIGN*/
+.modal-content-user {
+  width: 700px;
+}
+.container {
+  width: 700px;
+  height: 400px;
+  background-color: var(--background-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px 0 rgba(#333, 0.2);
+}
+
+.message {
+  position: absolute;
+  background: white;
+  width: 58%;
+  height: 100%;
+  transition: 0.5s all ease;
+  transform: translateX(100%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 70%;
+    opacity: 0;
+    left: 0;
+    top: 15%;
+  }
+
+  .button {
+    margin: 5px 0;
+  }
+}
+
+.signup {
+  &:before {
+    opacity: 0.3;
+    left: 0;
+  }
+}
+
+.login {
+  &:before {
+    opacity: 0.3;
+    left: 100%;
+  }
+}
+
+.btn-wrapper {
+  width: 60%;
+}
+.formUser {
+  width: 50%;
+  height: 80%;
+  display: none;
+}
+
+.formUser.active {
+  display: block;
+}
+
+.form--heading {
+  font-size: 25px;
+  height: 50px;
+  color: #129d72;
+}
+
+.inputUser {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  font-size: 13px;
+  font-weight: 300;
+  color: #797a9e;
+  letter-spacing: 0.11em;
+  margin: 10px 0;
+}
+
+.inputUser::placeholder {
+  color: #333;
+  font-size: 10px;
+}
+
+.inputUser:focus {
+  outline: 0;
+  transition: 0.6s all ease;
+}
+
+.buttonUser {
+  width: 100%;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  background: #129d72;
+  cursor: pointer;
+  margin-top: 10px;
+}

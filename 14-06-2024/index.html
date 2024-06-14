@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/formLogIn.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Fake Store</title>
+  </head>
+  <body>
+    <nav class="navMenu">
+      <h1>FAKE STORE</h1>
+      <span id="add">aggiungi</span>
+      <span id="delete">elimina</span>
+      <span id="edit">modifica</span>
+      <span id="logIn">Log in/SignUp</span>
+    </nav>
+
+    <!--FORM LOGIN-SING UP-->
+    <div id="logInUserModal" class="modalUser">
+      <div class="modal-content-user">
+        <span class="close">&times;</span>
+
+        <div class="container">
+          <div class="message" id="messageBox">
+            <div class="btn-wrapper" id="initialButtons">
+              <button class="buttonUser" id="signupBtn">Sign Up</button>
+              <button class="buttonUser" id="loginBtn">Login</button>
+            </div>
+          </div>
+          <div class="formUser form--signup" id="signupForm">
+            <div class="form--heading">Welcome! Sign Up</div>
+            <form autocomplete="off">
+              <input class="inputUser" type="text" placeholder="Name" />
+              <input class="inputUser" type="email" placeholder="Email" />
+              <input class="inputUser" type="password" placeholder="Password" />
+              <button class="buttonUser">Sign Up</button>
+            </form>
+          </div>
+          <div class="formUser form--login" id="loginForm">
+            <div class="form--heading">Welcome back!</div>
+            <form autocomplete="off">
+              <input class="inputUser" type="text" placeholder="Name" />
+              <input class="inputUser" type="password" placeholder="Password" />
+              <button class="buttonUser">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Aggiungi Prodotto -->
+    <div class="form-container">
+      <div id="addProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <h3>Aggiungi Prodotto</h3>
+
+          <form id="productForm">
+            <label for="title">Titolo:</label>
+            <span id="titleError" class="error-message"></span>
+            <input type="text" id="title" name="title" /><br /><br />
+
+            <label for="price">Prezzo:</label>
+            <span id="priceError" class="error-message"></span>
+            <input type="number" id="price" name="price" /><br /><br />
+
+            <label for="description">Descrizione:</label>
+            <span id="descriptionError" class="error-message"></span>
+            <textarea id="description" name="description"></textarea
+            ><br /><br />
+
+            <label for="categoryId">Categoria:</label>
+            <span id="categoryIdError" class="error-message"></span>
+            <input
+              type="number"
+              id="categoryId"
+              name="categoryId"
+            /><br /><br />
+
+            <label for="images">Immagini:</label>
+            <span id="imagesError" class="error-message"></span>
+            <input type="text" id="images" name="images" /><br /><br />
+
+            <button type="submit">Aggiungi Prodotto</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Form Cancella Prodotto -->
+      <div id="deleteProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <h3>Elimina Prodotto</h3>
+
+          <form id="deleteForm">
+            <label for="productId">ID Prodotto:</label>
+            <span id="deleteIdError" class="error-message"></span>
+            <input type="text" id="productId" name="id" /><br /><br />
+            <button type="submit">Cancella Prodotto</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Form Modifica Prodotto -->
+      <div id="editProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <h3>Modifica Prodotto</h3>
+
+          <form id="editProductForm">
+            <div id="checkID">
+              <label for="editProductId">ID:</label>
+              <span id="editIdError" class="error-message"></span>
+              <input type="text" id="editProductId" name="id" /><br /><br />
+              <button id="checkIdBtn">Check</button>
+            </div>
+            <label for="editTitle">Titolo:</label>
+            <span id="editTitleError" class="error-message"></span>
+            <input type="text" id="editTitle" name="title" /><br /><br />
+
+            <label for="editPrice">Prezzo:</label>
+            <span id="editPriceError" class="error-message"></span>
+            <input type="number" id="editPrice" name="price" /><br /><br />
+
+            <label for="editDescription">Descrizione:</label>
+            <span id="editDescriptionError" class="error-message"></span>
+            <textarea id="editDescription" name="description"></textarea
+            ><br /><br />
+
+            <label for="editCategoryId">Categoria:</label>
+            <span id="editCategoryIdError" class="error-message"></span>
+            <input
+              type="number"
+              id="editCategoryId"
+              name="categoryId"
+            /><br /><br />
+
+            <label for="editImages">URL Immagine:</label>
+            <span id="editImagesError" class="error-message"></span>
+            <input type="text" id="editImages" name="images" /><br /><br />
+
+            <button type="submit">Modifica Prodotto</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <h2>Lista Prodotti</h2>
+
+    <div id="productList"></div>
+
+    <!-- pagine dei prodotti -->
+    <div class="pagination">
+      <button id="prevPageBtn" class="pagination-btn" disabled>
+        ← Precedente
+      </button>
+      <button id="nextPageBtn" class="pagination-btn">Successiva →</button>
+    </div>
+
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>
