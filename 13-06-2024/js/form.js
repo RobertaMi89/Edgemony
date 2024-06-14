@@ -3,7 +3,7 @@ import {
   deleteProduct,
   editProduct,
   getProductById,
-} from "./fetch.js"; // Assicurati di avere una funzione getProductById in fetch.js
+} from "./fetch.js";
 
 const productForm = document.getElementById("productForm");
 const deleteForm = document.getElementById("deleteForm");
@@ -24,9 +24,8 @@ buttonSearchById.addEventListener("click", async (event) => {
   }
 
   try {
-    const product = await getProductById(idCheck); // Usa getProductById per ottenere i dati del prodotto
+    const product = await getProductById(idCheck);
     if (product) {
-      // Riempie i campi del form con i dati del prodotto
       document.getElementById("editTitle").value = product.title;
       document.getElementById("editPrice").value = product.price;
       document.getElementById("editDescription").value = product.description;
