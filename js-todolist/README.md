@@ -40,7 +40,7 @@ Click the checkmark icon (✔) next to the task you want to mark as completed.
 components.js
 Contains the core functions for creating and managing the task list and category cards.
 
-`export const toDo = () => [
+````export const toDo = () => [
 // Array of category objects with items
 ];
 
@@ -59,12 +59,12 @@ export const cardList = () => {
 export const card = (el) => {
 // Function to create a card for a given category
 // ...
-};`
+};```
 
 script.js
 Contains the event listeners and DOM manipulation logic for adding, editing, and removing tasks.
 
-`btn.addEventListener("click", () => {
+```btn.addEventListener("click", () => {
 const inputValue = input.value.trim().toLowerCase();
 const listItems = list.getElementsByTagName("li");
 let itemExists = false;
@@ -84,4 +84,5 @@ openModal();
 addItem(inputValue, input, list);
 input.value = ""; // Clear the input after adding the item
 }
-});`
+});```
+````
