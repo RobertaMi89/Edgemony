@@ -1,17 +1,35 @@
 export function initLogInUserModal() {
   const loginModal = document.getElementById("logInUserModal");
-  const logInBtn = document.getElementById("logIn");
+  const logInUserBtn = document.getElementById("logIn");
+  const loginSpan = loginModal.querySelector(".close");
   const signupBtn = document.getElementById("signupBtn");
   const loginBtn = document.getElementById("loginBtn");
+  const doLoginBtn = document.getElementById("doLoginBtn");
+  const doSignUpBtn = document.getElementById("doSignUpBtn");
 
-  const loginSpan = loginModal.getElementsByClassName("close")[0];
   const messageBox = document.getElementById("messageBox");
   const signupForm = document.getElementById("signupForm");
   const loginForm = document.getElementById("loginForm");
 
-  logInBtn.onclick = function () {
+  const signupName = document.getElementById("signUpName");
+  const signUpEmail = document.getElementById("signUpEmail");
+  const signUpPass = document.getElementById("signUpPass");
+
+  const logInName = document.getElementById("logInName");
+  const logInPass = document.getElementById("logInPass");
+
+  // Nascondi la modale all'inizio
+  loginModal.style.display = "none";
+  loginBtn.style.display = "none";
+
+  logInUserBtn.onclick = function () {
     loginModal.style.display = "block";
-    showInitialButtons();
+    messageBox.classList.add("login");
+    messageBox.classList.remove("signup");
+    loginForm.classList.add("active");
+    signupForm.classList.remove("active");
+    signupBtn.style.display = "block";
+    loginBtn.style.display = "none";
   };
 
   signupBtn.onclick = function () {
@@ -19,6 +37,8 @@ export function initLogInUserModal() {
     messageBox.classList.remove("login");
     signupForm.classList.add("active");
     loginForm.classList.remove("active");
+    loginBtn.style.display = "block";
+    signupBtn.style.display = "none";
   };
 
   loginBtn.onclick = function () {
@@ -26,57 +46,40 @@ export function initLogInUserModal() {
     messageBox.classList.remove("signup");
     loginForm.classList.add("active");
     signupForm.classList.remove("active");
+    signupBtn.style.display = "block";
+    loginBtn.style.display = "none";
+  };
+  doLoginBtn.onclick = function () {
+    logInUser(logInName.textContent, logInPass.textContent);
   };
 
+  doSignUpBtn.onclick = function () {
+    signUpUser(
+      signupName.textContent,
+      signUpEmail.textContent,
+      signUpPass.textContent
+    );
+  };
   loginSpan.onclick = function () {
     loginModal.style.display = "none";
   };
-
-  window.onclick = function (event) {
-    if (event.target == loginModal) {
-      loginModal.style.display = "none";
-    }
-  };
-
-  document.querySelector("#signupForm form").onsubmit = function (event) {
-    event.preventDefault();
-    const name = this.querySelector('input[placeholder="Name"]').value;
-    const email = this.querySelector('input[placeholder="Email"]').value;
-    const password = this.querySelector('input[placeholder="Password"]').value;
-    signUpUser(name, email, password);
-  };
-
-  document.querySelector("#loginForm form").onsubmit = function (event) {
-    event.preventDefault();
-    const name = this.querySelector('input[placeholder="Name"]').value;
-    const password = this.querySelector('input[placeholder="Password"]').value;
-    logInUser(name, password);
-  };
 }
 
-function showInitialButtons() {
-  const messageBox = document.getElementById("messageBox");
-  messageBox.classList.remove("signup", "login");
-  document.getElementById("initialButtons").style.display = "block";
-  document.getElementById("signupForm").classList.remove("active");
-  document.getElementById("loginForm").classList.remove("active");
-}
-
-function signUpUser(name, email, password) {
+export function signUpUser(signUpName, signUpEmail, signUpPass) {
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  if (users.find((user) => user.email === email)) {
+  if (users.find((user) => user.email === signUpEmail)) {
     alert("Email already registered");
     return;
   }
-  users.push({ name, email, password });
+  users.push({ name: signUpName, email: signUpEmail, password: signUpPass });
   localStorage.setItem("users", JSON.stringify(users));
   alert("User registered successfully");
 }
 
-function logInUser(name, password) {
+export function logInUser(loginName, loginPass) {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const user = users.find(
-    (user) => user.name === name && user.password === password
+    (user) => user.name === loginName && user.password === loginPass
   );
   if (user) {
     alert("Login successful");

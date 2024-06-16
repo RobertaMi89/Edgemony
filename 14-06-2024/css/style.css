@@ -37,7 +37,7 @@ h2 {
 /*NAVBAR*/
 
 .navMenu {
-  background: var(--background-color);
+  background: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -63,50 +63,6 @@ h2 {
   text-decoration: underline;
 }
 
-/* CARDS */
-#productList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-.product-card {
-  background-color: var(--white-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  width: 300px;
-  margin: 10px;
-}
-
-.product-card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.product-card h3 {
-  font-size: 1.2em;
-  color: var(--primary-color);
-}
-
-.product-card p {
-  font-size: 1em;
-  color: var(--text-color);
-}
-
-@media (max-width: 768px) {
-  .form,
-  .product-list {
-    width: 90%;
-  }
-
-  .product-card {
-    width: calc(50% - 20px);
-  }
-}
 button {
   background-color: #fbeee0;
   color: var(--shadow-color);
@@ -126,12 +82,6 @@ button {
   line-height: 30px;
   padding: 0 18px;
 }
-
 button:hover {
-  background-color: #fff;
-}
-
-button:active {
-  box-shadow: #422800 2px 2px 0 0;
-  transform: translate(2px, 2px);
+  background-color: var(--primary-color);
 }

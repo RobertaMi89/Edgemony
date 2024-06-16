@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/form.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
     <link rel="stylesheet" href="./css/formLogIn.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Fake Store</title>
@@ -12,41 +11,59 @@
   <body>
     <nav class="navMenu">
       <h1>FAKE STORE</h1>
-      <span id="add">aggiungi</span>
-      <span id="delete">elimina</span>
-      <span id="edit">modifica</span>
+
       <span id="logIn">Log in/SignUp</span>
     </nav>
-
-    <!--FORM LOGIN-SING UP-->
     <div id="logInUserModal" class="modalUser">
       <div class="modal-content-user">
         <span class="close">&times;</span>
 
-        <div class="container">
-          <div class="message" id="messageBox">
-            <div class="btn-wrapper" id="initialButtons">
-              <button class="buttonUser" id="signupBtn">Sign Up</button>
-              <button class="buttonUser" id="loginBtn">Login</button>
-            </div>
-          </div>
-          <div class="formUser form--signup" id="signupForm">
-            <div class="form--heading">Welcome! Sign Up</div>
-            <form autocomplete="off">
-              <input class="inputUser" type="text" placeholder="Name" />
-              <input class="inputUser" type="email" placeholder="Email" />
-              <input class="inputUser" type="password" placeholder="Password" />
-              <button class="buttonUser">Sign Up</button>
-            </form>
-          </div>
-          <div class="formUser form--login" id="loginForm">
-            <div class="form--heading">Welcome back!</div>
-            <form autocomplete="off">
-              <input class="inputUser" type="text" placeholder="Name" />
-              <input class="inputUser" type="password" placeholder="Password" />
-              <button class="buttonUser">Login</button>
-            </form>
-          </div>
+        <div class="message" id="messageBox"></div>
+        <div class="formUser form--signup" id="signupForm">
+          <div class="form--heading">Welcome! Sign Up</div>
+          <form autocomplete="off" class="formUserAccess">
+            <input
+              class="inputUser"
+              id="signUpName"
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              class="inputUser"
+              id="signUpEmail"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              class="inputUser"
+              id="signUpPass"
+              type="password"
+              placeholder="Password"
+            />
+            <button class="buttonUser" id="doSignUpBtn">Sign Up</button>
+          </form>
+        </div>
+        <div class="formUser form--login" id="loginForm">
+          <div class="form--heading">Welcome back!</div>
+          <form autocomplete="off" class="formUserAccess">
+            <input
+              class="inputUser"
+              id="logInName"
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              class="inputUser"
+              id="logInPass"
+              type="password"
+              placeholder="Password"
+            />
+            <button class="buttonUser" id="doLoginBtn">Login</button>
+          </form>
+        </div>
+        <div class="btn-wrapper" id="initialButtons">
+          <button class="buttonUser" id="signupBtn">Sign Up</button>
+          <button class="buttonUser" id="loginBtn">Login</button>
         </div>
       </div>
     </div>
@@ -55,7 +72,7 @@
     <div class="form-container">
       <div id="addProductModal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <!-- <span class="close">&times;</span> -->
 
           <h3>Aggiungi Prodotto</h3>
 
@@ -93,7 +110,7 @@
       <!-- Form Cancella Prodotto -->
       <div id="deleteProductModal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <!-- <span class="close">&times;</span> -->
 
           <h3>Elimina Prodotto</h3>
 
@@ -109,7 +126,7 @@
       <!-- Form Modifica Prodotto -->
       <div id="editProductModal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <!-- <span class="close">&times;</span> -->
 
           <h3>Modifica Prodotto</h3>
 
@@ -150,18 +167,19 @@
         </div>
       </div>
     </div>
-
+    <!-- 
     <h2>Lista Prodotti</h2>
 
     <div id="productList"></div>
 
     <!-- pagine dei prodotti -->
-    <div class="pagination">
+    <!-- <div class="pagination">
       <button id="prevPageBtn" class="pagination-btn" disabled>
         ← Precedente
       </button>
       <button id="nextPageBtn" class="pagination-btn">Successiva →</button>
     </div>
+    -->
 
     <script src="./js/script.js" type="module"></script>
   </body>

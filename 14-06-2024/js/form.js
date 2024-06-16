@@ -196,7 +196,6 @@ export const handleEditProductFormSubmit = async (event) => {
   try {
     const updatedProduct = await editProduct(id, productData);
     console.log("Prodotto modificato:", updatedProduct);
-    document.getElementById("editProductModal").style.display = "none";
   } catch (error) {
     console.error("Errore nella modifica del prodotto:", error.message);
     showInputErrors(errors);

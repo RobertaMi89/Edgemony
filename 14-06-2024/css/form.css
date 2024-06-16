@@ -1,36 +1,45 @@
 :root {
-  --form-label-color: #5a5255;
-  --form-input-bg-color: #fff4e6;
-  --form-input-border-color: #ccc;
-  --form-input-text-color: black;
-  --error-text-color: red;
+  --overlay-color: rgba(0, 0, 0, 0.4);
+  --text-color: #333;
+  --shadow-color: #5a5255;
+  --modal-bg-color: #f7e7b4;
+  --background-color: #e8f4ea;
+  --white-color: #fff;
+  --close-btn-color: #ff580f;
+  --close-btn-hover-color: #df5a00;
+  --secondary-color: #b8dbd3;
+  --primary-color: #68c4af;
+  --heading-color: #559e83;
+}
+.modal {
+  width: 30%;
+  height: auto;
 }
 
-form {
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+.modal-content {
+  background-color: var(--secondary-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 0;
+  border-radius: 20px;
+  width: 80%;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .form-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
-
 label {
   display: block;
   margin-bottom: 5px;
   color: var(--form-label-color);
 }
-input {
-  z-index: 10;
-  position: relative;
-}
+
 input[type="text"],
 input[type="number"],
 textarea {
@@ -39,7 +48,7 @@ textarea {
   border: 1px solid var(--form-input-border-color);
   border-radius: 5px;
   box-sizing: border-box;
-  background-color: var(--form-input-bg-color);
+  background-color: white;
   color: var(--form-input-text-color);
 }
 
@@ -65,8 +74,8 @@ input[type="submit"]:hover {
 #editProductId {
   width: 50%;
   margin-left: 10px;
-  padding: 0;
-  height: 40px;
+  padding: 5px;
+  height: 30px;
 }
 .error-message {
   color: #cc0033;
