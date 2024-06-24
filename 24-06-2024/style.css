@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+.headerGrid {
+  background-color: rgb(238, 44, 44);
+}
+
+main,
+.mainGrid {
+  background-color: rgb(255, 255, 255);
+}
+
+section,
+.leftGrid {
+  background-color: rgb(255, 210, 47);
+}
+
+aside,
+.rightGrid {
+  background-color: rgb(188, 250, 45);
+}
+
+footer,
+.footerGrid {
+  background-color: rgb(0, 136, 255);
+}
+
+.app,
+.appGrid {
+  margin: 20px;
+  border: 5px solid black;
+}
+
+.app header,
+.app main,
+.app section,
+.app aside,
+.app footer,
+.appGrid .headerGrid,
+.appGrid .mainGrid,
+.appGrid .leftGrid,
+.appGrid .rightGrid,
+.appGrid .footerGrid {
+  padding: 1rem;
+}
+
+/* Flexbox Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header,
+.footer {
+  padding: 10px;
+  text-align: center;
+  flex-basis: 80px;
+}
+.header {
+  order: 0;
+}
+.main {
+  flex: 1;
+  padding: 20px;
+  flex-basis: 300px;
+}
+.left,
+.right {
+  flex-basis: 100px;
+  padding: 10px;
+}
+.left {
+  order: 1;
+}
+.right {
+  order: 1;
+}
+.footer {
+  order: 3;
+}
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  .left,
+  .right {
+    flex-basis: auto;
+  }
+}
+@media (max-width: 1500px) {
+}
+/* Grid Layout */
+.appGrid {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "section content side"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.headerGrid {
+  grid-area: header;
+  height: 200px;
+}
+
+.mainGrid {
+  grid-area: content;
+  height: 300px;
+}
+
+.leftGrid {
+  grid-area: section;
+  height: auto;
+}
+
+.rightGrid {
+  grid-area: side;
+  height: auto;
+}
+
+.footerGrid {
+  grid-area: footer;
+  height: 100px;
+}
+
+/* Tablet layout */
+@media (max-width: 1024px) {
+  .appGrid {
+    grid-template-areas:
+      "header header"
+      "content content"
+      "section side"
+      "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .appGrid {
+    grid-template-areas:
+      "header"
+      "content"
+      "section"
+      "side"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+}

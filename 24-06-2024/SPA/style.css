@@ -1,0 +1,173 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+  width: 120px;
+  height: auto;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #66bb6a;
+}
+
+/* Sidebar styles */
+aside {
+  background-color: #eee;
+  padding: 20px;
+  width: 250px;
+}
+
+aside h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+aside ul {
+  list-style-type: none;
+}
+
+aside ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Main styles */
+main {
+  padding: 20px;
+}
+
+main h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+article {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+article h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+article p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+article em {
+  font-style: normal;
+  color: #666;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .footer-logo img {
+  width: 100px;
+  height: auto;
+}
+
+footer nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+footer nav ul li {
+  margin: 0 15px;
+}
+
+footer nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  color: #66bb6a;
+}
+
+footer .country {
+  position: relative;
+}
+
+footer .country .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer .country:hover .submenu {
+  display: block;
+}
+
+footer .country .submenu li {
+  margin-bottom: 5px;
+}
+
+footer .country .submenu li a {
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
