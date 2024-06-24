@@ -81,17 +81,49 @@ footer,
 .footer {
   order: 3;
 }
-@media (max-width: 768px) {
-  .app {
-    flex-direction: column;
+@media screen and (min-width: 600px) {
+  .group {
+    flex-direction: row;
+    flex: 1;
+  }
+  .main {
+    order: 1;
   }
   .left,
   .right {
-    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    order: 2;
   }
 }
-@media (max-width: 1500px) {
+
+/* Media query per desktop */
+@media screen and (min-width: 1024px) {
+  .header {
+    order: 0;
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+  .left {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .right {
+    order: 3;
+  }
+  .left,
+  .right {
+    flex-basis: 100px;
+    flex: 1;
+  }
 }
+
 /* Grid Layout */
 .appGrid {
   display: grid;
