@@ -1,0 +1,13 @@
+/*FOOTER*/
+.footer-logo {
+  display: flex;
+  background: linear-gradient(to right, #86efac, #3b82f6, #a855f7);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 10px;
+}
+.footer-logo img {
+  width: 100px;
+}

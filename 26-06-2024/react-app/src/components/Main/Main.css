@@ -1,0 +1,76 @@
+/*MAIN*/
+main {
+  background-color: lightgrey;
+}
+aside,
+article {
+  padding: 20px;
+}
+.articleDiv {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 50px;
+}
+/*CARD*/
+@keyframes backgroundAnimation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.article {
+  width: 400px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #86efac, #3b82f6, #a855f7);
+  padding: 2px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.article:hover {
+  background-size: 400% 400%;
+  animation: backgroundAnimation 4s ease infinite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article-inner {
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 16px;
+}
+
+.date {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.title {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.tags {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  border-radius: 10px;
+  background-color: #f3e8ff;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #a855f7;
+}
