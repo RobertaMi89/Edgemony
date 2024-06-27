@@ -11,3 +11,15 @@
 .footer-logo img {
   width: 100px;
 }
+.menu {
+  display: flex;
+  gap: 50px;
+}
+li .item {
+  text-align: justify;
+}
+.item a {
+  text-decoration: none;
+  list-style: none;
+  align-items: baseline;
+}
