@@ -11,7 +11,7 @@ function App() {
     setDisplayValue((prevValue) => {
       if (value === "AC") {
         return "0";
-      } else if (value === "Reset") {
+      } else if (value === "C") {
         return "0";
       } else if (value === "+/-") {
         return (parseFloat(prevValue) * -1).toString();
