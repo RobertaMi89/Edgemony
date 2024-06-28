@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.character-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: left;
+}
+
+.character-card img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+}
