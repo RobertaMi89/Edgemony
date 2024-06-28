@@ -12,6 +12,8 @@ function Main() {
       const chars = (await fetchCharacters()).characters;
       setCharacters(chars);
       setFilteredList(chars);
+
+      console.log(chars);
     }
 
     setChars();

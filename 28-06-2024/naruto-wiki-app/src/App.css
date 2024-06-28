@@ -1,25 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.cdnfonts.com/css/ninja-naruto");
+body {
+  background-color: #f4f4f4;
+  font-family: "Ninja Naruto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Main {
+  background-image: url("./assets/sigillo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 150vh;
 }
 .App {
+  min-height: 100vh;
   text-align: center;
-  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b, #ffcc33);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.App img {
+  width: 200px;
+  text-align: left;
+}
+h2 {
+  color: #e30808;
+  font-size: 3em;
+  text-shadow: 2px 2px 5px #363535;
+  margin-bottom: 20px;
 }
 
+.search-bar input {
+  width: 50%;
+  padding: 10px;
+  font-size: 1.2em;
+  border: 2px solid #e30808;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.character-list h2 {
+  width: 100%;
+}
 .character-card {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin-top: 16px;
-  display: inline-block;
-  text-align: left;
+  background-color: #ffffffcd;
+  border: 2px solid #ff4500;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
 }
 
 .character-card img {
-  width: 150px;
-  height: auto;
-  display: block;
-  margin: 0 auto 16px;
+  width: 100%;
+  border-bottom: 2px solid #ff4500;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.character-card h2 {
+  color: #ff4500;
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.character-card p {
+  color: #333;
+  font-size: 1em;
 }

@@ -3,22 +3,20 @@ import CharacterCard from "./CharacterCard";
 
 const CharacterList = ({ filteredList }) => {
   return (
-    <div>
+    <div className="character-list">
       <h2>Lista dei Personaggi</h2>
-      <ul>
-        {filteredList?.length > 0 ? (
-          filteredList.map((character) => (
-            <CharacterCard
-              key={character.id}
-              id={character.id}
-              name={character.name}
-              image={character.images}
-            ></CharacterCard>
-          ))
-        ) : (
-          <></>
-        )}
-      </ul>
+      {filteredList?.length > 0 ? (
+        filteredList.map((character) => (
+          <CharacterCard
+            key={character.id}
+            id={character.id}
+            name={character.name}
+            image={character.images}
+          ></CharacterCard>
+        ))
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
