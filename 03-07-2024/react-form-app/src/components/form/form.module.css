@@ -61,8 +61,7 @@ label {
 }
 fieldset {
   display: flex;
-  width: 46%;
-  margin-right: 9px;
+  width: 50%;
 }
 input,
 fieldset {
@@ -89,6 +88,13 @@ input[type="radio"],
 input[type="checkbox"] {
   margin-right: 10px;
 }
+
+.radioLeft {
+  margin-right: 4px;
+}
+.radioRight {
+  margin-left: 4px;
+}
 .error-message {
   color: red;
   font-size: 14px;
@@ -98,7 +104,9 @@ input[type="checkbox"] {
 .input-error {
   border-color: red;
 }
-
+.check {
+  text-align: start;
+}
 .submit {
   background-color: var(--Green-600-medium);
   color: white;

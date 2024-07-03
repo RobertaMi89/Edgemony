@@ -87,7 +87,7 @@ function Form() {
             </div>
             <div className={styles.query}>
               <br />
-              <fieldset className={styles.radio}>
+              <fieldset className={styles.radioLeft}>
                 <input
                   type="radio"
                   id="generalEnquiry"
@@ -97,7 +97,7 @@ function Form() {
                 />
                 <label htmlFor="generalEnquiry">General Enquiry</label>
               </fieldset>
-              <fieldset className={styles.radio}>
+              <fieldset className={styles.radioRight}>
                 <input
                   type="radio"
                   id="supportRequest"
@@ -126,10 +126,12 @@ function Form() {
                 <p style={{ color: "red" }}>{errors.message}</p>
               )}
             </div>
-            <input type="checkbox" name="check" />
-            <label htmlFor="name">
-              I consent to being contacted by the team *
-            </label>
+            <div className={styles.check}>
+              <input type="checkbox" name="check" />
+              <label htmlFor="name">
+                I consent to being contacted by the team *
+              </label>
+            </div>
           </div>
           <input type="submit" value="Submit" className={styles.submit} />
         </form>
