@@ -10,7 +10,7 @@
   padding: 0.5rem;
   font-size: 1rem;
   color: #fff;
-  background-color: hsl(150, 100%, 66%);
+  background-color: var(--neon-green);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -23,7 +23,7 @@
 }
 
 .button:hover {
-  box-shadow: 0 0 10px hsl(150, 100%, 66%);
+  box-shadow: 0 0 10px var(--neon-green);
 }
 
 .adviceContainer {
@@ -34,7 +34,7 @@
 
 .adviceId {
   font-size: 0.9rem;
-  color: hsl(150, 100%, 66%);
+  color: var(--neon-green);
 }
 
 .adviceText {

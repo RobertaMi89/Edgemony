@@ -6,6 +6,6 @@
   height: 250px;
   margin: 2rem auto;
   text-align: center;
-  background-color: hsl(217, 19%, 24%);
+  background-color: var(--blu-grey);
   position: relative;
 }
