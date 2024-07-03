@@ -1,3 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+.containerWrapper {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  min-height: 100vh;
+}
+
+form {
+  background-color: var(--White);
+  width: 100%;
+  max-width: 736px;
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 100%;
+  letter-spacing: -1px;
+  text-align: start;
+}
+.fullName,
+.email,
+.message {
+  text-align: start;
+  margin-top: 10px;
+}
+
+.fullName {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+}
+.name,
+.surname {
+  width: 50%;
+}
+.email {
+  width: 100%;
+}
+.query {
+  display: flex;
+  width: 103%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.queryLabel {
+  width: 100%;
+  margin-top: 10px;
+  text-align: start;
+}
+label {
+  font-weight: 700;
+  text-align: start;
+}
+fieldset {
+  display: flex;
+  width: 46%;
+  margin-right: 9px;
+}
+input,
+fieldset {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+input[name="email"] {
+  width: 100%;
+}
+input[name="name"],
+input[name="surname"] {
+  width: 100%;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 .input-error {
-  border: 1px solid red;
+  border-color: red;
+}
+
+.submit {
+  background-color: var(--Green-600-medium);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit:hover {
+  background-color: #45a049;
 }
