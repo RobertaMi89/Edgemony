@@ -3,6 +3,7 @@
   --dark-blue: hsl(218, 23%, 16%);
   --blu-grey: hsl(217, 19%, 24%);
   --neon-green: hsl(150, 100%, 66%);
+  --text: hsl(193, 38%, 86%);
 }
 html {
   background-color: #202632;
