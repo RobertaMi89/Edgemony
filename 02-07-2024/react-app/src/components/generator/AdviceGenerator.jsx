@@ -5,15 +5,15 @@ import Card from "../card/Card";
 const adviceList = [
   {
     id: 1,
-    text: `"Once you find a really good friend don't do anything that could mess up your friendship."`,
+    text: "Once you find a really good friend don't do anything that could mess up your friendship.",
   },
   {
     id: 2,
-    text: `"If you are feeling down, try holding a pencil between your top lip and your nose for five minutes."`,
+    text: "If you are feeling down, try holding a pencil between your top lip and your nose for five minutes.",
   },
-  { id: 3, text: `"Don't always rely on your comforts."` },
-  { id: 4, text: `"Drink a glass of water before meals."` },
-  { id: 5, text: `"Everything matters, but nothing matters that much."` },
+  { id: 3, text: "Don't always rely on your comforts." },
+  { id: 4, text: "Drink a glass of water before meals." },
+  { id: 5, text: "Everything matters, but nothing matters that much." },
 ];
 
 const AdviceGenerator = () => {
