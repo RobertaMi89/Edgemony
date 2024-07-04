@@ -63,8 +63,8 @@ function Form() {
                   onChange={handleChange}
                   className={errors.name ? "input-error" : ""}
                 />
+                {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
               </div>
-              {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
               <div className={styles.surname}>
                 <label>Last Name *</label>
 
@@ -74,9 +74,11 @@ function Form() {
                   value={input.surname}
                   onChange={handleChange}
                 />
+                {errors.surname && (
+                  <p style={{ color: "red" }}>{errors.surname}</p>
+                )}
               </div>
             </div>
-            {errors.surname && <p style={{ color: "red" }}>{errors.surname}</p>}
             <div className={styles.email}>
               <label>Email *</label>
               <input name="email" value={input.email} onChange={handleChange} />
@@ -135,11 +137,13 @@ function Form() {
           </div>
           <input type="submit" value="Submit" className={styles.submit} />
         </form>
-        <p>{input.name}</p>
-        <p>{input.surname}</p>
-        <p>{input.email}</p>
-        <p>{input.queryType}</p>
-        <p>{input.message}</p>
+        <div className={styles.showInput}>
+          <p>{input.name}</p>
+          <p>{input.surname}</p>
+          <p>{input.email}</p>
+          <p>{input.queryType}</p>
+          <p>{input.message}</p>
+        </div>
       </div>
     </>
   );

@@ -120,3 +120,8 @@ input[type="checkbox"] {
 .submit:hover {
   background-color: #45a049;
 }
+.showInput {
+  height: 200px;
+  width: 200px;
+  background-color: var(--White);
+}
