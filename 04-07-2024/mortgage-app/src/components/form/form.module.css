@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--White);
+  border-radius: 20px;
+  width: 120vh;
+}
+
+form {
+  background-color: var(--White);
+  width: 100%;
+  max-width: 489px;
+  max-height: 480px;
+  padding: 40px;
+  border-radius: 16px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: 700;
+  text-align: start;
+}
+fieldset {
+  width: 50%;
+  display: flex;
+}
+input,
+fieldset {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/*HEADER*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 {
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-align: start;
+}
+.clearAll {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*MORTGAGE AMOUNT*/
+.mortgageTermRate,
+.amount {
+  margin-top: 10px;
+  width: 102%;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Mortgage Term Rate*/
+.mortgageTermRate {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.mortgageTerm,
+.interestRate {
+  width: 50%;
+}
+.termYears {
+  margin-right: 15px;
+}
+.interestRate {
+  margin-left: 15px;
+}
+input[name="termYears"],
+input[name="interestRate"] {
+  width: 94%;
+}
+
+/*Mortagage Type*/
+.query {
+  width: 100%;
+  margin-right: 10px;
+  gap: 10px;
+  flex-direction: column;
+  display: flex;
+}
+.mortagageType {
+  width: 100%;
+  margin-top: 10px;
+  text-align: start;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.repayment,
+.interestOnly {
+  width: 98%;
+}
+
+/*SUBMIT*/
+.submitBtn {
+  background-color: var(--Green-600-medium);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.submitBtn:hover {
+  background-color: #45a049;
+}
+/*RESULT SHOW HERE*/
+.resultDefault {
+  background-color: var(--Slate-900);
+  width: 100%;
+  padding: 40px;
+  max-width: 489px;
+  height: 480px;
+  border-radius: 0% 4% 3% 18%;
+}
+/*YOUR RESULTS*/
+.showInput {
+  height: 200px;
+  width: 200px;
+  background-color: var(--White);
+}
+/*ERROR*/
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.input-error {
+  border-color: red;
+}
