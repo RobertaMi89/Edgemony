@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./form.module.css";
 import Svg from "../SvgFile.jsx";
+import Results from "../Results/Results.jsx";
 function Form() {
   const initialInputState = {
     mortgageAmount: "",
@@ -25,34 +26,12 @@ function Form() {
   const [input, setInput] = useState(initialInputState);
   const [errors, setErrors] = useState(initialErrorState);
   const [results, setResults] = useState(initialResultState);
+  const [showResults, setShowResults] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prevState) => ({ ...prevState, [name]: value }));
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let newErrors = {};
-
-    const requiredFields = ["mortgageAmount", "termYears", "interestRate"];
-    requiredFields.forEach((field) => {
-      if (!input[field]) {
-        newErrors[field] = "This field is required.";
-      }
-    });
-
-    if (!input.viewOption) {
-      newErrors.viewOption = "Please select a view option.";
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      setErrors({});
-      calculateResults();
-    }
   };
 
   const calculateResults = () => {
@@ -75,10 +54,39 @@ function Form() {
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let newErrors = {};
+
+    const requiredFields = ["mortgageAmount", "termYears", "interestRate"];
+    requiredFields.forEach((field) => {
+      if (!input[field]) {
+        newErrors[field] = "This field is required.";
+      }
+    });
+
+    if (!input.viewOption) {
+      newErrors.viewOption = "Please select a view option.";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      setErrors({});
+      calculateResults();
+      setShowResults(true);
+    }
+  };
+
   const handleClear = () => {
     setInput(initialInputState);
     setErrors(initialErrorState);
     setResults(initialResultState);
+    setShowResults(false);
+    setInput((prevState) => ({
+      ...prevState,
+      viewOption: "",
+    }));
   };
   return (
     <>
@@ -91,42 +99,53 @@ function Form() {
             </span>
           </div>
           <div>
+            {/*Mortgage Amount*/}
             <div className={styles.amount}>
               <label>Mortgage Amount</label>
-              <input
-                name="mortgageAmount"
-                value={input.mortgageAmount}
-                onChange={handleChange}
-                className={errors.mortgageAmount ? "input-error" : ""}
-              />
+              <div className={styles.inputAmount}>
+                <span>£</span>
+                <input
+                  name="mortgageAmount"
+                  value={input.mortgageAmount}
+                  onChange={handleChange}
+                  className={errors.mortgageAmount ? "input-error" : ""}
+                />
+              </div>
               {errors.mortgageAmount && (
                 <p style={{ color: "red" }}>{errors.mortgageAmount}</p>
               )}
             </div>
+
+            {/*Mortagage Term*/}
             <div className={styles.mortgageTermRate}>
               <div className={styles.mortgageTerm}>
                 <label>Mortagage Term</label>
-                <br />
-                <input
-                  name="termYears"
-                  value={input.termYears}
-                  onChange={handleChange}
-                  className={errors.termYears ? "input-error" : ""}
-                />
+                <div className={styles.inputTerm}>
+                  <br />
+                  <input
+                    name="termYears"
+                    value={input.termYears}
+                    onChange={handleChange}
+                    className={errors.termYears ? "input-error" : ""}
+                  />
+                  <span>years</span>
+                </div>
                 {errors.termYears && (
                   <p style={{ color: "red" }}>{errors.termYears}</p>
                 )}
               </div>
               <div className={styles.interestRate}>
                 <label>Interest Rate</label>
-
-                <br />
-                <input
-                  name="interestRate"
-                  value={input.interestRate}
-                  onChange={handleChange}
-                  className={errors.interestRate ? "input-error" : ""}
-                />
+                <div className={styles.inputRate}>
+                  <br />
+                  <input
+                    name="interestRate"
+                    value={input.interestRate}
+                    onChange={handleChange}
+                    className={errors.interestRate ? "input-error" : ""}
+                  />
+                  <span>%</span>
+                </div>
                 {errors.interestRate && (
                   <p style={{ color: "red" }}>{errors.interestRate}</p>
                 )}
@@ -144,6 +163,7 @@ function Form() {
                   id="interestOnly"
                   name="viewOption"
                   value="interestOnly"
+                  checked={input.viewOption === "interestOnly"}
                   onChange={handleChange}
                 />
                 <label htmlFor="Repayment">Repayment</label>
@@ -154,6 +174,7 @@ function Form() {
                   id="totalMortgage"
                   name="viewOption"
                   value="totalMortgage"
+                  checked={input.viewOption === "totalMortgage"}
                   onChange={handleChange}
                 />
                 <label htmlFor="InterestOnly">Interest Only</label>
@@ -185,24 +206,9 @@ function Form() {
         </form>
 
         <div className={styles.resultDefault}>
-          <Svg sty />
-        </div>
-        <div className={styles.showInput}>
-          <h2>Results</h2>
-          {input.viewOption === "interestOnly" && (
-            <>
-              <p>Total Interest: {results.totalInterest}</p>
-              <p>Annual Installment: {results.annualInstallment}</p>
-            </>
-          )}
-          {input.viewOption === "totalMortgage" && (
-            <>
-              <p>
-                Total Mortgage with Interest:{" "}
-                {results.totalMortgageWithInterest}
-              </p>
-              <p>Annual Installment: {results.annualInstallment}</p>
-            </>
+          {!showResults && <Svg style={{ margin: "0 auto" }} />}
+          {showResults && (
+            <Results results={results} viewOption={input.viewOption} />
           )}
         </div>
       </div>

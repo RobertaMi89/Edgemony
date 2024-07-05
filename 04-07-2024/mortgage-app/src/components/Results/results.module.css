@@ -1,0 +1,46 @@
+.showInput {
+  height: 480px;
+  width: 440px;
+  color: var(--White);
+  text-align: start;
+}
+h2 {
+  margin: 10px 0 10px 0;
+  color: var(--White);
+}
+.spanResults {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--Slate-300);
+}
+.showResults {
+  border-top: 5px solid var(--Lime);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 50px;
+  height: 200px;
+  width: 400px;
+  background-color: hsl(202, 54%, 12%);
+  color: var(--Slate-500);
+}
+.monthly {
+  color: var(--Lime);
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+hr {
+  margin-inline: auto;
+  width: 400px;
+  margin-bottom: 20px;
+}
+h4 {
+  color: var(--Slate-300);
+  font-weight: normal;
+}
+.total {
+  color: var(--White);
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 10px;
+}

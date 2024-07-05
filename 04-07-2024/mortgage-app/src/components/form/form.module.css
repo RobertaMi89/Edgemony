@@ -36,12 +36,12 @@ fieldset {
   width: 50%;
   display: flex;
 }
-input,
+.containerWrapper input,
 fieldset {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  background-color: white;
 }
 
 /*HEADER*/
@@ -60,8 +60,8 @@ h1 {
 .clearAll {
   cursor: pointer;
   text-decoration: underline;
+  color: var(--Slate-500);
 }
-
 /*MORTGAGE AMOUNT*/
 .mortgageTermRate,
 .amount {
@@ -70,6 +70,34 @@ h1 {
   text-align: start;
   display: flex;
   flex-direction: column;
+}
+.amount label {
+  margin-right: 10px;
+}
+
+.inputAmount {
+  display: inline-flex; /* Utilizziamo inline-flex per allineare lo span e l'input orizzontalmente */
+  align-items: center;
+  border: 1px solid #ccc; /* Aggiungiamo un bordo per tutto l'inputAmount */
+  border-radius: 5px; /* Arrotondiamo i bordi */
+}
+
+.inputAmount span {
+  background-color: var(--Slate-100);
+  font-size: 18px;
+  color: var(--Slate-900);
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  align-content: center;
+  text-align: center;
+}
+
+.inputAmount input {
+  flex: 1; /* Facciamo espandere l'input per occupare tutto lo spazio disponibile */
+  border: none; /* Rimuoviamo il bordo dell'input per nasconderlo */
+  outline: none; /* Rimuoviamo l'outline di default dell'input */
+  font-size: 16px;
 }
 
 /*Mortgage Term Rate*/
@@ -92,7 +120,9 @@ input[name="termYears"],
 input[name="interestRate"] {
   width: 94%;
 }
-
+.inputTerm span {
+  width: 50px;
+}
 /*Mortagage Type*/
 .query {
   width: 100%;
@@ -118,17 +148,23 @@ input[type="checkbox"] {
 }
 
 /*SUBMIT*/
-.submitBtn {
-  background-color: var(--Green-600-medium);
-  color: white;
-  padding: 10px 20px;
+.submitBtn,
+.submitBtn input {
+  color: var(--Slate-900);
+  display: flex;
+  background-color: var(--Lime);
+  align-items: center;
+  width: 260px;
   border: none;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 16px;
+  padding: 7px;
+  font-weight: 900;
+  text-align: start;
 }
-.submitBtn:hover {
-  background-color: #45a049;
+.submitBtn svg {
+  padding: 0 5px 0 25px;
 }
 /*RESULT SHOW HERE*/
 .resultDefault {
@@ -138,13 +174,10 @@ input[type="checkbox"] {
   max-width: 489px;
   height: 480px;
   border-radius: 0% 4% 3% 18%;
+  align-content: center;
+  text-align: center;
 }
-/*YOUR RESULTS*/
-.showInput {
-  height: 200px;
-  width: 200px;
-  background-color: var(--White);
-}
+
 /*ERROR*/
 .error-message {
   color: red;
@@ -154,4 +187,8 @@ input[type="checkbox"] {
 
 .input-error {
   border-color: red;
+}
+
+input:focus {
+  border-color: var(--Lime);
 }

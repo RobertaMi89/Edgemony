@@ -2,7 +2,7 @@ import React from "react";
 
 function svg() {
   return (
-    <div>
+    <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="192"
@@ -191,7 +191,14 @@ function svg() {
           d="M19.622 98.995c-.153.845-1.036 1.498-1.881 1.613-.883.077-1.766-.115-2.573-.499a9.519 9.519 0 0 1-4.109-3.264c-.384-.615-.768-2.611.576-2.074.807.307 1.613 1.46 2.343 1.959.422.23 5.568 2.764 5.644 2.265Z"
         />
       </svg>
-    </div>
+      <div style={{ color: "white" }}>
+        <h2 style={{ margin: "10px" }}>Results shown here</h2>
+        <p>
+          Complete the form and click "calculate repayments" to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+    </>
   );
 }
 
