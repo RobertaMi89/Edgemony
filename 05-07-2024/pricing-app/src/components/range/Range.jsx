@@ -13,7 +13,7 @@ function Range({ value, onChange }) {
       <input
         type="range"
         min="0"
-        max="100000"
+        max="200"
         value={value}
         defaultValue={value}
         onChange={handleChange}

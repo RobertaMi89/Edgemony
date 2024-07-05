@@ -1,7 +1,7 @@
 .switch {
   --button-width: 3.5em;
-  --button-height: 2em;
-  --toggle-diameter: 1.5em;
+  --button-height: 1.8em;
+  --toggle-diameter: 1.3em;
   --button-toggle-offset: calc(
     (var(--button-height) - var(--toggle-diameter)) / 2
   );
