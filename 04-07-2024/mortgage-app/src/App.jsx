@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.module.css";
 import Form from "./components/form/Form";
 
 function App() {

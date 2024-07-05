@@ -35,6 +35,7 @@ label {
 fieldset {
   width: 50%;
   display: flex;
+  border-radius: 5px;
 }
 .containerWrapper input,
 fieldset {
@@ -62,7 +63,6 @@ h1 {
   text-decoration: underline;
   color: var(--Slate-500);
 }
-/*MORTGAGE AMOUNT*/
 .mortgageTermRate,
 .amount {
   margin-top: 10px;
@@ -71,15 +71,23 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+.inputAmount:focus-within,
+.inputTerm:focus-within,
+.inputRate:focus-within {
+  border-color: var(--Lime);
+}
+
+/*MORTGAGE AMOUNT*/
 .amount label {
   margin-right: 10px;
 }
 
 .inputAmount {
-  display: inline-flex; /* Utilizziamo inline-flex per allineare lo span e l'input orizzontalmente */
+  display: inline-flex;
   align-items: center;
-  border: 1px solid #ccc; /* Aggiungiamo un bordo per tutto l'inputAmount */
-  border-radius: 5px; /* Arrotondiamo i bordi */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .inputAmount span {
@@ -94,13 +102,13 @@ h1 {
 }
 
 .inputAmount input {
-  flex: 1; /* Facciamo espandere l'input per occupare tutto lo spazio disponibile */
-  border: none; /* Rimuoviamo il bordo dell'input per nasconderlo */
-  outline: none; /* Rimuoviamo l'outline di default dell'input */
+  flex: 1;
+  border: none;
+  outline: none;
   font-size: 16px;
 }
 
-/*Mortgage Term Rate*/
+/*Mortgage Term and Rate*/
 .mortgageTermRate {
   width: 100%;
   display: flex;
@@ -120,13 +128,64 @@ input[name="termYears"],
 input[name="interestRate"] {
   width: 94%;
 }
-.inputTerm span {
-  width: 50px;
+/*Mortgage Term*/
+.inputTerm {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
 }
+
+.inputTerm span {
+  background-color: var(--Slate-100);
+  font-size: 18px;
+  color: var(--Slate-900);
+  font-weight: 700;
+  width: 70px;
+  height: 40px;
+  align-content: center;
+  text-align: center;
+}
+
+.inputTerm input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+/*interest Rate*/
+.inputRate {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.inputRate span {
+  background-color: var(--Slate-100);
+  font-size: 18px;
+  color: var(--Slate-900);
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  align-content: center;
+  text-align: center;
+}
+
+.inputRate input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
 /*Mortagage Type*/
 .query {
   width: 100%;
   margin-right: 10px;
+  margin-top: 10px;
   gap: 10px;
   flex-direction: column;
   display: flex;
@@ -137,11 +196,16 @@ input[name="interestRate"] {
   text-align: start;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type="radio"] {
   margin-right: 10px;
 }
-
+input[type="radio"] {
+  color: var(--Lime);
+}
+.fieldsetSelected {
+  background-color: hsl(61, 91%, 91%);
+  border-color: var(--Lime);
+}
 .repayment,
 .interestOnly {
   width: 98%;

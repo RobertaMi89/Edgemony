@@ -41,16 +41,23 @@ function Form() {
 
     const annualRate = r;
     const numPayments = n;
+
+    // Calcolo dell'importo annuale dell'ammortamento
     const annualInstallment =
       (P * (annualRate * Math.pow(1 + annualRate, numPayments))) /
       (Math.pow(1 + annualRate, numPayments) - 1);
+
+    // Calcolo del totale del mutuo con interesse
     const totalMortgageWithInterest = annualInstallment * numPayments;
+
+    // Calcolo degli interessi totali pagati
     const totalInterest = totalMortgageWithInterest - P;
 
+    // Imposta i risultati con due decimali e il simbolo della sterlina
     setResults({
-      annualInstallment: annualInstallment.toFixed(2),
-      totalInterest: totalInterest.toFixed(2),
-      totalMortgageWithInterest: totalMortgageWithInterest.toFixed(2),
+      annualInstallment: `£${annualInstallment.toFixed(2)}`,
+      totalInterest: `£${totalInterest.toFixed(2)}`,
+      totalMortgageWithInterest: `£${totalMortgageWithInterest.toFixed(2)}`,
     });
   };
 
@@ -156,8 +163,13 @@ function Form() {
               <label>Mortgage Type</label>
             </div>
             <div className={styles.query}>
-              <br />
-              <fieldset className={styles.repayment}>
+              <fieldset
+                className={`${styles.repayment} ${
+                  input.viewOption === "interestOnly"
+                    ? styles.fieldsetSelected
+                    : ""
+                }`}
+              >
                 <input
                   type="radio"
                   id="interestOnly"
@@ -168,7 +180,13 @@ function Form() {
                 />
                 <label htmlFor="Repayment">Repayment</label>
               </fieldset>
-              <fieldset className={styles.interestOnly}>
+              <fieldset
+                className={`${styles.interestOnly} ${
+                  input.viewOption === "totalMortgage"
+                    ? styles.fieldsetSelected
+                    : ""
+                }`}
+              >
                 <input
                   type="radio"
                   id="totalMortgage"
