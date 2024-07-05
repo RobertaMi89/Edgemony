@@ -1,0 +1,68 @@
+.cardContainer {
+  background-color: var(--White);
+  position: absolute;
+  top: 30%;
+  width: 500px;
+  height: 350px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  padding: 40px;
+}
+.headerCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.billing {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+  align-self: center;
+  margin-bottom: 50px;
+}
+.billing button {
+  background-color: var(--LightGrayishRed);
+  border: 1px solid #fee0e0;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: var(--LightRed);
+  text-align: left;
+  height: 25px;
+  padding: 4px;
+  font-weight: 500;
+}
+hr {
+  border-top: 1px solid rgb(238, 236, 236);
+  width: 100%;
+}
+/*FOOTER CARD*/
+.footerCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.customList {
+  padding: 0;
+  list-style-type: none;
+}
+
+.customList li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.checkmark {
+  margin-right: 10px;
+  color: var(--StrongCyan);
+  font-weight: bold;
+  font-size: 0.8em;
+  font-weight: 900;
+}
+.footerCard button {
+  border-radius: 50px;
+  width: 180px;
+  height: 50px;
+  background-color: var(--DarkDesaturatedBlue);
+  color: var(--White);
+}

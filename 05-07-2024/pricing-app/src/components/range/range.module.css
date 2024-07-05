@@ -1,0 +1,39 @@
+.range {
+  margin: 40px 0 40px 0;
+}
+.rangeInput {
+  width: 100%;
+  position: relative;
+  appearance: none;
+  background: var(--LightGrayishBlue);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 10px;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  appearance: none;
+  background-image: url("../../../interactive-pricing-component-main/images/icon-slider.svg");
+  background-color: var(--StrongCyan);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 1.2rem 2.5rem hsl(174, 70%, 50%);
+  cursor: pointer;
+}
+
+.rangeInput::-moz-range-thumb {
+  background-image: url("../../../interactive-pricing-component-main/images/icon-slider.svg");
+  background-color: var(--StrongCyan);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 1.2rem 2.5rem hsl(174, 70%, 50%);
+  cursor: pointer;
+}

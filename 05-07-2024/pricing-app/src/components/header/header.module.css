@@ -1,0 +1,36 @@
+.emptyBackground {
+  background-color: var(--LightGrayishBlue);
+  text-align: center;
+  align-self: self-start;
+  height: 50%;
+  width: 100%;
+  border-radius: 0% 0% 24% 24%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.backgroundImage {
+  width: 160px;
+  height: auto;
+  align-self: start;
+  padding-top: 30px;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.textOverlay h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.textOverlay p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+}
