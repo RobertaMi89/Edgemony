@@ -39,7 +39,7 @@ fieldset {
 }
 .containerWrapper input,
 fieldset {
-  padding: 10px;
+  padding: 6px;
   font-size: 16px;
   border: 1px solid #ccc;
   background-color: white;
@@ -99,6 +99,7 @@ h1 {
   height: 40px;
   align-content: center;
   text-align: center;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .inputAmount input {
@@ -146,6 +147,7 @@ input[name="interestRate"] {
   height: 40px;
   align-content: center;
   text-align: center;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .inputTerm input {
@@ -172,6 +174,7 @@ input[name="interestRate"] {
   height: 40px;
   align-content: center;
   text-align: center;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .inputRate input {
