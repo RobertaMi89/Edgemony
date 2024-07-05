@@ -201,10 +201,9 @@ input[name="interestRate"] {
 
 input[type="radio"] {
   margin: 0px 10px 0px 10px;
+  accent-color: rgb(115, 115, 28);
 }
-input[type="radio"] {
-  color: var(--Lime);
-}
+
 .fieldsetSelected {
   background-color: hsl(61, 91%, 91%);
   border-color: var(--Lime);
