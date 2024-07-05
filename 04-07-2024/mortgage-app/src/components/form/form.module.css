@@ -14,7 +14,7 @@ body {
   justify-content: center;
   background-color: var(--White);
   border-radius: 20px;
-  width: 120vh;
+  width: 100vh;
 }
 
 form {
