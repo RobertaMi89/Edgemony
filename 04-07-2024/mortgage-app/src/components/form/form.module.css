@@ -258,3 +258,77 @@ input[type="radio"] {
 input:focus {
   border-color: var(--Lime);
 }
+/* Media Queries */
+
+/* Laptop (1024px and down) */
+@media (max-width: 1024px) {
+  .containerWrapper {
+    width: 85vh;
+  }
+}
+
+/* Tablet (768px and down) */
+@media (max-width: 768px) {
+  .containerWrapper {
+    flex-wrap: wrap;
+    width: 70vh;
+    border-radius: 0px;
+  }
+  .resultDefault {
+    align-content: center;
+    border-radius: 0px 0px 20px 20px;
+  }
+}
+
+/* Mobile (600px and down) */
+@media (max-width: 600px) {
+  .containerWrapper {
+    width: 53vh;
+    flex-direction: column;
+    align-content: center;
+  }
+  form {
+    border-radius: 20px 20px 0px 0px;
+  }
+  .resultDefault {
+    align-content: center;
+    border-radius: 0px 0px 20px 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .containerWrapper {
+    width: 48vh;
+    align-content: center;
+  }
+  .mortgageTermRate {
+    flex-direction: column;
+  }
+  .mortgageTerm,
+  .interestRate {
+    width: 100%;
+    margin: 0;
+    display: contents;
+  }
+  .submitBtn,
+  .submitBtn input {
+    align-self: center;
+  }
+}
+/* Mobile (400px and down) */
+@media (max-width: 425px) {
+  .containerWrapper {
+    width: 45vh;
+    align-content: center;
+  }
+  .submitBtn,
+  .submitBtn input {
+    width: 180px;
+    font-size: 12px;
+  }
+  .resultDefault {
+    width: 38vh;
+    align-content: center;
+    border-radius: 0px 0px 20px 20px;
+  }
+}
