@@ -70,6 +70,15 @@ fieldset {
   border: 1px solid #ccc;
   border-radius: 10px;
 }
+input:hover,
+fieldset:hover {
+  cursor: pointer;
+  border-color: var(--Grey-900-darker);
+}
+input:focus,
+fieldset:focus-within {
+  background-color: var(--Green-200-lighter);
+}
 textarea {
   width: 100%;
   padding: 10px;
@@ -118,10 +127,53 @@ input[type="checkbox"] {
 }
 
 .submit:hover {
-  background-color: #45a049;
+  background-color: var(--Grey-900-darker);
 }
 .showInput {
   height: 200px;
   width: 200px;
   background-color: var(--White);
+}
+/* Very small devices (400px and down) */
+@media (max-width: 650px) {
+  form {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .fullName,
+  .email,
+  .query,
+  .message {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+  }
+  .name,
+  .surname {
+    width: 100%;
+  }
+  .radioLeft,
+  .radioRight {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+  .message {
+    margin-bottom: 30px;
+  }
+  .submit {
+    padding: 8px;
+    font-size: 12px;
+  }
 }
