@@ -1,0 +1,13 @@
+.filterContainer {
+  margin-top: 20px;
+}
+
+.filterContainer label {
+  margin-right: 10px;
+}
+
+.filterContainer select {
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}

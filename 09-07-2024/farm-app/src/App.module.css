@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+  background-image: url("./assets/1f3de.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
