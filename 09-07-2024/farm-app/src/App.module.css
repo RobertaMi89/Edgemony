@@ -16,3 +16,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+h1 {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  text-transform: uppercase;
+  display: block;
+  font-size: 30px;
+  color: #1da1f2;
+  text-shadow: 0 8px 9px #9da1c4, 0px -2px 1px #fff;
+  font-weight: bold;
+  letter-spacing: -4px;
+  text-align: center;
+  background: linear-gradient(to bottom, #ebf3fdda 0%, #d1e0e9 100%);
+  padding: 16px 44px;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+}
