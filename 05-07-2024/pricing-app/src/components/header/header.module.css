@@ -34,3 +34,9 @@
   margin: 10px 0 0;
   font-size: 1rem;
 }
+@media (max-width: 425px) {
+  .cardContainer {
+    width: 35vh;
+    height: 50vh;
+  }
+}

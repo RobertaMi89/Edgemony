@@ -67,3 +67,30 @@ hr {
   background-color: var(--DarkDesaturatedBlue);
   color: var(--White);
 }
+@media (max-width: 425px) {
+  .cardContainer {
+    width: 35vh;
+    height: 50vh;
+  }
+  .headerCard {
+    flex-direction: column;
+  }
+  .billing {
+    font-size: 10px;
+    align-items: center;
+    margin: 20px 0 20px 0;
+  }
+  .billing button {
+    font-size: 10px;
+    padding: 2px;
+  }
+  .customList li {
+    font-size: 12px;
+  }
+  .footerCard {
+    flex-direction: column;
+  }
+  .footerCard button {
+    width: 190px;
+  }
+}
