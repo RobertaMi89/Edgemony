@@ -1,12 +1,10 @@
 import React from "react";
 import styles from "./cardAnimal.module.css";
 
-function CardAnimal({ name, type, onDelete }) {
+function CardAnimal({ name, onDelete }) {
   return (
     <div className={styles.card}>
-      <p>
-        {name} {type}
-      </p>
+      <p>{name}</p>
       <button className={styles.deleteBtn} onClick={() => onDelete(name)}>
         ➖
       </button>
