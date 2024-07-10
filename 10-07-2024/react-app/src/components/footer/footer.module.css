@@ -1,0 +1,10 @@
+.footer {
+  border: 5px solid blue;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+}
+.footer p:hover {
+  font-weight: 900;
+  color: blue;
+}

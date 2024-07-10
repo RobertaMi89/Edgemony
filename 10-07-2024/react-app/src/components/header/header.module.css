@@ -1,0 +1,17 @@
+.header {
+  border: 5px solid rgb(204, 5, 144);
+  padding: 10px;
+  text-align: center;
+}
+.navList {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+.navItem {
+  margin: 0 10px;
+}
+h1:hover {
+  font-weight: 900;
+  color: rgb(204, 5, 144);
+}
