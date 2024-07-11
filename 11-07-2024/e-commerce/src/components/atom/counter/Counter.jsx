@@ -1,17 +1,25 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./counter.module.css";
 import IconMinus from "../icons/IconMinus.jsx";
 import IconPlus from "../icons/IconPlus.jsx";
 import classNames from "classnames";
 
 function Counter() {
+  const [count, setCount] = useState(0);
+  const handleMinusClick = () => {
+    if (count === 0) {
+      return;
+    }
+
+    setCount(count - 1);
+  };
   return (
     <div className={classNames(styles.counter)}>
-      <button>
+      <button onClick={handleMinusClick}>
         <IconMinus />
       </button>
-      <div>0</div>
-      <button>
+      <div>{count}</div>
+      <button onClick={() => setCount(count + 1)}>
         <IconPlus />
       </button>
     </div>
