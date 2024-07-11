@@ -1,11 +1,9 @@
-import { useState } from "react";
 import styles from "./counter.module.css";
 import IconMinus from "../icons/IconMinus.jsx";
 import IconPlus from "../icons/IconPlus.jsx";
 import classNames from "classnames";
 
-function Counter() {
-  const [count, setCount] = useState(0);
+function Counter({ count, setCount }) {
   const handleMinusClick = () => {
     if (count === 0) {
       return;

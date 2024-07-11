@@ -3,7 +3,8 @@ import IconCart from "../../atom/icons/IconCart";
 import Avatar from "../../../../ecommerce-product-page-main/images/image-avatar.png";
 import Logo from "../../atom/logo/Logo";
 import Menu from "../../atom/menu/Menu.jsx";
-function NavBar() {
+
+function NavBar({ count }) {
   return (
     <>
       <nav>
@@ -12,7 +13,7 @@ function NavBar() {
           <Menu />
         </div>
         <div className={styles.user}>
-          <IconCart />
+          <IconCart count={count} />
           <img src={Avatar} alt="avatar" />
         </div>
       </nav>

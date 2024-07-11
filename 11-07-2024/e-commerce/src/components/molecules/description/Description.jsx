@@ -3,7 +3,12 @@ import IconCart from "../../atom/icons/IconCart.jsx";
 import Counter from "../../atom/counter/Counter.jsx";
 import styles from "./description.module.css";
 
-function Description() {
+function Description({ count, setCount }) {
+  const handleAddToCart = () => {
+    // Logic to add the item to cart
+    // You can use 'count' here as the quantity selected
+    console.log(`Added ${count} item(s) to cart`);
+  };
   return (
     <div className={styles.card}>
       <span>sneaker company</span>
@@ -18,8 +23,8 @@ function Description() {
         <p>$250.00</p>
       </div>
       <div className={styles.setBtns}>
-        <Counter />
-        <Button text={"Add to cart"}>
+        <Counter count={count} setCount={setCount} />
+        <Button text={"Add to cart"} onClick={handleAddToCart}>
           <IconCart fill="#000"></IconCart>
         </Button>
       </div>

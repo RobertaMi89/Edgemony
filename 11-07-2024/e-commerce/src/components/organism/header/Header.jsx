@@ -1,10 +1,10 @@
 import styles from "./header.module.css";
 import NavBar from "../../molecules/navbar/NavBar";
 
-function Header() {
+function Header({ count }) {
   return (
     <div>
-      <NavBar />
+      <NavBar count={count} />
     </div>
   );
 }

@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Main />
+      <Header count={count} setCount={setCount} />
+      <Main count={count} setCount={setCount} />
       <Footer />
     </>
   );
