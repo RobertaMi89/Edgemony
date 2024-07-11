@@ -1,20 +1,17 @@
 import { useState } from "react";
-import "./App.module.css";
-import Button from "./components/button/Button.jsx";
-import IconCart from "./components/icons/IconCart.jsx";
-import Counter from "./components/counter/Counter.jsx";
-import ProductLightBox from "./components/product-lightBox/ProductLightBox.jsx";
+import styles from "./App.module.css";
+import Main from "./components/organism/main/Main.jsx";
+import Header from "./components/organism/header/Header.jsx";
+import Footer from "./components/organism/footer/Footer.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Button text={"Add to cart"}>
-        <IconCart fill="#000"></IconCart>
-      </Button>
-      <Counter />
-      <ProductLightBox />
+      <Header />
+      <Main />
+      <Footer />
     </>
   );
 }
