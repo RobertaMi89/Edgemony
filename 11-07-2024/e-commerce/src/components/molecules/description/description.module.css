@@ -1,0 +1,17 @@
+.card {
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  margin: 50px 50px 50px 90px;
+}
+.card span {
+  text-transform: uppercase;
+}
+.card h1 {
+  text-transform: capitalize;
+  font-size: 3em;
+  margin: 10px 0px 30px 0px;
+}
+.setBtns {
+  display: flex;
+}
