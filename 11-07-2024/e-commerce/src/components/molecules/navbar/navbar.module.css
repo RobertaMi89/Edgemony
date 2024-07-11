@@ -4,6 +4,11 @@ nav {
   align-items: center;
   margin: 30px 0px;
 }
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
 .user {
   display: flex;
   align-items: center;

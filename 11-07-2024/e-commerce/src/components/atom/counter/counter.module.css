@@ -2,6 +2,8 @@
   background-color: var(--LightGrayishBlue);
   display: flex;
   justify-content: space-between;
+  width: 150px;
+  border-radius: 10px;
 }
 .counter button {
   all: unset;

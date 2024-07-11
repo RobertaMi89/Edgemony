@@ -1,7 +1,7 @@
 .button {
   background-color: var(--Orange);
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;

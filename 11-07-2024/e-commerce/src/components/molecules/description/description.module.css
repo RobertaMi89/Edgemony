@@ -12,6 +12,27 @@
   font-size: 3em;
   margin: 10px 0px 30px 0px;
 }
+.price {
+  margin: 20px 0px;
+}
+.price span {
+  font-weight: 900;
+  margin-right: 10px;
+}
+.price button {
+  background-color: var(--Black);
+  border-radius: 5px;
+  color: var(--White);
+  padding: 3px 6px;
+}
+.price p {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+  font-weight: 700;
+}
 .setBtns {
   display: flex;
+  height: 50px;
+  gap: 15px;
+  margin: 20px 0px;
 }
