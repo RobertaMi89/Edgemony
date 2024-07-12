@@ -5,12 +5,16 @@ import Header from "./components/organism/header/Header.jsx";
 import Footer from "./components/organism/footer/Footer.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
+
+  const addToCart = (count) => {
+    setCartCount(cartCount + count);
+  };
 
   return (
     <>
-      <Header count={count} setCount={setCount} />
-      <Main count={count} setCount={setCount} />
+      <Header count={cartCount} />
+      <Main addToCart={addToCart} />
       <Footer />
     </>
   );

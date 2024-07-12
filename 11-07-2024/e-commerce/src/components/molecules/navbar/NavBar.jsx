@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./navbar.module.css";
 import IconCart from "../../atom/icons/IconCart";
 import Avatar from "../../../../ecommerce-product-page-main/images/image-avatar.png";
@@ -13,7 +14,8 @@ function NavBar({ count }) {
           <Menu />
         </div>
         <div className={styles.user}>
-          <IconCart count={count} />
+          <IconCart />
+          {count > 0 && <span className={styles.count}>{count}</span>}
           <img src={Avatar} alt="avatar" />
         </div>
       </nav>

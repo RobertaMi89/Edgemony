@@ -3,9 +3,9 @@ import NavBar from "../../molecules/navbar/NavBar";
 
 function Header({ count }) {
   return (
-    <div>
+    <header>
       <NavBar count={count} />
-    </div>
+    </header>
   );
 }
 
