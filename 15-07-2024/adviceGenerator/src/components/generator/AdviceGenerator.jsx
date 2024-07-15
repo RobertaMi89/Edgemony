@@ -3,31 +3,38 @@ import Card from "../card/Card";
 import { fetchAdvice } from "../api";
 
 const AdviceGenerator = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [advice, setAdvice] = useState([]);
 
   useEffect(() => {
     async function setAdviceGen() {
-      const advice = await fetchAdvice();
-      setAdvice(advice);
-
-      console.log(advice);
+      try {
+        const fetchedAdvice = await fetchAdvice();
+        if (fetchedAdvice.id >= count) {
+          setAdvice(fetchedAdvice);
+        }
+      } catch (error) {
+        console.error("Error fetching advice:", error);
+      }
     }
     setAdviceGen();
   }, [count]);
 
   const handleNewAdviceClick = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
+  console.log(advice);
 
   return (
     <Card>
       <div className="text-center">
-        {advice && (
+        {advice ? (
           <div className="rounded-lg m-4 p-4">
             <p className="text-NeonGreen text-sm">ADVICE # {advice.id}</p>
             <p className="text-Text text-xl mt-2.5">{advice.advice}</p>
           </div>
+        ) : (
+          <p>Loading advice...</p>
         )}
       </div>
       <div className="text-center flex justify-center ">
