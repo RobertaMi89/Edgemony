@@ -4,13 +4,13 @@ import { fetchAdvice } from "../api";
 
 const AdviceGenerator = () => {
   const [count, setCount] = useState(1);
-  const [advice, setAdvice] = useState([]);
+  const [advice, setAdvice] = useState(null);
 
   useEffect(() => {
     async function setAdviceGen() {
       try {
         const fetchedAdvice = await fetchAdvice();
-        if (fetchedAdvice.id >= count) {
+        if (fetchedAdvice.id) {
           setAdvice(fetchedAdvice);
         }
       } catch (error) {
@@ -23,7 +23,10 @@ const AdviceGenerator = () => {
   const handleNewAdviceClick = () => {
     setCount((prevCount) => prevCount + 1);
   };
-  console.log(advice);
+
+  useEffect(() => {
+    console.log(advice);
+  }, [advice]);
 
   return (
     <Card>
