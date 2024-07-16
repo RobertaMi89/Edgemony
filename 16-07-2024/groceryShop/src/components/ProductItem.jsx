@@ -9,7 +9,7 @@ const ProductItem = ({ product }) => {
       <img
         src={product.image}
         alt={product.title}
-        className="w-32 h-32 object-cover mb-4"
+        className="object-cover mb-4"
       />
       <h2 className="text-xl font-semibold mb-2 text-center">
         {product.title}
