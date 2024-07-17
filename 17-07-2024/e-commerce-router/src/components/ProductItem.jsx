@@ -14,6 +14,9 @@ const ProductItem = ({ product }) => {
         <p className="mb-9 font-normal text-gray-700 dark:text-gray-400">
           ${product.price}
         </p>
+        <p className="mb-9 font-normal text-gray-700 dark:text-gray-400">
+          ${product.description}
+        </p>
         <button
           onClick={() => addToCart(product)}
           className="bg-blue-500 text-white w-48 px-4 py-2  rounded hover:bg-blue-700 absolute bottom-2.5 left-2.5 "

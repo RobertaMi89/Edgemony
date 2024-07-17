@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Cart from "./pages/Cart.jsx";
+import { CartProvider } from "./components/CartContext.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "contact",
+        path: "contacts",
         element: <Contact />,
       },
       {
@@ -37,6 +38,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
