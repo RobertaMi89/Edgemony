@@ -9,14 +9,14 @@ const menuList = [
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="flex items-center justify-between ">
       <h1>
         <a href="#">
           <img src={Logo} alt="logo" className="w-32" />
         </a>
       </h1>
       <div>
-        <ul className="flex gap-6 pe-5">
+        <ul className="flex gap-6 pe-5 text-yellow-600">
           {menuList.map((item, index) => {
             return (
               <li key={index}>

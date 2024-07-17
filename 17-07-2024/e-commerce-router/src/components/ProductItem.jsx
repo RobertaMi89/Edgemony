@@ -25,7 +25,7 @@ const ProductItem = ({ product }) => {
           onClick={() => {
             addToCart(product);
           }}
-          className="bg-blue-500 text-white w-48 px-4 py-2  rounded hover:bg-blue-700 absolute bottom-2.5 left-2.5 "
+          className="bg-yellow-600 text-white w-48 px-4 py-2  rounded-xl hover:bg-gray-500 absolute bottom-2.5 left-2.5 "
         >
           Add to Cart
         </button>
