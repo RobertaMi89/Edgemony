@@ -1,4 +1,5 @@
 import Logo from "../assets/logo.png";
+import { NavLink } from "react-router-dom";
 
 const menuList = [
   { name: "Home", path: "/" },
@@ -20,7 +21,12 @@ function Navbar() {
           {menuList.map((item, index) => {
             return (
               <li key={index}>
-                <a href={item.path}>{item.name}</a>
+                <NavLink
+                  className={({ isActive }) => (isActive ? "underline" : "")}
+                  to={item.path}
+                >
+                  {item.name}
+                </NavLink>
               </li>
             );
           })}
