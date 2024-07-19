@@ -7,28 +7,29 @@
       "price": 19.99,
       "category": "uomo",
       "images": [
-        "https://loremflickr.com/320/240/t-shirt,uomo",
-        "https://loremflickr.com/320/240/t-shirt,uomo",
-        "https://loremflickr.com/320/240/t-shirt,uomo",
-        "https://loremflickr.com/320/240/t-shirt,uomo"
+        "../src/assets/uomoImg/felpa.webp",
+        "../src/assets/uomoImg/felpa1.webp",
+        "../src/assets/uomoImg/felpa2.webp",
+        "../src/assets/uomoImg/felpa3.webp"
       ],
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "colors": ["#d7c8b4"]
     },
     {
       "id": 2,
-      "name": "Jeans uomo",
-      "description": "Jeans regular fit blu per uomo",
-      "price": 49.99,
+      "name": "T-shirt con stampa",
+      "description": "Scollo: Tondo,Fantasia: Stampa,Codice articolo: TOB2100DN-M11",
+      "price": 35.99,
+      "brand":"Tommy Jeans",
       "category": "uomo",
       "images": [
-        "https://loremflickr.com/320/240/jeans,uomo",
-        "https://loremflickr.com/320/240/jeans,uomo",
-        "https://loremflickr.com/320/240/jeans,uomo",
-        "https://loremflickr.com/320/240/jeans,uomo"
+        "../src/assets/uomoImg/tshirt.webp",
+        "../src/assets/uomoImg/tshirt1.webp",
+        "../src/assets/uomoImg/tshirt2.webp",
+       "../src/assets/uomoImg/tshirt3.webp"
       ],
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "colors": ["#7c775c", "#000000", "#FF0000"]
     },
     {
       "id": 3,
