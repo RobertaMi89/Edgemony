@@ -83,10 +83,10 @@
       "brand":"Apricot",
       "category": "donna",
       "images": [
-        "../src/assets/donnaImg/vestito-elegante.webp",
-        "../src/assets/donnaImg/vestito-elegante1.webp",
-        "../src/assets/donnaImg/vestito-elegante2.webp",
-        "../src/assets/donnaImg/vestito-elegante3.webp"
+        "../src/assets/donnaImg/vestito-elegante.png",
+        "../src/assets/donnaImg/vestito-elegante1.png",
+        "../src/assets/donnaImg/vestito-elegante2.png",
+        "../src/assets/donnaImg/vestito-elegante3.png"
       ],
       "sizes": ["XS","S", "M", "L", "XL","XXL"],
       "color": ["#2b6e77"]
