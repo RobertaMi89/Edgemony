@@ -1,13 +1,28 @@
 import CartContext from "../providers/CartContext";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Toast from "../components/atom/Toast";
 
 function ProductPage() {
   const { addToCart } = useContext(CartContext);
   const location = useLocation();
   const { product } = location.state || {};
-
+  const [isToastVisible, setIsToastVisible] = useState(false);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
   const colors = product?.colors || [];
+
+  const handleAddToCart = (product) => {
+    if (selectedSize && selectedColor) {
+      addToCart(product, selectedSize, selectedColor);
+      setIsToastVisible(true);
+      setTimeout(() => {
+        setIsToastVisible(false);
+      }, 3000);
+    } else {
+      alert("Please select a size and color.");
+    }
+  };
 
   return (
     <>
@@ -25,7 +40,7 @@ function ProductPage() {
               <div className="flex mb-4 justify-center items-center">
                 <div className="px-2">
                   <button
-                    onClick={() => addToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                     className="bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
                   >
                     Add to Cart
@@ -71,10 +86,15 @@ function ProductPage() {
                   {colors.length > 0 ? (
                     colors.map((color, index) => (
                       <button
-                        key={index} // Utilizza l'indice se non ci sono chiavi uniche per i colori
-                        className="w-6 h-6 rounded-full mr-2"
+                        key={index}
+                        className={`w-6 h-6 rounded-full mr-2 ${
+                          selectedColor === color
+                            ? "ring-2 ring-offset-2 ring-gray-500"
+                            : ""
+                        }`}
                         style={{ backgroundColor: color }}
                         aria-label={`Color ${color}`}
+                        onClick={() => setSelectedColor(color)}
                       ></button>
                     ))
                   ) : (
@@ -84,20 +104,18 @@ function ProductPage() {
                   )}
                 </div>
               </div>
-              <div className="mb-4">
-                <span className="font-bold text-gray-700 dark:text-gray-300">
-                  Select Size:
-                </span>
-                <div className="flex items-center mt-2">
-                  {product?.sizes.map((size) => (
-                    <button
-                      key={size}
-                      className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600"
-                    >
-                      {size}
-                    </button>
-                  ))}
-                </div>
+              <div className="flex items-center mt-2">
+                {product?.sizes.map((size) => (
+                  <button
+                    key={size}
+                    className={`bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600 ${
+                      selectedSize === size ? "bg-gray-500" : ""
+                    }`}
+                    onClick={() => setSelectedSize(size)}
+                  >
+                    {size}
+                  </button>
+                ))}
               </div>
               <div>
                 <span className="font-bold text-gray-700 dark:text-gray-300">
@@ -110,6 +128,12 @@ function ProductPage() {
             </div>
           </div>
         </div>
+        {isToastVisible && (
+          <Toast
+            message={`${product.title} added to cart!`}
+            onClose={() => setIsToastVisible(false)}
+          />
+        )}
       </div>
     </>
   );

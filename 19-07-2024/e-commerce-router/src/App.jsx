@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import ProductItem from "./components/ProductItem.jsx";
+import ProductItem from "./components/organisms/ProductItem.jsx";
 import productsData from "../server/db.json";
-
+import Carousel from "./components/molecules/Carousel.jsx";
+import MenuCategories from "./components/molecules/MenuCategories.jsx";
 const App = () => {
   const [product, setProduct] = useState([]);
 
@@ -10,13 +11,17 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container mx-auto my-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {product.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
+    <>
+      <Carousel />
+      <MenuCategories />
+      <div className="container mx-auto my-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {product.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
