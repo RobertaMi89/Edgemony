@@ -7,7 +7,8 @@ const ProductItem = ({ product }) => {
   const { setProducts } = useContext(SetProductContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAdd = (product) => {
+  {
+    /*const handleAdd = (product) => {
     setProducts((prevState) => {
       if (!Array.isArray(prevState)) {
         return [product];
@@ -17,19 +18,20 @@ const ProductItem = ({ product }) => {
   };
 
   const colors = product.colors || [];
-  const sizes = product.sizes || [];
+  const sizes = product.sizes || [];*/
+  }
 
   return (
-    <div className="flex flex-wrap justify-center h-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
+    <div className="flex flex-wrap justify-center h- bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
       <img
         onClick={() => setIsModalOpen(true)}
         src={product.images[0]}
-        alt={product.title}
-        className="max-w-full rounded-lg cursor-pointer"
+        alt={product.name}
+        className="rounded-t-lg w-full max-w-md h-auto object-cover cursor-pointer"
       />
       <div className="p-5">
         <h4 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-          {product.title}
+          {product.name}
         </h4>
       </div>
       <Modal isOpen={isModalOpen} OnClose={() => setIsModalOpen(false)}>
@@ -37,17 +39,15 @@ const ProductItem = ({ product }) => {
           <div className="flex justify-center mb-4">
             <img
               src={product.images[0]}
-              alt={product.title}
-              className="rounded-t-lg w-full max-w-md h-auto object-cover"
+              alt={product.name}
+              className="rounded-lg w-full max-w-md h-auto object-cover"
             />
           </div>
           <div className="mb-4">
             <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              {product.title}
+              {product.name}
             </h4>
-            <p className="text-gray-700 dark:text-gray-400 mb-2">
-              {product.description}
-            </p>
+
             <div className="mb-4">
               <span className="font-bold text-gray-700 dark:text-gray-300">
                 Price:

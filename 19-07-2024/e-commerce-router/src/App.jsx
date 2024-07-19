@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <>
-      <Carousel />
+      {/*<Carousel />*/}
       <MenuCategories />
       <div className="container mx-auto my-8">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

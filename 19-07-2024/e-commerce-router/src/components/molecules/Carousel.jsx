@@ -1,75 +1,80 @@
+import React from "react";
+import Img1 from "../../../src/assets/carousel/img1.png";
+import Img2 from "../../../src/assets/carousel/img2.png";
+import Img3 from "../../../src/assets/carousel/img3.png";
+import Img4 from "../../../src/assets/carousel/img4.png";
+import Img5 from "../../../src/assets/carousel/img5.png";
+
 function Carousel() {
   return (
-    <div
-      id="custom-controls-gallery"
-      className="relative w-full"
-      data-carousel="slide"
-    >
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-        {/*Item 1*/}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-            className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt=""
-          />
+    <>
+      <div id="gallery" className="relative w-full" data-carousel="slide">
+        {/* Carousel wrapper */}
+        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+          {/* Item 1 */}
+          <div
+            className="hidden duration-700 ease-in-out"
+            data-carousel-item="active"
+          >
+            <img
+              src={Img1}
+              className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="Image 1"
+            />
+          </div>
+          {/* Item 2 */}
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={Img2}
+              className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="Image 2"
+            />
+          </div>
+          {/* Item 3 */}
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={Img3}
+              className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="Image 3"
+            />
+          </div>
+          {/* Item 4 */}
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={Img4}
+              className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="Image 4"
+            />
+          </div>
+          {/* Item 5 */}
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={Img5}
+              className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="Image 5"
+            />
+          </div>
         </div>
-        {/*Item 2*/}
-        <div
-          className="hidden duration-700 ease-in-out"
-          data-carousel-item="active"
-        >
-          <img
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-            className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt=""
-          />
-        </div>
-        {/*Item 3*/}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-            className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt=""
-          />
-        </div>
-        {/*Item 4*/}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-            className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt=""
-          />
-        </div>
-        {/*Item 5*/}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-            className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt=""
-          />
-        </div>
-      </div>
-      <div className="flex justify-center items-center pt-4">
+        {/* Slider controls */}
         <button
           type="button"
-          className="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none"
+          className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
           data-carousel-prev
         >
-          <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg
-              className="rtl:rotate-180 w-5 h-5"
+              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 14 10"
+              viewBox="0 0 6 10"
             >
               <path
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M13 5H1m0 0 4 4M1 5l4-4"
+                d="M5 1 1 5l4 4"
               />
             </svg>
             <span className="sr-only">Previous</span>
@@ -77,30 +82,30 @@ function Carousel() {
         </button>
         <button
           type="button"
-          className="flex justify-center items-center h-full cursor-pointer group focus:outline-none"
+          className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
           data-carousel-next
         >
-          <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg
-              className="rtl:rotate-180 w-5 h-5"
+              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 14 10"
+              viewBox="0 0 6 10"
             >
               <path
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
+                d="m1 9 4-4-4-4"
               />
             </svg>
             <span className="sr-only">Next</span>
           </span>
         </button>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -10,7 +10,7 @@ function Modal({ children, isOpen, OnClose }) {
           aria-hidden="true"
           className="w-full h-full fixed top-0 left-0 z-50 flex items-center justify-center bg-slate-500/30 backdrop-blur-sm"
         >
-          <div className="relative p-4 w-full max-w-2xl max-h-full">
+          <div className="relative p-4 w-full max-w-2xl max-h-xl">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <button
