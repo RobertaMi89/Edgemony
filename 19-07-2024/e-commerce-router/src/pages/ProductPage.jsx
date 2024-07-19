@@ -144,7 +144,7 @@ function ProductPage() {
         </div>
         {isToastVisible && (
           <Toast
-            message={`${product.title} added to cart!`}
+            message={`${product.name} added to cart!`}
             onClose={() => setIsToastVisible(false)}
           />
         )}
