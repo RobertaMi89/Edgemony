@@ -11,6 +11,8 @@ import { CartProvider } from "./components/CartContext.jsx";
 import "./index.css";
 import ProductPage from "./pages/ProductPage.jsx";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const router = createBrowserRouter([
   {
     path: "/",

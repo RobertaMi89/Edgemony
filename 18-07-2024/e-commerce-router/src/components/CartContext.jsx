@@ -22,6 +22,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     const existingIndex = cart.findIndex((item) => item.id === product.id);
+
     if (existingIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart[existingIndex].quantity += 1;

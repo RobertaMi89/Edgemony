@@ -2,10 +2,20 @@ import React, { useContext, useState } from "react";
 import CartContext from "../components/CartContext";
 import Modal from "./Modal";
 import { Link } from "react-router-dom";
+import Toast from "./Toast";
 
 const ProductItem = ({ product }) => {
   const { addToCart } = useContext(CartContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isToastVisible, setIsToastVisible] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setIsToastVisible(true);
+    setTimeout(() => {
+      setIsToastVisible(false);
+    }, 3000); // Nascondi il toast dopo 3 secondi
+  };
 
   return (
     <div className="flex flex-wrap justify-center h-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
@@ -27,6 +37,7 @@ const ProductItem = ({ product }) => {
         <button
           onClick={() => {
             addToCart(product);
+            handleAddToCart();
           }}
           className="bg-yellow-600 text-white w-48 px-4 py-2  rounded-xl hover:bg-gray-500 absolute bottom-2.5 left-2.5 "
         >
@@ -53,6 +64,12 @@ const ProductItem = ({ product }) => {
           </Link>
         </div>
       </Modal>
+      {isToastVisible && (
+        <Toast
+          message={`${product.title} added to cart!`}
+          onClose={() => setIsToastVisible(false)}
+        />
+      )}
     </div>
   );
 };
