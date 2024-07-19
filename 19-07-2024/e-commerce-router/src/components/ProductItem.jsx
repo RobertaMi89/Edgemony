@@ -32,7 +32,7 @@ const ProductItem = ({ product }) => {
     <div className="flex flex-wrap justify-center h-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
       <img
         onClick={() => setIsModalOpen(true)}
-        src={product.image}
+        src={product.images[0]}
         alt={product.title}
         className="rounded-t-lg h-auto w-44 object-contain m-2 cursor-pointer"
       />

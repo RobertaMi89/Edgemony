@@ -1,13 +1,233 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title", "views": 100 },
-      { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "products": [
+    {
+      "id": 1,
+      "name": "T-shirt uomo",
+      "description": "T-shirt in cotone 100% di colore bianco",
+      "price": 19.99,
+      "category": "uomo",
+      "images": [
+        "https://loremflickr.com/320/240/t-shirt,uomo",
+        "https://loremflickr.com/320/240/t-shirt,uomo",
+        "https://loremflickr.com/320/240/t-shirt,uomo",
+        "https://loremflickr.com/320/240/t-shirt,uomo"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 2,
+      "name": "Jeans uomo",
+      "description": "Jeans regular fit blu per uomo",
+      "price": 49.99,
+      "category": "uomo",
+      "images": [
+        "https://loremflickr.com/320/240/jeans,uomo",
+        "https://loremflickr.com/320/240/jeans,uomo",
+        "https://loremflickr.com/320/240/jeans,uomo",
+        "https://loremflickr.com/320/240/jeans,uomo"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 3,
+      "name": "Giacca in pelle uomo",
+      "description": "Giacca in pelle nera da uomo",
+      "price": 159.99,
+      "category": "uomo",
+      "images": [
+        "https://loremflickr.com/320/240/giacca,pelle,uomo",
+        "https://loremflickr.com/320/240/giacca,pelle,uomo",
+        "https://loremflickr.com/320/240/giacca,pelle,uomo",
+        "https://loremflickr.com/320/240/giacca,pelle,uomo"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 4,
+      "name": "Felpa con cappuccio uomo",
+      "description": "Felpa con cappuccio grigia da uomo",
+      "price": 39.99,
+      "category": "uomo",
+      "images": [
+        "https://loremflickr.com/320/240/felpa,cappuccio,uomo",
+        "https://loremflickr.com/320/240/felpa,cappuccio,uomo",
+        "https://loremflickr.com/320/240/felpa,cappuccio,uomo",
+        "https://loremflickr.com/320/240/felpa,cappuccio,uomo"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 5,
+      "name": "Scarpe da ginnastica uomo",
+      "description": "Scarpe da ginnastica bianche unisex",
+      "price": 59.99,
+      "category": "uomo",
+      "images": [
+        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo",
+        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo",
+        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo",
+        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 6,
+      "name": "Vestito elegante donna",
+      "description": "Vestito lungo elegante da sera",
+      "price": 45.99,
+      "brand":"Apricot",
+      "category": "donna",
+      "images": [
+        "../src/assets/donnaImg/vestito-elegante.webp",
+        "../src/assets/donnaImg/vestito-elegante1.webp",
+        "../src/assets/donnaImg/vestito-elegante2.webp",
+        "../src/assets/donnaImg/vestito-elegante3.webp"
+      ],
+      "sizes": ["XS","S", "M", "L", "XL","XXL"],
+      "color": ["#2b6e77"]
+      
+    },
+    {
+      "id": 7,
+      "name": "Jeans skinny donna",
+      "description": "Jeans skinny blu per donna",
+      "price": 49.99,
+      "category": "donna",
+      "images": [
+        "https://loremflickr.com/320/240/jeans,skinny,donna",
+        "https://loremflickr.com/320/240/jeans,skinny,donna",
+        "https://loremflickr.com/320/240/jeans,skinny,donna",
+        "https://loremflickr.com/320/240/jeans,skinny,donna"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 8,
+      "name": "Maglione donna",
+      "description": "Maglione in lana bianca da donna",
+      "price": 54.99,
+      "category": "donna",
+      "images": [
+        "https://loremflickr.com/320/240/maglione,donna",
+        "https://loremflickr.com/320/240/maglione,donna",
+        "https://loremflickr.com/320/240/maglione,donna",
+        "https://loremflickr.com/320/240/maglione,donna"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 9,
+      "name": "Sneakers",
+      "description": "AIR FORCE",
+      "price": 119.99,
+      "brand":"Nike Sportswear",
+      "category": "donna",
+      "images": [
+        "../src/assets/donnaImg/scarpe.webp",
+        "../src/assets/donnaImg/scarpe1.webp",
+        "../src/assets/donnaImg/scarpe2.webp",
+        "../src/assets/donnaImg/scarpe3.webp"
+      ],
+      "sizes": ["36", "37", "38", "39","40","41","42"],
+      "colors": ["#000000"]
+    },
+    {
+      "id": 10,
+      "name": "Tuta",
+      "description": "Una tuta fa sempre comodo nella vita di tutti i giorni: a casa davanti al PC quando sei in smartworking, nei pomeriggi trascorsi in giardino oppure durante i weekend. Questa versione adidas offre massima versatilità grazie alla struttura in morbido tricot e alla vestibilità aderente. L'orlo e i polsini a coste, il girovita elasticizzato e la zip integrale completano il modello con tutti i dettagli che ti aspetteresti dal tuo nuovo completo preferito. Almeno il 70% di questo prodotto è costituito da un mix di materiali riciclati e rinnovabili.",
+      "price": 64.99,
+      "category": "donna",
+      "images": [
+        "../src/assets/donnaImg/tuta.webp",
+        "../src/assets/donnaImg/tuta1.webp",
+        "../src/assets/donnaImg/tuta2.webp",
+        "../src/assets/donnaImg/tuta3.webp"
+      ],
+      "sizes": ["XS","S", "M", "L", "XL","XXL"],
+      "colors": ["#ddccc5"]
+    },
+    {
+      "id": 11,
+      "name": "T-shirt bambino",
+      "description": "T-shirt in cotone 100% di colore rosso",
+      "price": 14.99,
+      "category": "bambino",
+      "images": [
+        "https://loremflickr.com/320/240/t-shirt,bambino",
+        "https://loremflickr.com/320/240/t-shirt,bambino",
+        "https://loremflickr.com/320/240/t-shirt,bambino",
+        "https://loremflickr.com/320/240/t-shirt,bambino"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 12,
+      "name": "Jeans bambino",
+      "description": "Jeans regular fit blu per bambino",
+      "price": 29.99,
+      "category": "bambino",
+      "images": [
+        "https://loremflickr.com/320/240/jeans,bambino",
+        "https://loremflickr.com/320/240/jeans,bambino",
+        "https://loremflickr.com/320/240/jeans,bambino",
+        "https://loremflickr.com/320/240/jeans,bambino"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 13,
+      "name": "Felpa con cappuccio bambino",
+      "description": "Felpa con cappuccio blu per bambino",
+      "price": 24.99,
+      "category": "bambino",
+      "images": [
+        "https://loremflickr.com/320/240/felpa,cappuccio,bambino",
+        "https://loremflickr.com/320/240/felpa,cappuccio,bambino",
+        "https://loremflickr.com/320/240/felpa,cappuccio,bambino",
+        "https://loremflickr.com/320/240/felpa,cappuccio,bambino"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 14,
+      "name": "Scarpe da ginnastica bambino",
+      "description": "Scarpe da ginnastica blu per bambino",
+      "price": 39.99,
+      "category": "bambino",
+      "images": [
+        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino",
+        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino",
+        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino",
+        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino"
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+    },
+    {
+      "id": 15,
+      "name": "Pantaloncini bambino",
+      "description": "Pantaloncini sportivi neri per bambino",
+      "price": 19.99,
+      "category": "bambino",
+      "images": [
+        "https://loremflickr.com/320/240/pantaloncini,bambino",
+        "https://loremflickr.com/320/240/pantaloncini,bambino",
+        "https://loremflickr.com/320/240/pantaloncini,bambino",
+        "https://loremflickr.com/320/240/pantaloncini,bambino"
+      ],  
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+
     }
-  }
+  ]
+}

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import ProductItem from "./components/ProductItem.jsx";
+import productsData from "../server/db.json";
 
 const App = () => {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => setProduct(data));
+    setProduct(productsData.products);
   }, []);
 
   return (
