@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useCallback } from "react";
 
 const CartContext = createContext();
 
@@ -9,6 +9,7 @@ export const CartProvider = ({ children }) => {
     return savedCount ? JSON.parse(savedCount) : 0;
   });
 
+  // Carica il carrello dal localStorage all'avvio
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -16,57 +17,68 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
+  // Salva il carrello e il conteggio nel localStorage ogni volta che cambiano
   useEffect(() => {
-    if (!cart.length) {
-      localStorage.removeItem("cart");
-    } else {
+    if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  }, [cart]);
-
-  useEffect(() => {
-    localStorage.setItem("cartCount", JSON.stringify(cartCount));
-  }, [cartCount]);
-
-  const addToCart = (product) => {
-    const existingIndex = cart.findIndex((item) => item.id === product.id);
-
-    if (existingIndex !== -1) {
-      const updatedCart = [...cart];
-      updatedCart[existingIndex].quantity += 1;
-      setCart(updatedCart);
     } else {
-      setCart((prevCart) => [...prevCart, { ...product, quantity: 1 }]);
+      localStorage.removeItem("cart");
     }
+    localStorage.setItem("cartCount", JSON.stringify(cartCount));
+  }, [cart, cartCount]);
 
-    setCartCount((prevCount) => prevCount + 1);
-  };
+  const addToCart = useCallback((product, selectedSize, selectedColor) => {
+    setCart((prevCart) => {
+      const existingIndex = prevCart.findIndex(
+        (item) =>
+          item.id === product.id &&
+          item.selectedSize === selectedSize &&
+          item.selectedColor === selectedColor
+      );
 
-  const removeFromCart = (productId) => {
-    const itemToRemove = cart.find((item) => item.id === productId);
-    if (itemToRemove) {
-      setCartCount((prevCount) => prevCount - itemToRemove.quantity);
-    }
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
-  };
+      if (existingIndex !== -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingIndex].quantity += 1;
+        setCartCount((prevCount) => prevCount + 1);
+        return updatedCart;
+      } else {
+        setCartCount((prevCount) => prevCount + 1);
+        return [
+          ...prevCart,
+          { ...product, quantity: 1, selectedSize, selectedColor },
+        ];
+      }
+    });
+  }, []);
 
-  const updateCartItemQuantity = (productId, newQuantity) => {
-    const itemToUpdate = cart.find((item) => item.id === productId);
-    if (itemToUpdate) {
-      const quantityDifference = newQuantity - itemToUpdate.quantity;
-      setCartCount((prevCount) => prevCount + quantityDifference);
-    }
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === productId ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
+  const removeFromCart = useCallback((productId) => {
+    setCart((prevCart) => {
+      const itemToRemove = prevCart.find((item) => item.id === productId);
+      if (itemToRemove) {
+        setCartCount((prevCount) => prevCount - itemToRemove.quantity);
+      }
+      return prevCart.filter((item) => item.id !== productId);
+    });
+  }, []);
 
-  const clearCart = () => {
+  const updateCartItemQuantity = useCallback((productId, newQuantity) => {
+    setCart((prevCart) => {
+      const itemToUpdate = prevCart.find((item) => item.id === productId);
+      if (itemToUpdate) {
+        const quantityDifference = newQuantity - itemToUpdate.quantity;
+        setCartCount((prevCount) => prevCount + quantityDifference);
+        return prevCart.map((item) =>
+          item.id === productId ? { ...item, quantity: newQuantity } : item
+        );
+      }
+      return prevCart;
+    });
+  }, []);
+
+  const clearCart = useCallback(() => {
     setCart([]);
     setCartCount(0);
-  };
+  }, []);
 
   return (
     <CartContext.Provider

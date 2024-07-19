@@ -26,12 +26,22 @@ const CartItem = ({ item }) => {
       updateCartItemQuantity(item.id, newQuantity);
     }
   };
+
   return (
     <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
-      <img src={item.image} alt={item.title} className="w-32 mb-4" />
+      <img src={item.images[0]} alt={item.title} className="w-32 mb-4" />
       <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-        <h4 className=" font-semibold mb-2">{item.title}</h4>
-
+        <h4 className="font-semibold mb-2">{item.title}</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Size: {item.selectedSize}
+        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Color:{" "}
+          <span
+            style={{ backgroundColor: item.selectedColor }}
+            className="w-4 h-4 inline-block rounded-full"
+          ></span>
+        </p>
         <div className="flex items-center gap-4 w-full">
           <button
             type="button"
@@ -115,7 +125,6 @@ const CartItem = ({ item }) => {
             id="counter-input"
             data-input-counter
             className="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
-            placeholder=""
             value={quantity}
             onChange={handleQuantityChange}
             required
