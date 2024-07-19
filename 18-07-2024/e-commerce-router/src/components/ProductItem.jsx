@@ -14,7 +14,7 @@ const ProductItem = ({ product }) => {
     setIsToastVisible(true);
     setTimeout(() => {
       setIsToastVisible(false);
-    }, 3000); // Nascondi il toast dopo 3 secondi
+    }, 3000);
   };
 
   return (
