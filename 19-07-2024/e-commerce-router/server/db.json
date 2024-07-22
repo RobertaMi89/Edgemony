@@ -33,47 +33,50 @@
     },
     {
       "id": 3,
-      "name": "Giacca in pelle uomo",
-      "description": "Giacca in pelle nera da uomo",
-      "price": 159.99,
+      "name": "Scarpe da ginnastica",
+      "description": "Tipo di sport: Pallacanestro,Punta: Tonda,Tipo di tacco: Senza tacco,Chiusura: Lacci,Chiusura: Lacci,Fantasia: Monocromo,Dettagli: Aperture,Codice articolo: NI112O0H3-Q11",
+      "price": 119.99,
+      "brand":"Nike Sportswear",
       "category": "uomo",
       "images": [
-        "https://loremflickr.com/320/240/giacca,pelle,uomo",
-        "https://loremflickr.com/320/240/giacca,pelle,uomo",
-        "https://loremflickr.com/320/240/giacca,pelle,uomo",
-        "https://loremflickr.com/320/240/giacca,pelle,uomo"
+        "../src/assets/uomoImg/scarpa.webp",
+        "../src/assets/uomoImg/scarpa1.webp",
+        "../src/assets/uomoImg/scarpa2.webp",
+        "../src/assets/uomoImg/scarpa3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "sizes": ["38.5", "39", "40", "41","42", "43", "44","45", "46", "47","48"],
+      "colors": ["#FFFFFF", "#000000"]
     },
     {
       "id": 4,
-      "name": "Felpa con cappuccio uomo",
-      "description": "Felpa con cappuccio grigia da uomo",
-      "price": 39.99,
+      "name": "Orologio",
+      "description": "Chiusura: Gancio regolabile,Impermeabile: Sì,Visualizzazione: Analogico,Codice articolo: GU152M0F9-Q11",
+      "price": 99.99,
+      "brand": "Guess",
       "category": "uomo",
       "images": [
-        "https://loremflickr.com/320/240/felpa,cappuccio,uomo",
-        "https://loremflickr.com/320/240/felpa,cappuccio,uomo",
-        "https://loremflickr.com/320/240/felpa,cappuccio,uomo",
-        "https://loremflickr.com/320/240/felpa,cappuccio,uomo"
+        "../src/assets/uomoImg/orologio.webp",
+        "../src/assets/uomoImg/orologio1.webp",
+        "../src/assets/uomoImg/orologio2.webp",
+        "../src/assets/uomoImg/orologio3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "sizes": ["One size"],
+      "colors": ["#FFFFFF"]
     },
     {
       "id": 5,
-      "name": "Scarpe da ginnastica uomo",
+      "name": "Pantaloni cargo",
       "description": "Scarpe da ginnastica bianche unisex",
-      "price": 59.99,
+      "price": 34.99,
+      "brand":"Only & Sons",
       "category": "uomo",
       "images": [
-        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo",
-        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo",
-        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo",
-        "https://loremflickr.com/320/240/scarpe,ginnastica,uomo"
+        "../src/assets/uomoImg/pantaloni.webp",
+        "../src/assets/uomoImg/pantaloni1.webp",
+        "../src/assets/uomoImg/pantaloni2.webp",
+        "../src/assets/uomoImg/pantaloni3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": ["S", "M", "L", "XL","XXL"],
       "colors": ["#FFFFFF", "#000000", "#FF0000"]
     },
     {
@@ -95,30 +98,32 @@
     },
     {
       "id": 7,
-      "name": "Jeans skinny donna",
-      "description": "Jeans skinny blu per donna",
+      "name": "Vestito lungo",
+      "description": "Scollo: Schiena scoperta,Trasparenza: Forte,Fantasia: Monocromo,Codice articolo: M9121C745-F11",
       "price": 49.99,
+      "brand":"Mango",
       "category": "donna",
       "images": [
-        "https://loremflickr.com/320/240/jeans,skinny,donna",
-        "https://loremflickr.com/320/240/jeans,skinny,donna",
-        "https://loremflickr.com/320/240/jeans,skinny,donna",
-        "https://loremflickr.com/320/240/jeans,skinny,donna"
+        "../src/assets/donnaImg/vestito.webp",
+        "../src/assets/donnaImg/vestito1.webp",
+        "../src/assets/donnaImg/vestito2.webp",
+        "../src/assets/donnaImg/vestito3.webp"
       ],
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "colors": ["#FFFFFF", "#000000"]
     },
     {
       "id": 8,
-      "name": "Maglione donna",
-      "description": "Maglione in lana bianca da donna",
-      "price": 54.99,
+      "name": "2 T-shirt basic",
+      "description": "Scollo: Tondo,Fantasia: Monocromo,Codice articolo: PUC21D2Q8-O11",
+      "price": 14.99,
+      "brand":"PULL&BEAR",
       "category": "donna",
       "images": [
-        "https://loremflickr.com/320/240/maglione,donna",
-        "https://loremflickr.com/320/240/maglione,donna",
-        "https://loremflickr.com/320/240/maglione,donna",
-        "https://loremflickr.com/320/240/maglione,donna"
+        "../src/assets/donnaImg/maglie.webp",
+        "../src/assets/donnaImg/maglie1.webp",
+        "../src/assets/donnaImg/maglie2.webp",
+        "../src/assets/donnaImg/maglie3.webp"
       ],
       "sizes": ["S", "M", "L", "XL"],
       "colors": ["#FFFFFF", "#000000", "#FF0000"]
@@ -156,77 +161,82 @@
     },
     {
       "id": 11,
-      "name": "T-shirt bambino",
-      "description": "T-shirt in cotone 100% di colore rosso",
-      "price": 14.99,
+      "name": "Tuta",
+      "description": "Tipo di sport: Training,Vita: Normale,Colletto: Alto,Chiusura: Cerniera,Tasche: Tasche anteriori, Tasche laterali,Polsini: Elastico,Fantasia: Monocromo,Dettagli: Fascia elastica,Codice articolo: NI126D0BN-A11",
+      "price": 59.99,
+      "brand":"Nike Sportswear",
       "category": "bambino",
       "images": [
-        "https://loremflickr.com/320/240/t-shirt,bambino",
-        "https://loremflickr.com/320/240/t-shirt,bambino",
-        "https://loremflickr.com/320/240/t-shirt,bambino",
-        "https://loremflickr.com/320/240/t-shirt,bambino"
+        "../src/assets/bambiniImg/tuta.webp",
+        "../src/assets/bambiniImg/tuta1.webp",
+        "../src/assets/bambiniImg/tuta2.webp",
+        "../src/assets/bambiniImg/tuta3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": ["122/128", "128/137", "137/147", "147/158","158/170"],
       "colors": ["#FFFFFF", "#000000", "#FF0000"]
     },
     {
       "id": 12,
-      "name": "Jeans bambino",
-      "description": "Jeans regular fit blu per bambino",
-      "price": 29.99,
+      "name": "Pantaloni",
+      "description": "Vita: Alta,Scollo: Schiena scoperta,Fantasia: Stampa,Dettagli: Fascia elastica, bordatura,Codice articolo: M0H23D03N-M11",
+      "price": 25.00,
+      "brand":"Mayoral",
       "category": "bambino",
       "images": [
-        "https://loremflickr.com/320/240/jeans,bambino",
-        "https://loremflickr.com/320/240/jeans,bambino",
-        "https://loremflickr.com/320/240/jeans,bambino",
-        "https://loremflickr.com/320/240/jeans,bambino"
+        "../src/assets/bambiniImg/pantaloni.webp",
+        "../src/assets/bambiniImg/pantaloni1.webp",
+        "../src/assets/bambiniImg/pantaloni2.webp",
+        "../src/assets/bambiniImg/pantaloni3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "sizes": ["92","98","104","110","116","122","128","134"],
+      "colors": ["#FFFFFF"]
     },
     {
       "id": 13,
       "name": "Felpa con cappuccio bambino",
       "description": "Felpa con cappuccio blu per bambino",
-      "price": 24.99,
+      "price": 49.99,
+      "brand":"Nike Sportswear",
       "category": "bambino",
       "images": [
-        "https://loremflickr.com/320/240/felpa,cappuccio,bambino",
-        "https://loremflickr.com/320/240/felpa,cappuccio,bambino",
-        "https://loremflickr.com/320/240/felpa,cappuccio,bambino",
-        "https://loremflickr.com/320/240/felpa,cappuccio,bambino"
+       "../src/assets/bambiniImg/felpa.webp",
+        "../src/assets/bambiniImg/felpa1.webp",
+        "../src/assets/bambiniImg/felpa2.webp",
+        "../src/assets/bambiniImg/felpa3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": ["122/128", "128/137", "137/147", "147/158","158/170"],
       "colors": ["#FFFFFF", "#000000", "#FF0000"]
     },
     {
       "id": 14,
-      "name": "Scarpe da ginnastica bambino",
-      "description": "Scarpe da ginnastica blu per bambino",
-      "price": 39.99,
+      "name": "Orologio",
+      "description": "Chiusura: Fibbia,Fantasia: Monocromo,Impermeabile: 5 ATM,Visualizzazione: Analogico,Codice articolo: LA253G00N-J11",
+      "price": 74.99,
+      "brand":"Lacoste",
       "category": "bambino",
       "images": [
-        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino",
-        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino",
-        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino",
-        "https://loremflickr.com/320/240/scarpe,ginnastica,bambino"
+        "../src/assets/bambiniImg/orologio.webp",
+        "../src/assets/bambiniImg/orologio1.webp",
+        "../src/assets/bambiniImg/orologio2.webp",
+        "../src/assets/bambiniImg/orologio3.webp"
       ],
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["#FFFFFF", "#000000", "#FF0000"]
+      "sizes": ["One size"],
+      "colors": ["#FFFFFF"]
     },
     {
       "id": 15,
-      "name": "Pantaloncini bambino",
-      "description": "Pantaloncini sportivi neri per bambino",
-      "price": 19.99,
+      "name": "Cappellino",
+      "description": "Marchio in licenza: Sonic,Fantasia: Stampa,Dettagli: Ricamo,Codice articolo: NX353W03S-B11",
+      "price": 21.00,
+      "brand":"Next",
       "category": "bambino",
       "images": [
-        "https://loremflickr.com/320/240/pantaloncini,bambino",
-        "https://loremflickr.com/320/240/pantaloncini,bambino",
-        "https://loremflickr.com/320/240/pantaloncini,bambino",
-        "https://loremflickr.com/320/240/pantaloncini,bambino"
+        "../src/assets/bambiniImg/cappellino.webp",
+        "../src/assets/bambiniImg/cappellino1.webp",
+        "../src/assets/bambiniImg/cappellino2.webp",
+        "../src/assets/bambiniImg/cappellino3.webp"
       ],  
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": ["52", "54", "56", "57","58"],
       "colors": ["#FFFFFF", "#000000", "#FF0000"]
 
     }
