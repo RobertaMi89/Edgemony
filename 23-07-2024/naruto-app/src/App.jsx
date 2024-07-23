@@ -5,31 +5,34 @@ import bg from "./assets/bg.jpg";
 import imgLoading from "./assets/loading.gif";
 import { Link } from "react-router-dom";
 
+const ITEMS_PER_PAGE = 20;
+
 function App() {
   const [characterList, setCharacterList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-  const getCharacter = async () => {
+  const getCharacters = async (page) => {
     try {
-      const data = await fetchCharacters();
+      const data = await fetchCharacters(page, ITEMS_PER_PAGE);
+      console.log(data);
       setCharacterList(data.characters || []);
+      setTotalPages(Math.ceil(data.total / ITEMS_PER_PAGE));
     } catch (error) {
-      console.log("stiamo sbagliando qui...");
-      setCharacterList([]);
+      console.error("Errore durante il recupero dei personaggi:", error);
+      setError("Si è verificato un errore durante il recupero dei dati.");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    getCharacter();
-  }, []);
+    getCharacters(page);
+  }, [page]);
 
-  useEffect(() => {
-    console.log(characterList);
-  }, [characterList]);
-
-  if (loading)
+  if (loading && page === 1)
     return (
       <div
         className="flex items-center justify-center min-h-screen bg-gray-900 bg-cover text-yellow-500 text-center"
@@ -37,8 +40,15 @@ function App() {
       >
         <div>
           <img src={imgLoading} alt="loading" className="mx-auto" />
-          <p>is Loading...</p>
+          <p>Loading...</p>
         </div>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 bg-cover text-yellow-500 text-center">
+        <p>{error}</p>
       </div>
     );
 
@@ -83,8 +93,8 @@ function App() {
             </thead>
 
             <tbody className="divide-y divide-gray-700">
-              {characterList.map((character, index) => (
-                <tr key={index}>
+              {characterList.map((character) => (
+                <tr key={character.id}>
                   <td className="whitespace-nowrap px-4 py-2 font-medium">
                     {character.name}
                   </td>
@@ -109,6 +119,26 @@ function App() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div className="flex justify-between p-4">
+          <button
+            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+            disabled={page === 1}
+            className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-600 border border-black shadow-lg"
+          >
+            Previous
+          </button>
+          <span className="text-white">
+            Page {page} of {totalPages}
+          </span>
+          <button
+            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={page === totalPages}
+            className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-600 border border-black shadow-lg"
+          >
+            Next
+          </button>
         </div>
       </main>
     </div>
