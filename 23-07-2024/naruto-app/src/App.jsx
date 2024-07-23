@@ -1,6 +1,6 @@
 import { labels } from "./data/labels.js";
 import { useEffect, useState } from "react";
-import { fetchCharacters } from "./utils/api.jsx";
+import { fetchAllCharacters } from "./utils/api.jsx";
 import bg from "./assets/bg.jpg";
 import imgLoading from "./assets/loading.gif";
 import { Link } from "react-router-dom";
@@ -16,8 +16,7 @@ function App() {
 
   const getCharacters = async (page) => {
     try {
-      const data = await fetchCharacters(page, ITEMS_PER_PAGE);
-      console.log(data);
+      const data = await fetchAllCharacters(page, ITEMS_PER_PAGE);
       setCharacterList(data.characters || []);
       setTotalPages(Math.ceil(data.total / ITEMS_PER_PAGE));
     } catch (error) {
@@ -66,7 +65,7 @@ function App() {
       className="flex justify-center min-h-screen bg-gray-900 bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <main className="w-[1200px] bg-opacity-70 bg-gray-800 rounded-lg shadow-lg">
+      <main className="w-[1200px] bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
         <div className="p-4 border-b border-gray-700">
           <h1 className="text-3xl text-yellow-400 font-bold">
             {labels.charList}
