@@ -2,6 +2,7 @@ import { labels } from "./data/labels.js";
 import { useEffect, useState } from "react";
 import { getCharacterList } from "./utils/apiFake.jsx";
 import bg from "./assets/bg.jpg";
+import imgLoading from "./assets/loading.gif";
 
 function App() {
   const [characterList, setCharacterList] = useState([]);
@@ -26,7 +27,18 @@ function App() {
     console.log(characterList);
   }, [characterList]);
 
-  if (loading) return <p>is Loading...</p>;
+  if (loading)
+    return (
+      <div
+        className="flex items-center justify-center min-h-screen bg-gray-900 bg-cover text-yellow-500 text-center"
+        style={{ backgroundImage: `url(${bg})` }}
+      >
+        <div>
+          <img src={imgLoading} alt="loading" className="mx-auto" />
+          <p>is Loading...</p>
+        </div>
+      </div>
+    );
 
   return (
     <>
@@ -45,7 +57,7 @@ function App() {
 
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y-2 divide-gray-700 bg-gray-800 text-sm text-white">
-              <thead className="ltr:text-left rtl:text-right">
+              <thead className="text-left">
                 <tr>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-yellow-400">
                     {labels.charTableName}
