@@ -59,7 +59,7 @@ function CharacterPage() {
 
   return (
     <div className="bg-gray-800 text-white">
-      <div className="container mx-auto my-5 p-5">
+      <div className="container mx-auto p-5">
         <div className="md:flex no-wrap md:-mx-2">
           <div className="w-full md:w-3/12 md:mx-2">
             {/*scheda avatar*/}
@@ -113,9 +113,7 @@ function CharacterPage() {
                 <span>{labels.charTableFamily}</span>
               </div>
               <div className="grid grid-cols-3 gap-4 mt-4">
-                <p className="text-gray-300 text-sm font-semibold leading-5 mt-2">
-                  <FamilyList family={character.family} />
-                </p>
+                <FamilyList family={character.family} />
               </div>
             </div>
           </div>
