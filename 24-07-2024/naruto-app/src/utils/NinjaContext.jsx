@@ -4,16 +4,19 @@ const NinjaContext = createContext();
 
 export const NinjaProvider = ({ children }) => {
   const [ninjaList, setNinjaList] = useState([]);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const savedNinjas = JSON.parse(localStorage.getItem("ninjaList"));
     setNinjaList(savedNinjas);
+    setIsInitialized(true);
   }, []);
 
   useEffect(() => {
-    if (ninjaList.length > 0)
+    if (isInitialized) {
       localStorage.setItem("ninjaList", JSON.stringify(ninjaList));
-  }, [ninjaList]);
+    }
+  }, [ninjaList, isInitialized]);
 
   const addNinja = (ninja) => {
     setNinjaList((prev) => {
