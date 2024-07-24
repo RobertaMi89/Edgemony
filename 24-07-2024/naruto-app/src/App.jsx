@@ -1,5 +1,5 @@
-import { labels } from "./data/labels.js";
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNinjaContext } from "./utils/NinjaContext.jsx";
 import { fetchAllCharacters } from "./utils/api.jsx";
 import bg from "./assets/bg.jpg";
 import imgLoading from "./assets/loading.gif";
@@ -8,7 +8,8 @@ import SearchBar from "./components/SearchBar.jsx";
 
 const ITEMS_PER_PAGE = 20;
 
-function App() {
+const App = () => {
+  const { ninjaList } = useNinjaContext();
   const [characterList, setCharacterList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -63,6 +64,13 @@ function App() {
     return "N/A";
   };
 
+  const getRankString = (rank) => {
+    if (typeof rank === "object") {
+      return rank["Part I"] || "N/A";
+    }
+    return rank || "N/A";
+  };
+
   return (
     <div
       className="flex justify-center min-h-screen bg-gray-900 bg-cover"
@@ -71,7 +79,7 @@ function App() {
       <main className="w-[1200px] bg-gray-800 bg-opacity-70 rounded-lg shadow-lg">
         <div className="p-4 border-b border-gray-700">
           <h1 className="text-3xl text-yellow-400 font-bold flex justify-between">
-            {labels.charList}
+            Character List
             <SearchBar
               characters={characterList}
               setFilteredList={setFilteredList}
@@ -84,50 +92,51 @@ function App() {
             <thead className="text-left">
               <tr>
                 <th className="whitespace-nowrap px-4 py-2 font-medium text-yellow-400">
-                  {labels.charTableName}
+                  Name
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 font-medium text-yellow-400">
-                  {labels.charTableClan}
+                  Clan
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 font-medium text-yellow-400">
-                  {labels.charTableRank}
+                  Rank
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 font-medium text-yellow-400">
-                  {labels.charTableTeam}
+                  Team
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 font-medium text-yellow-400">
-                  {labels.charTableActions}
+                  Actions
                 </th>
               </tr>
             </thead>
 
             <tbody className="divide-y divide-gray-700">
-              {(filteredList.length > 0 ? filteredList : characterList).map(
-                (character) => (
-                  <tr key={character.id}>
-                    <td className="whitespace-nowrap px-4 py-2 font-medium">
-                      {character.name}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      {character.personal.clan}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      {character.rank?.ninjaRank?.["Part I"] || "N/A"}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      {getTeamName(character.personal?.team)}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      <Link
-                        to={`/character/${character.id}`}
-                        className="inline-block rounded bg-orange-600 px-4 py-2 text-xs font-medium text-white hover:bg-orange-700"
-                      >
-                        View
-                      </Link>
-                    </td>
-                  </tr>
-                )
-              )}
+              {[
+                ...ninjaList,
+                ...(filteredList.length > 0 ? filteredList : characterList),
+              ].map((character) => (
+                <tr key={character.id}>
+                  <td className="whitespace-nowrap px-4 py-2 font-medium">
+                    {character.name}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {character.personal?.clan || character.clan}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {getRankString(character.rank)}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {getTeamName(character.personal?.team || character.team)}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    <Link
+                      to={`/character/${character.id}`}
+                      className="inline-block rounded bg-orange-600 px-4 py-2 text-xs font-medium text-white hover:bg-orange-700"
+                    >
+                      View
+                    </Link>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -154,6 +163,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;

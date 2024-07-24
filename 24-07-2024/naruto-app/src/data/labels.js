@@ -8,5 +8,6 @@ export const labels = {
   charTableBio: "Bio",
   charTableFamily: "Family Members",
   navHome: "Home",
+  create: "Create Ninja",
   searchBar: "Search characters...",
 };

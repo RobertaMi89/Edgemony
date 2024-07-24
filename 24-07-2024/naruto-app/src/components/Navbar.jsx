@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/narutologo.png";
+import { labels } from "../data/labels";
 
-const menuList = [{ name: "Home", path: "/" }];
+const menuList = [
+  { name: labels.navHome, path: "/" },
+  { name: labels.create, path: "create" },
+];
 
 function Navbar() {
   return (

@@ -1,15 +1,23 @@
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import NavBar from "./Navbar";
+import Navbar from "./Navbar.jsx";
 
-function DefaultLayout() {
+const DefaultLayout = () => {
+  const [ninjaList, setNinjaList] = useState([]);
+
+  const addNinja = (ninja) => {
+    setNinjaList((prevList) => [
+      ...prevList,
+      { ...ninja, id: crypto.randomUUID() },
+    ]);
+  };
+
   return (
     <div>
-      <NavBar />
-      <div>
-        <Outlet />
-      </div>
+      <Navbar />
+      <Outlet context={{ addNinja, ninjaList }} />
     </div>
   );
-}
+};
 
 export default DefaultLayout;
