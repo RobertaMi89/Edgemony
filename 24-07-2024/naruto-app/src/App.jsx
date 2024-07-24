@@ -64,13 +64,6 @@ const App = () => {
     return "N/A";
   };
 
-  const getRankString = (rank) => {
-    if (typeof rank === "object") {
-      return rank["Part I"] || "N/A";
-    }
-    return rank || "N/A";
-  };
-
   return (
     <div
       className="flex justify-center min-h-screen bg-gray-900 bg-cover"
@@ -122,7 +115,7 @@ const App = () => {
                     {character.personal?.clan || character.clan}
                   </td>
                   <td className="whitespace-nowrap px-4 py-2">
-                    {getRankString(character.rank)}
+                    {character.rank?.ninjaRank?.["Part I"] || "N/A"}
                   </td>
                   <td className="whitespace-nowrap px-4 py-2">
                     {getTeamName(character.personal?.team || character.team)}
