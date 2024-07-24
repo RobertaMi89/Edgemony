@@ -6,7 +6,8 @@ export const NinjaProvider = ({ children }) => {
   const [ninjaList, setNinjaList] = useState([]);
 
   const addNinja = (ninja) => {
-    setNinjaList((prevList) => [ninja, ...prevList]);
+    const newNinja = { ...ninja, id: crypto.randomUUID() };
+    setNinjaList((prevNinjaList) => [newNinja, ...prevNinjaList]);
   };
 
   return (

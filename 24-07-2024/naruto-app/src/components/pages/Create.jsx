@@ -16,7 +16,17 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addNinja({ name, clan, rank, team, jutsu, avatar, natureType });
+    const newNinja = {
+      id: crypto.randomUUID(),
+      name,
+      clan,
+      rank,
+      team,
+      jutsu,
+      avatar,
+      natureType,
+    };
+    addNinja(newNinja);
     navigate("/");
   };
 
