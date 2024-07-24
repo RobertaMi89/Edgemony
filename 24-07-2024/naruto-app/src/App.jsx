@@ -64,6 +64,22 @@ const App = () => {
     return "N/A";
   };
 
+  const combinedList = [
+    ...ninjaList,
+    ...(filteredList.length > 0 ? filteredList : characterList),
+  ];
+
+  if (!combinedList.length) {
+    return (
+      <div
+        className="flex items-center justify-center min-h-screen bg-gray-900 bg-cover text-yellow-500 text-center"
+        style={{ backgroundImage: `url(${bg})` }}
+      >
+        <p className="text-white">No characters found.</p>
+      </div>
+    );
+  }
+
   return (
     <div
       className="flex justify-center min-h-screen bg-gray-900 bg-cover"
@@ -103,10 +119,7 @@ const App = () => {
             </thead>
 
             <tbody className="divide-y divide-gray-700">
-              {[
-                ...ninjaList,
-                ...(filteredList.length > 0 ? filteredList : characterList),
-              ].map((character) => (
+              {combinedList.map((character) => (
                 <tr key={character.id}>
                   <td className="whitespace-nowrap px-4 py-2 font-medium">
                     {character.name}
