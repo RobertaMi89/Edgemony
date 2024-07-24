@@ -1,4 +1,4 @@
-import ErrorImg from "../../assets/error.gif";
+import ErrorImg from "../assets/error.gif";
 function ErrorPage() {
   return (
     <section className=" bg-gray-900 h-svh">

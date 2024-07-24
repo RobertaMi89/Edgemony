@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useNinjaContext } from "../../utils/NinjaContext";
+import { useNinjaContext } from "../utils/NinjaContext";
 
 const Create = () => {
   const [name, setName] = useState("");

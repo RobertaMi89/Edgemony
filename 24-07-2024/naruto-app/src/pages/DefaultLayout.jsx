@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
+import Navbar from "../components/Navbar";
 
 const DefaultLayout = () => {
   const [ninjaList, setNinjaList] = useState([]);

@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import DefaultLayout from "./components/DefaultLayout.jsx";
-import ErrorPage from "./components/pages/ErrorPage.jsx";
+import DefaultLayout from "./pages/DefaultLayout.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import CharacterPage from "./pages/CharacterPage.jsx";
+import Create from "./pages/Create.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CharacterPage from "./components/pages/CharacterPage.jsx";
-import Create from "./components/pages/Create.jsx";
 import { NinjaProvider } from "./utils/NinjaContext.jsx";
 
 const router = createBrowserRouter([

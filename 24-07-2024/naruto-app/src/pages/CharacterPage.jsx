@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCharacterDetails } from "../../utils/api";
-import bg from "../../assets/bg.jpg";
-import imgLoading from "../../assets/loading.gif";
-import { labels } from "../../data/labels";
-import CharacterNatureTypes from "../CharacterNatureTypes";
-import JutsuList from "../Jutsu";
-import FamilyList from "../FamilyList";
+import { fetchCharacterDetails } from "../utils/api";
+import bg from "../assets/bg.jpg";
+import imgLoading from "../assets/loading.gif";
+import { labels } from "../data/labels";
+import CharacterNatureTypes from "../components/path-api.jsx/CharacterNatureTypes";
+import JutsuList from "../components/path-api.jsx/Jutsu";
+import FamilyList from "../components/path-api.jsx/FamilyList";
 
 function CharacterPage() {
   const { id } = useParams();
