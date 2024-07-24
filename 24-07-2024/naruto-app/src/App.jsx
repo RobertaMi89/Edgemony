@@ -69,17 +69,6 @@ const App = () => {
     ...(filteredList.length > 0 ? filteredList : characterList),
   ];
 
-  if (!combinedList.length) {
-    return (
-      <div
-        className="flex items-center justify-center min-h-screen bg-gray-900 bg-cover text-yellow-500 text-center"
-        style={{ backgroundImage: `url(${bg})` }}
-      >
-        <p className="text-white">No characters found.</p>
-      </div>
-    );
-  }
-
   return (
     <div
       className="flex justify-center min-h-screen bg-gray-900 bg-cover"
