@@ -7,14 +7,14 @@ export const getBookList = () => {
             id: "1",
             isbn: "0-8783-3579-X",
             title: "Paperino alla scoperta del mondo",
-            genre: "fantascienza",
+            genre: "Fantascienza",
             author: "Pippo e pluto",
           },
           {
             id: "2",
             isbn: "0-8783-3579-Y",
             title: "Paperino e l'oro del Ruanda",
-            genre: "avventura",
+            genre: "Avventura",
             author: "Pippo da solo",
           },
         ];
@@ -26,18 +26,23 @@ export const getBookList = () => {
 export const getBookDetail = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      /* reject({ message: "Errore bruttissimo" }) */
       resolve(() => {
         return {
           id: "1",
           isbn: "0-8783-3579-X",
           title: "Paperino alla scoperta del mondo",
-          genre: "fantascienza",
+          genre: "Fantascienza",
           author: "Pippo e pluto",
           cover:
             "https://blog-cdn.reedsy.com/directories/admin/attachments/large_guerin-cover-7156b8.jpg",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+          id: "2",
+          isbn: "0-8783-3579-Y",
+          title: "Paperino e l'oro del Ruanda",
+          genre: "Avventura",
+          author: "Pippo da solo",
         };
       });
     }, 500);

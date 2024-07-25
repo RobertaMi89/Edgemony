@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getBookList } from "./api/BookClient";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Loading from "./components/Loading";
 
 function App() {
   const navigate = useNavigate();
@@ -37,15 +38,14 @@ function App() {
     getBooks();
   }, []);
 
-  if (isLoading) return <p>{labels.isLoading}</p>;
+  if (isLoading) return <Loading />;
 
   return (
     <>
       <div className="flex justify-center">
         <main className="w-[1200px]">
-          <button onClick={() => navigate(+1)}>Avanti</button>
           <div className="p-4">
-            <h1 className="">{labels.bookList}</h1>
+            <h1 className="font-bold text-xl">{labels.bookList}</h1>
           </div>
           <section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
             <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
@@ -136,7 +136,7 @@ function App() {
                 </div>
                 <div>
                   <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                       <tr>
                         <th scope="col" className="px-4 py-3">
                           {labels.bookTableTitle}
@@ -162,7 +162,7 @@ function App() {
                         )
                         .map((book) => {
                           return (
-                            <tr key={book.id} className="relative">
+                            <tr key={book.id} className="relative border-b">
                               <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                 {book.title}
                               </td>
@@ -175,7 +175,7 @@ function App() {
                               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                                 {book.isbn}
                               </td>
-                              <td className="px-4 py-3 flex items-center justify-end relative">
+                              <td className="px-4 py-3 flex items-center justify-end relative ">
                                 <button
                                   id={`dropdown-button-${book.id}`}
                                   data-dropdown-toggle={`dropdown-${book.id}`}
