@@ -1,5 +1,5 @@
 import { labels } from "./data/labels";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getBookList, deleteBook } from "./api/BookClient";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -282,10 +282,6 @@ function App() {
             </div>
           </section>
         </main>
-        {/*<Toast
-          message={`${book.id} added to cart!`}
-          onClose={() => setIsToastVisible(false)}
-        />*/}
       </div>
     </>
   );
