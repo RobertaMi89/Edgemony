@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         primary: {
+          beige: "#f8ede7",
           50: "#eff6ff",
           100: "#dbeafe",
           200: "#bfdbfe",
