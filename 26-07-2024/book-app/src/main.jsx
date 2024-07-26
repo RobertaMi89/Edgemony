@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import DefaultLayout from "./layouts/DefaultLayout.jsx";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BookDetailPage from "./pages/BookDetailPage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
@@ -36,6 +35,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ToastProvider>
+      <RouterProvider router={router} />
+    </ToastProvider>
   </React.StrictMode>
 );

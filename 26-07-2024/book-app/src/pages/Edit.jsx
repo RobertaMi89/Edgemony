@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { getBookDetail, editBook } from "../api/BookClient";
 import BookForm from "../components/BookForm";
 import Loading from "../components/Loading";
+import { useToast } from "./ToastContext";
 
 function Edit() {
+  const { showToast } = useToast();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -35,11 +37,13 @@ function Edit() {
       const res = await editBook({ id, ...body });
       console.log(res);
       navigate(`/books/${id}`, { replace: true });
+      showToast("Book edited successfully", "info");
     } catch (error) {
       console.log(error);
       setIsError((prevState) => {
         return { ...prevState, message: error.message, isError: true };
       });
+      showToast("Failed to edit the book", "error");
     }
   };
 

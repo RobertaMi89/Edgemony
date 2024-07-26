@@ -9,7 +9,7 @@ export const getBookList = async () => {
 
 export const getBookDetail = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/book-detail/${id}`);
+    const res = await fetch(`http://localhost:3000/books-detail/${id}`);
     return res.json();
   } catch (error) {
     throw Error(error);
@@ -18,14 +18,34 @@ export const getBookDetail = async (id) => {
 
 export const addBook = async (body) => {
   const id = self.crypto.randomUUID();
+  const bookNoDetail = {
+    id,
+    title: body.title,
+    author: body.author,
+    isbn: body.isbn,
+    genre: body.genre,
+  };
 
   try {
-    const res = await fetch("http://localhost:3000/book-detail", {
+    await fetch("http://localhost:3000/books", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id: self.crypto.randomUUID(), ...body }),
+      body: JSON.stringify(bookNoDetail),
+    });
+
+    const res = await fetch("http://localhost:3000/books-detail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+        ...body,
+        cover:
+          "https://blog-cdn.reedsy.com/directories/admin/attachments/large_guerin-cover-7156b8.jpg",
+      }),
     });
     return res.json();
   } catch (error) {
@@ -43,21 +63,18 @@ export const editBook = (body) => {
   });
 };
 
-export const deleteBook = (id) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(`l'elemento ${id} è stato cancellato con successo`);
-    }, 3000);
-  });
+export const deleteBook = async (id) => {
+  try {
+    await fetch(`http://localhost:3000/books/${id}`, {
+      method: "DELETE",
+    });
+
+    const res = await fetch(`http://localhost:3000/books-detail/${id}`, {
+      method: "DELETE",
+    });
+
+    return res.json();
+  } catch (error) {
+    throw Error(error);
+  }
 };
-/* export const getBookList = async () => {
-	try {
-
-		const res = await fetch("https://jsonplaceholde.typicode.com/users");
-		return res.json()
-
-	} catch (error) {
-		throw new Error("Error:", error)
-
-	}
-};  */

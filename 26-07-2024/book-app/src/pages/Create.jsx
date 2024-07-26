@@ -2,9 +2,11 @@ import { useState } from "react";
 import { addBook } from "../api/BookClient";
 import { useNavigate } from "react-router-dom";
 import BookForm from "../components/BookForm";
+import { useToast } from "./ToastContext";
 
 function Create() {
   const navigate = useNavigate();
+  const { showToast } = useToast();
 
   const [isError, setIsError] = useState({
     message: "",
@@ -16,11 +18,13 @@ function Create() {
       const res = await addBook(body);
       console.log(res);
       navigate("/");
+      showToast("Book added successfully", "success");
     } catch (error) {
       console.log(error);
       setIsError((prevState) => {
         return { ...prevState, message: error.message, isError: true };
       });
+      showToast("Failed to add the book", "error");
     }
   };
 
