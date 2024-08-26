@@ -1,0 +1,11 @@
+1. Quali sono le principali componenti del mini-compilatore che riesci a individuare nel codice? Elencale brevemente.
+abbiamo il tokenizer, il parser, l'ast e il generator
+
+2. Cos'è e cosa fa la funzione tokenizer? Spiegalo con parole tue.
+è uno strumento che serve a dividere il codice grezzo in pezzi più piccoli (token) che aiutano a identificare le parti principali della struttura del codice (testo,numeri,operatori,variabili...) per renderlo più leggibile
+
+3. Perché è fondamentale avere un parser in un compilatore? Quale ruolo svolge?
+è fondamentale perchè consiste effettivamente a trasformare il codice da una forma leggibile per essere umani a linguaggio macchina. Il suo ruolo consiste nella comprensione del codice appunto, controlla se è scritto correttamente ed è in grado di ottimizzarlo per eventualemente essere trasformato in un altro linguaggio.
+
+4. Se dovessi creare un conta caratteri in JavaScript, quali parti di questo compilatore ti sarebbero utili?
+probabilmente userei un generatore di codice che potrebbe semplicemente restituire il conteggio dei caratteri.
