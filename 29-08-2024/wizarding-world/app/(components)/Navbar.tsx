@@ -5,15 +5,16 @@ import { usePathname } from "next/navigation"
 
 const navitems=[
     {path:"/",value:"Home"},
-    {path:"hogwarts-sorting",value:"Smistamento"},
-    {path:"bestiario",value: "Il Bestiario"},
-    {path:"characters",value:"Personaggi"},
-    {path:"signup",value:"Iscriviti"},
-    {path:"login",value:"Accedi"},
+    {path:"/hogwarts-sorting",value:"Smistamento"},
+    {path:"/bestiary",value: "Il Bestiario"},
+    {path:"/characters",value:"Personaggi"},
+    {path:"/signup",value:"Iscriviti"},
+    {path:"/login",value:"Accedi"},
 ]
 
 export default function Navbar() {
-    const pathname= usePathname();
+const pathname= usePathname();
+
   return (
     <div>
         <ul className="flex gap-2">
