@@ -1,6 +1,7 @@
 import Card from "@/app/(components)/Card";
 import fetchAllMovies, { fetchAllBooks }  from "@/utils/Api";
 import { transformBookToCardItem, transformMovieToCardItem } from "@/utils/Transformers";
+import Navbar from "./(components)/Navbar";
 
 
 export default async function Home() {
@@ -13,6 +14,7 @@ export default async function Home() {
 
     return (
       <main className="bg-yellow-50">
+           <Navbar/>
         <h1 className="text-center font-bold text-5xl my-2 text-blue-950 mt-0 mb-0 p-2">
           Wizarding  World
         </h1>
