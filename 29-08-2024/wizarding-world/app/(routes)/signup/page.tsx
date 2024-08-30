@@ -23,7 +23,7 @@ export default function Signup() {
           </a>
         </div>
         <div className="h-screen py-12 lg:px-8  flex flex-col justify-center items-center">
-          <div className="w-96 border-2 border-lime-700 rounded-md p-5 shadow-2xl ">
+          <div className="w-96 border-2 border-gray-300 rounded-md p-5 shadow-2xl ">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <Image src={Potion} alt="" />
               <h2 className="mt-10 text-lime-700 text-center text-2xl font-bold leading-9 tracking-tight">
