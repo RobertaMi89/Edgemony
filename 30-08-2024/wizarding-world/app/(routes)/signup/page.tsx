@@ -1,18 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import Potion from "@/app/assets/potion.gif";
+import Bg1 from "@/app/assets/bg1.svg";
 
 export default function Signup() {
   return (
     <>
-      <div className="bg-bgSignUp">
+      <div
+        className="min-h-screen bg-center bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url(${Bg1.src})` }}
+      >
         <div className="self-start">
           <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-8 text-lime-700 cursor-pointer"
+              className="size-12 text-lime-700 cursor-pointer hover:text-lime-600"
             >
               <path
                 fillRule="evenodd"
@@ -23,7 +27,7 @@ export default function Signup() {
           </a>
         </div>
         <div className="h-screen py-12 lg:px-8  flex flex-col justify-center items-center">
-          <div className="w-96 border-2 border-gray-300 rounded-md p-5 shadow-2xl ">
+          <div className="w-96 border-2 bg-paleGreen border-gray-300 rounded-md p-5 shadow-2xl ">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <Image src={Potion} alt="" />
               <h2 className="mt-10 text-lime-700 text-center text-2xl font-bold leading-9 tracking-tight">
@@ -63,7 +67,7 @@ export default function Signup() {
                     <div className="text-sm">
                       <a
                         href="#"
-                        className="font-semibold text-lime-500 hover:text-lime-700"
+                        className="font-semibold text-lime-600 hover:text-lime-700"
                       >
                         Forgot password?
                       </a>
@@ -84,7 +88,7 @@ export default function Signup() {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-lime-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md bg-lime-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
                   </button>

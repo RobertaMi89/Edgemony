@@ -17,14 +17,12 @@ export default async function Home() {
 
     return (
       <main
-        className="min-h-screen bg-center bg-cover bg-no-repeat"
+        className="min-h-screen bg-center bg-repeat"
         style={{ backgroundImage: `url(${Bg.src})` }}
       >
         <Navbar />
-        <h1 className="text-center font-bold text-5xl my-2 text-blue-950 mt-0 mb-0 p-2">
-          Wizarding World
-        </h1>
-        <h2 className="text-center text-4xl my-2 text-blue-950 mt-0 mb-0 p-5">
+
+        <h2 className="text-center font-bold text-4xl my-2 text-blue-950 mt-0 mb-0 p-5">
           Movies
         </h2>
         <div>
@@ -35,7 +33,7 @@ export default async function Home() {
               <p>No items found</p>
             )}
           </div>
-          <h2 className="text-center text-4xl my-2 text-blue-950 mt-0 mb-0 p-5">
+          <h2 className="text-center font-bold text-4xl my-2 text-blue-950 mt-0 mb-0 p-5">
             Books
           </h2>
           <div className="flex flex-wrap justify-center">

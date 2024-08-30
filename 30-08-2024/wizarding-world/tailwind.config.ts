@@ -10,6 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         bgSignUp: "#dde0cc", 
+        cream:"#d1b592",
+        deepBrown:"#342721",
+        paleGreen:"#dde1cc",
+        caramel:"#aa7d44"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

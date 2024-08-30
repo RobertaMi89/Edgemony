@@ -5,7 +5,7 @@ import { ICard } from "@/types/ICard";
 export default function Card({ item }: ICard) {
   return (
     <div className="flex justify-center m-2">
-      <div className="w-80 p-4 bg-white bg-transparent border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-80 p-4 bg-cream  rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
         <img
           src={item.coverImage}
           alt={item.title}
@@ -18,7 +18,7 @@ export default function Card({ item }: ICard) {
 
         <a
           href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-950 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-deepBrown rounded-lg hover:bg-caramel focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Scopri di più
           <svg
