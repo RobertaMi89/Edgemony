@@ -1,6 +1,7 @@
 "use client";
 
 import { ICard } from "@/types/ICard";
+import Link from "next/link";
 
 export default function Card({ item }: ICard) {
   return (
@@ -16,8 +17,8 @@ export default function Card({ item }: ICard) {
         </h5>
         <p className="text-gray-700 dark:text-gray-400 mb-2">{item.creator}</p>
 
-        <a
-          href="#"
+        <Link
+          href={`/detailPage/${item.id}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-deepBrown rounded-lg hover:bg-caramel focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Scopri di più
@@ -36,7 +37,7 @@ export default function Card({ item }: ICard) {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

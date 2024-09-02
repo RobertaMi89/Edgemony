@@ -22,7 +22,7 @@ export default async function Home() {
       >
         <Navbar />
 
-        <h2 className="text-center font-bold text-4xl my-2 text-blue-950 mt-0 mb-0 p-5">
+        <h2 className="text-center font-bold box-decoration-slice bg-gradient-to-r from-caramel to-cream text-4xl my-2 text-white mt-0 mb-0 p-5">
           Movies
         </h2>
         <div>
@@ -33,7 +33,7 @@ export default async function Home() {
               <p>No items found</p>
             )}
           </div>
-          <h2 className="text-center font-bold text-4xl my-2 text-blue-950 mt-0 mb-0 p-5">
+          <h2 className="text-center font-bold box-decoration-slice bg-gradient-to-r from-caramel to-cream text-4xl my-2 text-white mt-0 mb-0 p-5">
             Books
           </h2>
           <div className="flex flex-wrap justify-center">
