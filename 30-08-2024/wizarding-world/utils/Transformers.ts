@@ -10,6 +10,7 @@ export const transformBookToCardItem = (book: IBook): ICardItem => ({
   coverImage: book.attributes.cover,
   description: book.attributes.summary,
   creator: book.attributes.author,
+  type: book.type
 });
 
 export const transformMovieToCardItem = (movie: IMovie): ICardItem => ({
@@ -18,4 +19,5 @@ export const transformMovieToCardItem = (movie: IMovie): ICardItem => ({
   coverImage: movie.attributes.poster,
   description: movie.attributes.summary,
   creator: movie.attributes.directors[0],
+  type: movie.type
 });

@@ -8,4 +8,5 @@ export interface ICardItem {
     coverImage: string;
     description: string;
     creator: string; 
+    type: string;
   }
