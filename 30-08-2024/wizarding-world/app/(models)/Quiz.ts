@@ -1,7 +1,34 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Model, Schema } from "mongoose";
 
+// Establishing the MongoDB connection
 mongoose.connect(process.env.MONGODB_URI!);
 mongoose.Promise = global.Promise;
+
+// Defining the Quiz Schema
+const quizSchema = new Schema(
+  {
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    questions: { type: [Schema.Types.Mixed], required: true }, // Allows for an array of any type
+    results: { type: [Schema.Types.Mixed], required: true }, // Allows for an array of any type
+  },
+  {
+    collection: "QuizCollection",
+  }
+);
+
+export interface IQuiz extends Document {
+  title: string;
+  description: string;
+  questions: Array<any>; // You can define a more specific type if needed
+  results: Array<any>; // You can define a more specific type if needed
+}
+
+// Check if the model already exists before defining it
+const Quiz: Model<IQuiz> =
+  mongoose.models.Quiz || mongoose.model<IQuiz>("Quiz", quizSchema);
+
+export default Quiz;
 
 // const questionsSchema = new Schema({
 //     0:String,
@@ -22,17 +49,3 @@ mongoose.Promise = global.Promise;
 //     2:String,
 //     3:String
 // })
-
-const quizSchema = new Schema({
-  title: String,
-  description: String,
-  questions:Array,
-  results:Array
-});
-
-
-
-const Quiz =
-  mongoose.models.Quiz || mongoose.model("Quiz", quizSchema);
-
-export default Quiz;
