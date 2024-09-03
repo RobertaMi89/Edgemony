@@ -13,7 +13,8 @@ const config: Config = {
         cream:"#d1b592",
         deepBrown:"#342721",
         paleGreen:"#dde1cc",
-        caramel:"#aa7d44"
+        caramel:"#aa7d44",
+        bgLogin:"#11131b"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
