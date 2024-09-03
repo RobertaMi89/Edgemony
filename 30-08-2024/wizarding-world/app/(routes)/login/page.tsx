@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import Potion from "@/app/assets/gif/potion.gif";
-import Bg2 from "@/app/assets/bg/bg2.svg";
+import Key from "@/app/assets/key.gif";
+import Bg from "@/app/assets/bg6.jpg";
 
 export default function Login() {
   return (
     <>
       <div
         className="min-h-screen bg-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${Bg2.src})` }}
+        style={{ backgroundImage: `url(${Bg.src})` }}
       >
         <div className="self-start">
           <a href="/">
@@ -16,7 +16,7 @@ export default function Login() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-12 text-lime-700 cursor-pointer hover:text-lime-600"
+              className="size-12 text-amber-200 cursor-pointer hover:text-amber-100"
             >
               <path
                 fillRule="evenodd"
@@ -27,11 +27,11 @@ export default function Login() {
           </a>
         </div>
         <div className="h-screen py-12 lg:px-8  flex flex-col justify-center items-center">
-          <div className="w-96 border-2 bg-paleGreen border-gray-300 rounded-md p-5 shadow-2xl ">
+          <div className="w-96 border-2 bg-bgLogin border-gray-300 rounded-md p-5 shadow-2xl ">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-              <Image src={Potion} alt="" />
-              <h2 className="mt-10 text-lime-700 text-center text-2xl font-bold leading-9 tracking-tight">
-                Iscriviti
+              <Image src={Key} alt="" />
+              <h2 className="mt-10 text-amber-200 text-center text-2xl font-bold leading-9 tracking-tight">
+                Accedi
               </h2>
             </div>
 
@@ -40,7 +40,7 @@ export default function Login() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-lime-700"
+                    className="block text-sm font-medium leading-6 text-amber-200"
                   >
                     Email
                   </label>
@@ -60,14 +60,14 @@ export default function Login() {
                   <div className="flex items-center justify-between">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium leading-6 text-lime-700"
+                      className="block text-sm font-medium leading-6 text-amber-200"
                     >
                       Password
                     </label>
                     <div className="text-sm">
                       <a
                         href="#"
-                        className="font-semibold text-lime-600 hover:text-lime-700"
+                        className="font-semibold text-amber-50 hover:text-amber-700"
                       >
                         Forgot password?
                       </a>
@@ -88,7 +88,7 @@ export default function Login() {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-lime-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md bg-amber-200 px-3 py-1.5 text-sm font-semibold leading-6 text-gray-500 shadow-sm hover:bg-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
                   </button>

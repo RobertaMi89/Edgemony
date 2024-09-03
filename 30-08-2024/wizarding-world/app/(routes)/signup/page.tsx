@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Potion from "@/app/assets/gif/potion.gif";
-import Bg1 from "@/app/assets/bg/bg1.svg";
+import Potion from "@/app/assets/potion.gif";
+import Bg1 from "@/app/assets/bg1.svg";
 
 export default function Signup() {
   return (
@@ -64,14 +64,6 @@ export default function Signup() {
                     >
                       Password
                     </label>
-                    <div className="text-sm">
-                      <a
-                        href="#"
-                        className="font-semibold text-lime-600 hover:text-lime-700"
-                      >
-                        Forgot password?
-                      </a>
-                    </div>
                   </div>
                   <div className="mt-2">
                     <input

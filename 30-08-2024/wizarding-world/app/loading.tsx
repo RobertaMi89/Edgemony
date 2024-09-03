@@ -1,5 +1,5 @@
 import React from "react";
-import Glasses from "@/app/assets/gif/glasses.gif";
+import Glasses from "@/app/assets/glasses.gif";
 import Image from "next/image";
 
 export default function loading() {

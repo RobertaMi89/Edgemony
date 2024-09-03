@@ -5,7 +5,7 @@ import {
   transformMovieToCardItem,
 } from "@/utils/Transformers";
 import Navbar from "./(components)/Navbar";
-import Bg from "./assets/bg/bg.jpg";
+import Bg from "@/app/assets/bg.jpg";
 
 export default async function Home() {
   try {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Howler from "./assets/gif/howler.gif";
+import Howler from "./assets/howler.gif";
 import Image from "next/image";
 export default function notFound() {
   return (
