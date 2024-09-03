@@ -1,4 +1,3 @@
-import { ICardItem } from "@/types/ICard";
 import { fetchBookById } from "@/utils/Api";
 import { transformBookToCardItem } from "@/utils/Transformers";
 

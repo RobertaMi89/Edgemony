@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Potion from "@/app/assets/potion.gif";
-import Bg1 from "@/app/assets/bg1.svg";
+import Potion from "@/app/assets/gif/potion.gif";
+import Bg1 from "@/app/assets/bg/bg1.svg";
 
 export default function Signup() {
   return (

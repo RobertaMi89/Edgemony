@@ -65,6 +65,7 @@ export default function Navbar() {
           >
             Iscriviti
           </a>
+          <div>{/*inserire le lingue*/}</div>
         </div>
         <div
           className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"

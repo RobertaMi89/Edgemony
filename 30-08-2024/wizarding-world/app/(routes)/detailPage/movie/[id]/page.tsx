@@ -1,4 +1,3 @@
-import { ICardItem } from "@/types/ICard";
 import { fetchMovieById } from "@/utils/Api";
 import { transformMovieToCardItem } from "@/utils/Transformers";
 
