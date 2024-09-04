@@ -18,7 +18,7 @@ export default async function Home() {
     return (
       <main
         className="min-h-screen bg-center bg-repeat"
-        style={{ backgroundImage: `url(${Bg.src})` }}
+        style={{ backgroundImage: `url(${Bg.src})`, backgroundSize: "500px" }}
       >
         <Navbar />
 

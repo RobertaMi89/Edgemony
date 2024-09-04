@@ -1,51 +1,65 @@
-import mongoose, { Model, Schema } from "mongoose";
+import mongoose, { Model, Schema, Document } from "mongoose";
 
-// Establishing the MongoDB connection
-mongoose.connect(process.env.MONGODB_URI!);
-mongoose.Promise = global.Promise;
+// Definizione dell'interfaccia per le risposte
+export interface IAnswer {
+  text: string;
+  points: { [house: string]: number };
+}
 
-// Defining the Quiz Schema
-const quizSchema = new Schema(
+// Definizione dell'interfaccia per le domande
+export interface IQuestion {
+  question: string;
+  answers: IAnswer[];
+}
+
+// Definizione dell'interfaccia per i risultati
+export interface IResult {
+  house: string;
+  description: string;
+}
+
+// Definizione dell'interfaccia per il quiz
+export interface IQuiz extends Document {
+  title: string;
+  description: string;
+  questions: IQuestion[];
+  results: IResult[];
+}
+
+// Schemi Mongoose
+const answerSchema = new Schema<IAnswer>({
+  text: { type: String, required: true },
+  points: { type: Map, of: Number, required: true },
+});
+
+const questionSchema = new Schema<IQuestion>({
+  question: { type: String, required: true },
+  answers: { type: [answerSchema], required: true },
+});
+
+const resultSchema = new Schema<IResult>({
+  house: { type: String, required: true },
+  description: { type: String, required: true },
+});
+
+const quizSchema = new Schema<IQuiz>(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    questions: { type: [Schema.Types.Mixed], required: true }, // Allows for an array of any type
-    results: { type: [Schema.Types.Mixed], required: true }, // Allows for an array of any type
+    questions: { type: [questionSchema], required: true },
+    results: { type: [resultSchema], required: true },
   },
   {
     collection: "QuizCollection",
   }
 );
 
-export interface IQuiz extends Document {
-  title: string;
-  description: string;
-  questions: Array<any>; // You can define a more specific type if needed
-  results: Array<any>; // You can define a more specific type if needed
-}
-
-// Check if the model already exists before defining it
+// Modello Mongoose
 const Quiz: Model<IQuiz> =
   mongoose.models.Quiz || mongoose.model<IQuiz>("Quiz", quizSchema);
 
 export default Quiz;
 
-// const questionsSchema = new Schema({
-//     0:String,
-//     1:String,
-//     2:String,
-//     3:String,
-//     4:String,
-//     5:String,
-//     6:String,
-//     7:String,
-//     8:String,
-//     9:String,
-// })
-
-// const resultsSchema = new Schema({
-//     0:String,
-//     1:String,
-//     2:String,
-//     3:String
-// })
+// Connessione a MongoDB
+mongoose.connect(process.env.MONGODB_URI!);
+mongoose.Promise = global.Promise;
