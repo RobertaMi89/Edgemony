@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import Potion from "@/app/assets/potion.gif";
-import Bg1 from "@/app/assets/bg1.svg";
+import Death from "@/app/assets/deathlyHallow.gif";
+import Bg from "@/app/assets/bg8.jpg";
 
 export default function Signup() {
   return (
     <>
       <div
         className="min-h-screen bg-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${Bg1.src})` }}
+        style={{ backgroundImage: `url(${Bg.src})` }}
       >
         <div className="self-start">
           <a href="/">
@@ -16,7 +16,7 @@ export default function Signup() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-12 text-lime-700 cursor-pointer hover:text-lime-600"
+              className="size-12 text-gray-400 cursor-pointer hover:text-gray-600"
             >
               <path
                 fillRule="evenodd"
@@ -26,11 +26,11 @@ export default function Signup() {
             </svg>
           </a>
         </div>
-        <div className="h-screen py-12 lg:px-8  flex flex-col justify-center items-center">
-          <div className="w-96 border-2 bg-paleGreen border-gray-300 rounded-md p-5 shadow-2xl ">
+        <div className="h-screen py-6 lg:px-8  flex flex-col justify-center items-center">
+          <div className="w-80 border-2 bg-gray-900 border-gray-900 rounded-md p-5 shadow-2xl ">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-              <Image src={Potion} alt="" />
-              <h2 className="mt-10 text-lime-700 text-center text-2xl font-bold leading-9 tracking-tight">
+              <Image src={Death} alt="" />
+              <h2 className="mt-5 text-gray-400 text-center text-2xl font-bold leading-9 tracking-tight">
                 Iscriviti
               </h2>
             </div>
@@ -40,7 +40,7 @@ export default function Signup() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-lime-700"
+                    className="block text-sm font-medium leading-6 text-gray-400 "
                   >
                     Email
                   </label>
@@ -60,7 +60,7 @@ export default function Signup() {
                   <div className="flex items-center justify-between">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium leading-6 text-lime-700"
+                      className="block text-sm font-medium leading-6 text-gray-400 "
                     >
                       Password
                     </label>
@@ -80,7 +80,7 @@ export default function Signup() {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-lime-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md bg-gray-500  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
                   </button>
