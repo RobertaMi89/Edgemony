@@ -9,7 +9,7 @@ async function fetchQuiz(): Promise<IQuiz | null> {
     const response = await fetch("http://localhost:3000/api/quiz");
     if (!response.ok) throw new Error("Network response was not ok");
     const data = await response.json();
-    return data.quiz[0]; // Supponendo che tu voglia solo il primo quiz
+    return data.quiz[0];
   } catch (error) {
     console.error("Error fetching quiz:", error);
     return null;
