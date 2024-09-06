@@ -1,0 +1,29 @@
+.main{
+    text-align: end;
+
+    @media (max-width: 768px) {
+       text-align: start;
+       
+       
+      }
+
+    select{
+        border-radius: 10px;
+        padding: 2px;
+        margin-top: 10px;
+    }
+    input[type=range]{
+        accent-color: var(--darkBlue);
+        margin-top: 10px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+           display: flex;
+           flex-direction: column;
+         
+          }
+    }
+    button{
+        margin-top: 10px;
+    }
+}
